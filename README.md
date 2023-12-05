@@ -1,110 +1,633 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Culture Club
 
-Welcome USER_NAME,
+Write a presentation about your project.
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+<center> 
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+![Mockup image](/docs/readme.md/FILENAME) 
 
-## Gitpod Reminders
+</center>
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
+Developer: [Debbie Bergström](https://github.com/DebbieBergstrom) <br>
+[Live webpage](https://WEBADDRESS)<br>
+[Project Repository](https://github.com/DebbieBergstrom/Culture-Club)<br>
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
+![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=for-the-badge)
+![Gitpod Badge](https://img.shields.io/badge/Gitpod-FFAE33?logo=gitpod&logoColor=fff&style=for-the-badge)
+![Git Badge](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=for-the-badge)
+![Heroku Badge](https://img.shields.io/badge/Heroku-430098?logo=heroku&logoColor=fff&style=for-the-badge)
+![PostgreSQL Badge](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=fff&style=for-the-badge)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
+![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=for-the-badge)
+![JSS Badge](https://img.shields.io/badge/JSS-F7DF1E?logo=jss&logoColor=000&style=for-the-badge)
+![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)
+![Markdown Badge](https://img.shields.io/badge/Markdown-000?logo=markdown&logoColor=fff&style=for-the-badge)
 
-A blue button should appear to click: _Make Public_,
-
-Another blue button should appear to click: _Open Browser_.
-
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
-
-To log into the Heroku toolbelt CLI:
-
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
-
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
-
-------
-
-## Release History
-
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
-
-**September 20 2023:** Update Python version to 3.9.17.
-
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
-
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
-
-**July 2 2021:** Remove extensions that are not available in Open VSX.
-
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
-
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
-
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
-
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
-
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
-
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
-
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
-
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
-
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
-
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
-
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
-
-------
-
-## FAQ about the uptime script
-
-**Why have you added this script?**
-
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=for-the-badge)
+![Django Badge](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=fff&style=for-the-badge)
 
 ---
 
-Happy coding!
+## Table of Content
+
+- [Project Goals](#project-goals)
+    + [User Goals](#user-goals)
+    + [Site Owner Goals](#site-owner-goals)
+- [User Experience](#user-experience)
+    + [Target Audience](#target-audience)
+    + [User Requirements and Expectations](#user-requirements-and-expectations)
+    + [User Stories](#user-stories)
+      - [Epic 1: User Experience (Visitor)](#epic-1--user-experience--visitor-)
+      - [Epic 2: User Engagement and Interaction (Registered User)](#epic-2--user-engagement-and-interaction--registered-user-)
+      - [Epic 3: Administration and Content Management (Admin/Content Moderator)](#epic-3--administration-and-content-management--admin-content-moderator-)
+- [Database](#database)
+    + [Blog Application Database Schema](#blog-application-database-schema)
+      - [CultureCategory Table](#culturecategory-table)
+      - [UserProfile Table](#userprofile-table)
+      - [User Table](#user-table)
+      - [Post Table](#post-table)
+      - [Comment Table](#comment-table)
+- [Design](#design)
+    + [Design Choices](#design-choices)
+    + [Color](#color)
+    + [Fonts](#fonts)
+    + [Structure](#structure)
+      - [Before User logs in:](#before-user-logs-in-)
+      - [After User logged in:](#after-user-logged-in-)
+      - [Profile Navigation:](#profile-navigation-)
+    + [Wireframes](#wireframes)
+- [Technologies Used](#technologies-used)
+    + [Languages](#languages)
+    + [Frameworks](#frameworks)
+    + [Database](#database-1)
+    + [Media management platform](#media-management-platform)
+    + [Tools](#tools)
+    + [Supporting Libraries and Packages](#supporting-libraries-and-packages)
+- [Methodology](#methodology)
+    + [Agile Project Management with GitHub Projects](#agile-project-management-with-github-projects)
+    + [User Stories as GitHub Issues](#user-stories-as-github-issues)
+    + [Bug Tracking for Seamless Development](#bug-tracking-for-seamless-development)
+    + [Iterative Development Approach](#iterative-development-approach)
+    + [Future Backlog and Progress](#future-backlog-and-progress)
+- [Features](#features)
+    + [Landing Page:](#landing-page-)
+    + [Other Pages:](#other-pages-)
+    + [User Account Management:](#user-account-management-)
+    + [Navigation:](#navigation-)
+    + [Future Features](#future-features)
+- [Testing](#testing)
+- [Bugs](#bugs)
+    + [Known bugs](#known-bugs)
+    + [Fixed bugs](#fixed-bugs)
+- [Deployment](#deployment)
+    + [App Deployment](#app-deployment)
+    + [Cloudinary](#cloudinary)
+    + [Version Control](#version-control)
+    + [Forking the Repository:](#forking-the-repository-)
+    + [Clone of the Repository:](#clone-of-the-repository-)
+- [Credits](#credits)
+    + [Media](#media)
+    + [Django Documentation:](#django-documentation-)
+    + [Bootstrap docs:](#bootstrap-docs-)
+    + [Tutorials and YouTube channels:](#tutorials-and-youtube-channels-)
+    + [Content](#content)
+- [Acknowledgments](#acknowledgments)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
+---
+
+# Project Goals 
+
+Culture Club is a Django web application that...? 
+The key objectives of the project include:
+
+- **Goal1:** ...
+- **Goal2:** ...
+- **Goal3:** ...
+- **Goal4:** ...
+- **Goal5:** ...
+
+
+### User Goals
+- 
+
+### Site Owner Goals
+- 
+
+
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# User Experience
+
+### Target Audience
+Culture Club is designed for the following target audience:
+
+- 
+
+### User Requirements and Expectations
+When using Culture Club, users can expect the following features and characteristics to fulfill their needs:
+
+- 
+
+
+### User Stories
+
+#### Epic 1: User Experience (Visitor)
+
+- [Easily Navigate and Find Content (should-have)](https://github.com/DebbieBergstrom/Culture-Club/issues/1) #1 SPRINT ?
+- [Visually Appealing Homepage (should-have)](https://github.com/DebbieBergstrom/Culture-Club/issues/2) #2 SPRINT ?
+-
+
+#### Epic 2: User Engagement and Interaction (Registered User)
+
+
+- [Save Favorite Articles and Create Reading Lists (should-have)](https://github.com/DebbieBergstrom/Culture-Club/issues/2) #2 SPRINT ?
+
+
+#### Epic 3: Administration and Content Management (Admin/Content Moderator)
+
+- [Full Control Over User Accounts (must-have)](https://github.com/DebbieBergstrom/Culture-Club/issues/2) #2 SPRINT ?
+
+
+<br>
+
+The user stories and epics are organized into sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/DebbieBergstrom/Culture-Club//milestones), which will redirect you to the sprint information.
+
+![Sprints](/docs/readme.md/FILEPATH) 
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Database
+When creating the database structure schema for this project, I utilized the [dbdiagram.io](https://dbdiagram.io/) website. This online tool allowed me to visually design and document the database schema, making it easier to plan and implement the database for the blog application.
+
+<center> 
+
+![Database Schema image](/docs/readme.md/FILEPATH) 
+
+</center>
+
+### Blog Application Database Schema
+
+#### CultureCategory Table
+- Stores categories used for categorizing posts.
+- Fields:  culture_category_id (primary key), name (category name), genre (category genre).
+
+#### UserProfile Table
+- Extends the User model to store additional user-specific information.
+- Fields: userprofile_id (primary key), user (one-to-one relationship with the User model), first_name, last_name, profile_picture (user profile picture), bio (user bio), country (user's country).
+
+#### User Table
+- Represents user information. ( Django built In )
+- Fields: user_id (primary key), username (user's name), email (user's email address), password (user's password).
+
+#### Post Table
+- Represents blog posts created by users.
+- Fields: post_id (primary key), title (post title), slug (post slug), author_id (foreign key to User), update_on (post update date), content (post content), featured_image (featured image URL), excerpt (post excerpt), Created_on (post creation date), status (post status), likes (many-to-many relationship with User for post likes), category_id (foreign key to CultureCategory), genre (post genre 'MOVIES', 'BOOKS', 'MUSIC', 'PODCASTS', Charfield).
+
+#### Comment Table
+- Represents comments on blog posts.
+- Fields: comment_id (primary key), post_id (foreign key to Post), name (commenter's name), email (commenter's email address), body (comment content), created_on (comment creation date), approved (comment approval status), user_id (foreign key to user model).
+
+<br>
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Design
+Short description...
+
+### Design Choices
+Our design choices were made thinking of.....
+
+### Color
+short description using 60–30–10 rule for creating balanced interfaces.
+
+![Color Palette image](/docs/FILEPATH)
+**Dominant (60%):** 
+
+Choice of a ?color?, represented by #code as the dominant color, reflects...
+
+**Secondary (30%):** 
+
+The secondary color, ?color?, represented by #code ...
+
+**Accent (10%):** 
+
+Accent color...
+
+
+### Fonts
+The Culture Club site embraces the default fonts offered by Bootstrap 5, without any specific alterations, as they significantly enhance the overall aesthetics and user experience.
+
+### Structure
+
+User-friendly structure, ensuring seamless navigation and easy access to the website's content. Here's an overview of the website's structure:
+
+#### Before User logs in:
+
+- **Landing Page:** The landing page... <br>
+- **About Us:** The About Us page provides... <br>
+- **Sign Up:** For new Users, the Join Us page is ... <br>
+- **Log In:** Registered users can securely access their accounts and unlock the full potential of our website through the Log In page.<br>
+
+
+#### After User logged in:
+Once the User is logged in additional features is provided with the following pages:
+
+- **Home Page (Inside the Culture Club):** This is where the latest posts are revealed! The home page of Culture Club brings the User with new exiting posts.<br>
+- **Profile Page:** The Users' very own customized profile with profile picture, bio, 
+- **Contact Us:** If you encounter any issues or have questions, our friendly admins are just a message away. Feel free to reach out via the "Contact Us" page, and we'll assist you with any concerns or inquiries you may have.<br>
+
+
+#### Profile Navigation:
+
+Clicking on your profile image in the navigation bar opens up access to specific profile-related features:
+
+- **My Posts:** The "My Posts" page is ...<br>
+- **Create Post:** The "Create Post" page is ...<br>
+- **Log Out:** The "Log Out" button...<br>
+
+
+### Wireframes
+The wireframes serve as a visual blueprint for our web applicationClick on each page to view the wireframe.
+
+<details><summary>Landing page</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>About us</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>Join the Club</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>Log In</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>Home page (Blog articles)</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>Contact us</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>My Posts(Profile)</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>Create Post</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>Blog Post View</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+<details><summary>Log Out</summary>
+<img src="docs/wireframes/FILEPATH">
+</details>
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Technologies Used
+
+### Languages
+- HTML
+- CSS
+- Python
+
+### Frameworks
+- Django: A high-level Python web framework used for building the Culture Club web application.
+- Crispy Forms: A Django package used for rendering forms in a more efficient and customizable way.
+- Bootstrap v5.0: A popular CSS framework used for creating responsive and visually appealing user interfaces.
+
+### Database
+- 
+
+### Media management platform
+- Cloudinary: A cloud-based media management platform used for storing and serving images.
+
+### Tools
+- **Git**: A distributed version control system used for tracking changes in the project's source code.
+- **GitHub**: A web-based hosting service for version control repositories, used for storing and managing the project's source code.
+- **Gitpod**: An online integrated development environment (IDE) used for developing and testing the Culture Club project.
+- **Heroku**: A cloud platform that enables deployment and hosting of web applications. Heroku was used for deploying the Culture Club project to a live server.
+- **Adobe Photoshop**: A professional image editing software used for advanced image manipulation.
+- **DB diagram**: An online database design and diagramming tool that simplifies the process of creating and visualizing database schemas. dbdiagram.io was used for designing and documenting the database schema of the Culture Club project.
+- **Google Fonts**: A collection of free and open-source fonts used for typography on Culture Club website.
+- **Font Awesome**: A library of icons used for adding scalable vector icons to Culture Clubs website.
+- **Mailtrap**: In this project, Mailtrap was integrated to power the contact form, providing a secure environment for users to reach out to Culture Club via email.
+- **Balsamiq
+
+
+
+### Supporting Libraries and Packages
+import list of packages from requirements.txt
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Methodology
+
+The Culture Club project follows a methodology inspired by agile principles, fostering collaboration, flexibility, and gradual development. The outlined approach has guided the project's evolution:
+
+### Agile Project Management with GitHub Projects
+To streamline project management, GitHub Projects is employed as a central hub. User stories and tasks are structured as GitHub issues, creating an organized workflow. The GitHub project board serves as a visual representation, tracking progress effectively.
+
+### User Stories as GitHub Issues
+Transforming user stories into GitHub issues captures user-centric functionalities. These issues interlink with respective user stories, simplifying access to criteria, tasks, and discussions.
+
+### Bug Tracking for Seamless Development
+Bugs uncovered during development are documented as GitHub issues, offering insights into each bug's characteristics, impact, and reproduction steps. By hyperlinking these issues in README.md, users can stay updated on bug resolutions and contribute insights.
+
+### Iterative Development Approach
+The Culture Club project adheres to an iterative development approach, facilitating continuous enhancements within a predefined timeline. Despite its condensed schedule, the project accommodates future iterations and expansions.
+
+### Future Backlog and Progress
+The project board efficiently manages user stories, with the "Not started" column representing upcoming iterations. This backlog previews user stories set for subsequent development phases.
+
+Emphasizing that the project timeline is expedited, the iterative approach maintains adaptability, enabling ongoing refinements and improvements aligned with evolving user needs.
+
+**Labels and User Story Distribution (MoSCoW):**
+
+- **Must-Have:** example 10/15
+- **Should-Have:** 
+- **Could-Have:** 
+- **Wont-Have:**
+- **Task:** 
+
+For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/DebbieBergstrom/URLPATH).
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Features
+### Landing Page:
+- Desciption 
+<details><summary>See Screenshot **Landingpage**</summary><img src="FILEPATH"></details>
+
+
+### Other Pages:
+- Desciption 
+<details><summary>See Screenshot **Landingpage**</summary><img src="FILEPATH"></details>
+
+
+### User Account Management:
+- Desciption
+<details><summary>See Screenshot **Landingpage**</summary><img src="FILEPATH"></details>
+
+
+### Navigation:
+- Desciption 
+<details><summary>See Screenshot **Landingpage**</summary><img src="FILEPATH"></details>
+
+
+### Future Features
+Here are some exciting features that I would like to add to the Culture Club in the future:
+
+- **Feature:**  
+  Description
+
+
+<br>
+
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Testing
+
+The Culture Club website went through a comprehensive testing process to guarantee its functionality, accessibility, and performance. This included checking the code, such as code validation, accessibility assessment, performance testing, cross-device testing, verification of browser compatibility, assessment of user stories, and the integration of user feedback to enhance the overall user experience.
+
+All testing, including both manual and automated testing, was carried out and documented in [Testing.md](TESTING.md). 
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Bugs
+The bug section descriptions have been linked with the bug issues in my documentation for better visibility, added color coding, and divided the content into sections, all aimed at enhancing readability. The links are clickable for more reading and solution.
+
+### Known bugs
+
+| **Bug** | **Description** |
+| ------- | --------------- |
+| [Describe the problem.](https://github.com/DebbieBergstrom/FILEPATH) | Description. |
+
+
+
+
+### Fixed bugs
+
+| **Bug** | **Fix** |
+| ----------- | ----------- |
+| 1. Bug to be listed| Solutions to be fixed |
+
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Deployment
+
+### App Deployment
+For deploying Your app, Heroku is used. Follow these steps:
+
+ **Create a New App:**
+   - Create a new app on Heroku dashboard.
+
+ **Configure Settings:**
+   - Navigate to "Settings" in new app.
+
+ **Config Vars Setup:**
+   - In "Config Vars," add `PORT` as the key and `8000` as its value.
+
+ **Add PostgreSQL Database:**
+   - Choose PostgreSQL as database.
+
+        Example "ElephantSQL" was used in this project
+
+ **Configure DATABASE_URL:**
+   - In "Config Vars," add `DATABASE_URL` and copy the URL from PostgreSQL dashboard.
+
+     Note: If using ElephantSQL as PostgreSQL provider, you can use the URL provided by ElephantSQL.
+
+ **Environment Variable Setup:**
+   - Create a new file in workspace called `env.py`.
+   - Import the `os` library and set the environment variable for `DATABASE_URL` to the Heroku address (or ElephantSQL URL)
+   - Add a secret key using `os.environ["SECRET_KEY"] = "your secret key here"`.
+
+ **Heroku Config Vars:**
+   - Add the secret key to the Heroku app's config vars in the settings.
+
+ **Django Settings:**
+   - In `settings.py` of Django app, import `Path` from `pathlib`, `os`, and `dj_database_url`.
+   - Add `if os.path.isfile("env.py"): import env` to the file.
+   - Replace the SECRET_KEY with `SECRET_KEY = os.environ.get('SECRET_KEY')`.
+   - Replace the database section with `DATABASES = {'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))}`.
+
+ **Migrate Models:**
+   - In workspace terminal, migrate the models to the new database connection.
+
+### Cloudinary
+To integrate Cloudinary into project, follow these steps:
+
+ **Cloudinary Account:**
+   - Log in to Cloudinary account or create one.
+
+ **Copy CLOUDINARY_URL:**
+   - Copy `CLOUDINARY_URL`.
+
+ **Environment Variable Setup:**
+   - In `env.py`, add `os.environ["CLOUDINARY_URL"] = "add cloudinary_url here"`.
+
+ **Heroku Config Vars:**
+   - In Heroku settings, add `CLOUDINARY_URL` to config vars.
+
+ **Django Settings:**
+   - In `INSTALLED_APPS`, add `cloudinary_storage`, `Django.contrib.staticfiles`, and `cloudinary` in this order.
+   - Configure static file settings in `settings.py`: URL, storage path, directory path, root path, media URL, and default file storage.
+
+ **Templates Directory Link:**
+   - Link the file to the templates directory in Heroku with `TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')`.
+
+ **Change Templates Directory:**
+   - Change the templates directory to `TEMPLATES_DIR - 'DIRS': [TEMPLATES_DIR]`.
+
+ **Additional Folders:**
+   - Create three new folders: `media`, `static`, and `templates`.
+
+ **Procfile Creation:**
+   - Create a `Procfile`.
+   - Add the following line inside the Procfile: `web: gunicorn project_name_here.wsgi`.
+
+ **Push Changes:**
+    - Push all changes to GitHub.
+
+ **Manual Deployment:**
+    - In the Heroku deployment tab, deploy to Heroku manually the first time and closely monitor the process.
+    - Once successful, set up automatic deployments.
+
+### Version Control
+To manage version control and push code to the main repository on GitHub using GitPod, follow these steps:
+
+ **Add Changes:**
+   - In the GitPod terminal, use the command `git add .` to stage changes.
+
+ **Commit Changes:**
+   - Commit changes with a descriptive comment using the command:
+     ```
+     git commit -m "Push comment here"
+     ```
+
+ **Push to GitHub:**
+   - Push the updates to the repository on GitHub with the command:
+     ```
+     git push
+     ```
+
+
+ **Migrate Models:**
+    - In the terminal, migrate the models to the new database connection.
+
+### Forking the Repository:
+
+By forking the GitHub Repository, can create a copy of the original repository without affecting the original. Follow these steps:
+
+ **GitHub Account Setup:**
+   - Log into GitHub account or create one if you don't have one.
+
+ **Locate the Repository:**
+   - Find the repository at [https://URLPATH).
+
+ **Fork the Repository:**
+   - At the top right of the repository page, click "Fork" to create a copy in your own GitHub repository.
+
+### Clone of the Repository:
+
+Creating a clone allows you to have a local copy of the project. Follow these steps:
+
+ **Repository URL:**
+   - Navigate to [https://URLPATH).
+   - Click the green "Code" button at the top right.
+
+ **Clone the Repository:**
+   - Select the "Clone by HTTPS" option and copy the provided URL to the clipboard.
+
+ **Terminal and Git:**
+   - Open your code editor or terminal and navigate to the directory where you want to clone the repository.
+   - Run `git clone` followed by the copied URL.
+   - Press enter, and Git will clone the repository to your local machine.
+
+
+To fork the repository, follow these steps:
+
+1. Go to the GitHub repository.
+2. Click on the Fork button in the upper right-hand corner.
+3. Wait for the forking process to complete. Once done, you will have a copy of the repository in your GitHub account.
+
+To clone the repository, follow these steps:
+
+1. Go to the GitHub repository.
+2. Locate the Code button above the list of files and click it.
+3. Select your preferred method for cloning: HTTPS, SSH, or GitHub CLI, and click the copy button to copy the repository URL to your clipboard.
+4. Open Git Bash (or your preferred terminal).
+5. Change the current working directory to the location where you want the cloned directory to be created.
+6. Type the command `git clone` followed by the URL you copied in step 3. The command should look like this: `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`.
+7. Press Enter to create your local clone.
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Credits
+I would like to express my gratitude to the following resources:
+
+### Media
+Images are taken from the following page:
+
+
+### Django Documentation:
+The official Django documentation with guidance on models, forms, templates, and various aspects of Django development.
+
+- [Models](https://docs.djangoproject.com/en/4.2/topics/db/models/)
+
+
+### W3 Schools:
+- [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
+
+### Bootstrap docs:
+- [Increase knowledge of bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+
+### Geeksforgeeks: 
+- [Using crisp form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
+
+### Tutorials and YouTube channels:
+
+
+### Content
+
+- Paragraphs/text for the webpage/readme was written together with [ChatGPT](https://chat.openai.com/)
+
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
+
+# Acknowledgments
+ List of....
+
+
+<p align="right">(<a href="#table-of-content">back to top</a>)</p>
+
+---
