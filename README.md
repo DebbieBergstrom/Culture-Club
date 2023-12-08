@@ -140,21 +140,37 @@ When using Culture Club, users can expect the following features and characteris
 
 ### User Stories
 
-#### Epic 1: User Experience (Visitor)
+### Epic 1: User Authentication & Profile Management
+This epic focuses on user account management, including registration, login/logout, and personal profile customization.
+- [User Account Registration (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/2)
+- [Log In and Out of User Account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3)
+- [Edit User Bio and Profile Picture (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/4)
+- [Favourite Lists in Personal Bio (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
 
-- [Easily Navigate and Find Content (should-have)](https://github.com/DebbieBergstrom/Culture-Club/issues/1) #1 SPRINT ?
-- [Visually Appealing Homepage (should-have)](https://github.com/DebbieBergstrom/Culture-Club/issues/2) #2 SPRINT ?
--
+### Epic 2: Blog Interaction & Content Management
+This epic deals with the core functionalities of the blog, such as creating, reading, editing, and deleting posts, as well as interacting with posts through comments and likes.
+- [User Create & Edit Blog Posts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/7)
+- [Comment Blog Posts + Edit (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/8)
+- [Like/ Unlike Blog Posts (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/9)
+- [View Other Users' Profiles (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/10)
+- [See Post Overview (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/11)
+- [Read Full Post Detail (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/12)
+- [Save Favourite Articles (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/22)
+- [Follow Other Users (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/23)
 
-#### Epic 2: User Engagement and Interaction (Registered User)
+### Epic 3: Administration & Analytics
+This epic encompasses administrative control over the site, including user account management and content moderation, as well as tracking user engagement.
+- [Admin - Full Control Over User Accounts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/13)
+- [Admin - Review and Edit User-Submitted Articles (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/14)
+- [Admin - Manage and Categorize Articles (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/15)
+- [Admin - Track User Engagement and Analytics (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/16)
 
-
-- [Save Favorite Articles and Create Reading Lists (should-have)](https://github.com/DebbieBergstrom/Culture-Club/issues/2) #2 SPRINT ?
-
-
-#### Epic 3: Administration and Content Management (Admin/Content Moderator)
-
-- [Full Control Over User Accounts (must-have)](https://github.com/DebbieBergstrom/Culture-Club/issues/2) #2 SPRINT ?
+### Epic 4: User Experience & Accessibility
+This epic is focused on the overall user experience on the site, such as the appearance of the homepage, ease of navigation, and accessibility of information.
+- [Visually Appealing Landing Page (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/17)
+- [Navigate to About Us (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/18)
+- [Navigate to Join the Club Section (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/19)
+- [Easy Login from Landing Page (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/20)
 
 
 <br>
