@@ -105,23 +105,25 @@ Developer: [Debbie Bergström](https://github.com/DebbieBergstrom) <br>
 
 # Project Goals 
 
-Culture Club is a Django web application that...? 
-The key objectives of the project include:
+Culture Club is a Django web application that serves as a vibrant community platform for cultural enthusiasts to share and explore diverse cultural content including movies, books, podcasts, and music. The key objectives of the project include:
 
-- **Goal1:** ...
-- **Goal2:** ...
-- **Goal3:** ...
-- **Goal4:** ...
-- **Goal5:** ...
-
+- To provide a user-friendly interface where users can easily share and discover cultural experiences.
+- To foster a community of cultural exchange, where users can engage in discussions, express their opinions, and connect with like-minded individuals.
+- To offer a personal space for users to curate and display their cultural interests and recommendations.
+- To ensure secure and straightforward user registration, authentication, and profile management.
+- To allow users to actively participate by creating content, and liking and commenting on posts.
 
 ### User Goals
-- 
+
+- To discover and engage with content that aligns with their cultural interests.
+- To find a platform that allows them to express their own cultural narratives and experiences.
+- To join a community that values and fosters cultural diversity and exchange.
 
 ### Site Owner Goals
-- 
 
-
+- To build a community-driven platform that encourages user interaction and content creation.
+- To maintain a high standard of user experience with seamless navigation and responsive design.
+- To ensure the website is a safe and welcoming space for all users to share their cultural passions.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -130,14 +132,22 @@ The key objectives of the project include:
 # User Experience
 
 ### Target Audience
+
 Culture Club is designed for the following target audience:
 
-- 
+- Individuals passionate about various cultural domains who are looking for a space to explore and share content.
+- Users seeking a platform to keep track of their cultural experiences and get recommendations from a like-minded community.
+- Cultural content creators looking for an outlet to publish their work and engage with an audience.
 
 ### User Requirements and Expectations
+
 When using Culture Club, users can expect the following features and characteristics to fulfill their needs:
 
-- 
+- An aesthetically pleasing and intuitive interface that provides ease of navigation and content discovery.
+- A secure registration and login process, ensuring user data protection and privacy.
+- Interactive features such as the ability to like, comment, and create posts that facilitate community engagement.
+- A personalized user profile where they can showcase their favorite cultural elements and manage their contributions.
+- Access to a diverse range of cultural content and the opportunity to contribute their own insights and reviews.
 
 
 ### User Stories
