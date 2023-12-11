@@ -167,8 +167,8 @@ This epic deals with the core functionalities of the blog, such as creating, rea
 - [View Other Users' Profiles (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/10)
 - [See Post Overview (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/11)
 - [Read Full Post Detail (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/12)
-- [Save Favourite Articles (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/22)
-- [Follow Other Users (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/23)
+- [Bookmark Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/29)
+- [Follow Other Users (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/30)
 
 ### Epic 3: Administration & Analytics
 This epic encompasses administrative control over the site, including user account management and content moderation, as well as tracking user engagement.
@@ -200,31 +200,34 @@ When creating the database structure schema for this project, I utilized the [db
 
 <center> 
 
-![Database Schema image](/docs/readme.md/FILEPATH) 
+![Database Schema image](/docs/readme/database_schema.png) 
 
 </center>
 
-### Blog Application Database Schema
+## Database Schema Summary
 
-#### CultureCategory Table
-- Stores categories used for categorizing posts.
-- Fields:  culture_category_id (primary key), name (category name), genre (category genre).
+### `User` Table
+- Represents the basic user information according to Django's built-in User model.
+- Fields: `username`, `email`, `password`.
 
-#### UserProfile Table
-- Extends the User model to store additional user-specific information.
-- Fields: userprofile_id (primary key), user (one-to-one relationship with the User model), first_name, last_name, profile_picture (user profile picture), bio (user bio), country (user's country).
+### `UserProfile` Table
+- Extends the User model to store additional information and personal preferences.
+- Fields: `user_profile_id`, `user_id`, `profile_image`, `bio`, `country`, `top_movies`, `top_series`, `top_music_albums`, `top_books`, `top_podcasts`, `top_miscellaneous`.
 
-#### User Table
-- Represents user information. ( Django built In )
-- Fields: user_id (primary key), username (user's name), email (user's email address), password (user's password).
+### `MediaCategory` Table
+- Stores the different categories for media types that users can select when creating a blog post.
+- Fields: `media_category_id`, `media_name`.
 
-#### Post Table
-- Represents blog posts created by users.
-- Fields: post_id (primary key), title (post title), slug (post slug), author_id (foreign key to User), update_on (post update date), content (post content), featured_image (featured image URL), excerpt (post excerpt), Created_on (post creation date), status (post status), likes (many-to-many relationship with User for post likes), category_id (foreign key to CultureCategory), genre (post genre 'MOVIES', 'BOOKS', 'MUSIC', 'PODCASTS', Charfield).
+### `BlogPost` Table
+- Stores individual blog posts written by users, with details about the media being discussed.
+- Fields: `blogpost_id`, `blog_title`, `slug`, `author_id`, `created_on`, `updated_on`, `content`, `excerpt`, `status`, `featured_image`, `media_category_id`, `release_year`, `media_link`, `likes`, `bookmarks`.
 
-#### Comment Table
-- Represents comments on blog posts.
-- Fields: comment_id (primary key), post_id (foreign key to Post), name (commenter's name), email (commenter's email address), body (comment content), created_on (comment creation date), approved (comment approval status), user_id (foreign key to user model).
+### `Comment` Table
+- Stores comments made by users on blog posts.
+- Fields: `comment_id`, `body`, `created_on`, `approved`, `blogpost_id`, `user_id`.
+
+This database schema lays out the structure for the Culture Club application, facilitating user interaction with blog posts, personalization of user profiles, categorization of posts by media type, and community engagement through comments, likes, and bookmarks.
+
 
 <br>
 
