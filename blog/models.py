@@ -5,6 +5,43 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
 
+class MediaCategory(models.Model):
+    """
+    MediaCategory model stores various categories for cultural media,
+    such as movies, books, music, and podcasts. Each entry in this model
+    represents a distinct category of media, which can be used to classify
+    blog posts in the Culture Club application. The 'media_name' field
+    is unique to ensure each category is only represented once.
+    """
+    media_name = models.CharField(max_length=255, unique=True)
+
+    def __str__(self):
+        return self.media_name
+
+    class Meta:
+        verbose_name_plural = "Media Categories"
+
+
+class UserProfile(models.Model):
+    """
+    A UserProfile model extends the built-in User model to include additional user information.
+    It is linked to the User model with a OneToOneField, meaning each user will only have one profile. This model includes fields for a profile image, bio, country, and personal top picks in various media categories if the user wants to.
+    """
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    profile_image = CloudinaryField('image', default='placeholder')
+    bio = models.TextField(blank=True)
+    country = models.CharField(max_length=100, blank=True)
+    top_movies = models.CharField(max_length=255, blank=True)
+    top_series = models.CharField(max_length=255, blank=True)
+    top_music_albums = models.CharField(max_length=255, blank=True)
+    top_books = models.CharField(max_length=255, blank=True)
+    top_podcasts = models.CharField(max_length=255, blank=True)
+    top_miscellaneous = models.CharField(max_length=255, blank=True)
+
+    def __str__(self):
+        return self.user.username
+
+
 class Blogpost(models.Model):
     """
     The Blogpost model represents a blog post in the Culture Club application. 
