@@ -632,6 +632,8 @@ Images are taken from the following page:
 The official Django documentation with guidance on models, forms, templates, and various aspects of Django development.
 
 - [Models](https://docs.djangoproject.com/en/4.2/topics/db/models/)
+- [Validators](https://docs.djangoproject.com/en/5.0/ref/forms/validation/)
+
 
 
 ### W3 Schools:
