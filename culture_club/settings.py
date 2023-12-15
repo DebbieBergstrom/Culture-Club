@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-debbiebergs-cultureclub-ukuc5dyjnw0.ws-eu106.gitpod.io', 'culture-club.herokuapp.com', 'culture-club-5c87709e95e2.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['8000-debbiebergs-cultureclub-ukuc5dyjnw0.ws-eu106.gitpod.io', '8000-debbiebergs-cultureclub-ukuc5dyjnw0.ws-eu107.gitpod.io','culture-club.herokuapp.com', 'culture-club-5c87709e95e2.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
+    'django_summernote',
     'blog',
 ]
 

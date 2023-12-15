@@ -60,7 +60,7 @@ class Blogpost(models.Model):
     excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
-    media_category = models.ForeignKey('MediaCategory', on_delete=models.CASCADE, related_name='blog_posts')
+    media_category = models.ForeignKey('MediaCategory', on_delete=models.SET_NULL, related_name='blog_posts', blank=True, null=True) #temporary set to optional, change back to required later
     release_year = models.IntegerField()
     media_link = models.URLField()
     likes = models.ManyToManyField(User, related_name='blogpost_likes', blank=True)
