@@ -173,8 +173,8 @@ This epic deals with the core functionalities of the blog, such as creating, rea
 ### Epic 3: Administration & Analytics
 This epic encompasses administrative control over the site, including user account management and content moderation, as well as tracking user engagement.
 - [Admin - Full Control Over User Accounts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/13)
-- [Admin - Review and Edit User-Submitted Articles (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/14)
-- [Admin - Manage and Categorize Articles (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/15)
+- [Admin - Review and Edit User-Submitted Blog Posts (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/14)
+- [Admin - Manage and Categorize Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/15)
 - [Admin - Track User Engagement and Analytics (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/16)
 
 ### Epic 4: User Experience & Accessibility
@@ -305,7 +305,7 @@ The wireframes serve as a visual blueprint for our web applicationClick on each 
 <details><summary>Log In</summary>
 <img src="docs/wireframes/FILEPATH">
 </details>
-<details><summary>Home page (Blog articles)</summary>
+<details><summary>Home page (Blog Posts)</summary>
 <img src="docs/wireframes/FILEPATH">
 </details>
 <details><summary>Contact us</summary>
@@ -341,7 +341,7 @@ The wireframes serve as a visual blueprint for our web applicationClick on each 
 - Bootstrap v5.0: A popular CSS framework used for creating responsive and visually appealing user interfaces.
 
 ### Database
-- 
+- ElephantSQL: ElephantSQL is a PostgreSQL database as a service. It is used as the database for the Culture Club project, providing a reliable and scalable storage solution for the application's data.
 
 ### Media management platform
 - Cloudinary: A cloud-based media management platform used for storing and serving images.
