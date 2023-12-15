@@ -1,6 +1,12 @@
 from django.contrib import admin
-from .models import Blogpost, Comment
+from .models import Blogpost, Comment, MediaCategory
 from django_summernote.admin import SummernoteModelAdmin
+
+
+@admin.register(MediaCategory)
+class MediaCategoryAdmin(admin.ModelAdmin):
+    list_display = ('media_name',)
+    search_fields = ('media_name',)
 
 
 @admin.register(Blogpost)
