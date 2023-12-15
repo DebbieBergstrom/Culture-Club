@@ -1,6 +1,26 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
+
+current_year = timezone.now().year
+
+
+def validate_year(value):
+    """
+    Validates that a given year (value) is within the range of year 1800 and
+    the current year. This function ensures that the 'release year' input
+    falls within a reasonable and valid range. If the input year is outside
+    this range, a ValidationError is raised.
+    """
+    current_year = timezone.now().year
+    if not (1800 <= value <= current_year):
+        raise ValidationError(
+            _("Please enter a year between 1800 and %(current_year)s"),
+            params={'current_year': current_year},
+        )
 
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
@@ -24,8 +44,11 @@ class MediaCategory(models.Model):
 
 class UserProfile(models.Model):
     """
-    A UserProfile model extends the built-in User model to include additional user information.
-    It is linked to the User model with a OneToOneField, meaning each user will only have one profile. This model includes fields for a profile image, bio, country, and personal top picks in various media categories if the user wants to.
+    A UserProfile model extends the built-in User model to include 
+    additional user information. It is linked to the User model with a 
+    OneToOneField, meaning each user will only have one profile. This model
+    includes fields for a profile image, bio, country, and personal top 
+    picks in various media categories if the user wants to.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_image = CloudinaryField('image', default='placeholder')
@@ -44,33 +67,37 @@ class UserProfile(models.Model):
 
 class Blogpost(models.Model):
     """
-    The Blogpost model represents a blog post in the Culture Club application. 
-    It contains information about the blog title, slug, author, created and updated timestamps, 
-    the content of the post, an excerpt, the post status (draft or published), 
-    an image for the post, the category of media it pertains to, and the year of release 
-    if applicable. Users can also like or bookmark posts, which is represented by 
-    many-to-many relationships with the User model.
+    The Blogpost model represents a blog post in the Culture Club
+    application. It contains information about the blog title, slug,
+    author, created and updated timestamps, the content of the post,
+    an excerpt, the post status (draft or published), an image for the
+    post, the category of media it pertains to, and the year of release
+    if applicable. Users can also like or bookmark posts, which is
+    represented by many-to-many relationships with the User model.
     """
     blog_title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='blog_posts')
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='blog_posts'
+    )
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     content = models.TextField()
     excerpt = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
-    media_category = models.ForeignKey('MediaCategory', on_delete=models.SET_NULL, related_name='blog_posts', blank=True, null=True) #temporary set to optional, change back to required later
-    release_year = models.IntegerField()
+    media_category = models.ForeignKey(
+        'MediaCategory', on_delete=models.SET_NULL,
+        related_name='blog_posts', blank=True, null=True
+    ) # temporary set to optional, change back to required later
+    release_year = models.IntegerField(validators=[validate_year])
     media_link = models.URLField()
-    likes = models.ManyToManyField(User, related_name='blogpost_likes', blank=True)
-    bookmarks = models.ManyToManyField(User, related_name='blogpost_bookmarks', blank=True)
-
-    class Meta:
-        ordering = ['-created_on']
-
-    def __str__(self):
-        return self.blog_title
+    likes = models.ManyToManyField(
+        User, related_name='blogpost_likes', blank=True
+    )
+    bookmarks = models.ManyToManyField(
+        User, related_name='blogpost_bookmarks', blank=True
+    )
 
     def number_of_likes(self):
         return self.likes.count()
@@ -93,4 +120,4 @@ class Comment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
-        return f"Comment {self.body} by {self.user.username}"
+        return f"{self.id} by {self.user.username}"
