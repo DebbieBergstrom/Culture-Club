@@ -1,10 +1,10 @@
 /* Color variables */
 :root {
-    --primary-color: #004d4d;
+    --primary-color: #0c5858;
     /* Turquoise */
     --secondary-color: #9c27b0;
     /* Purple/Pink */
-    --accent-color: #ffeb3b;
+    --accent-color: #e6cf08;
     /* Yellow */
     --dark-bg: #0d0d0d;
     /* Dark background */
@@ -24,7 +24,7 @@ body {
     background-color: var(--primary-color);
 }
 
-.navbar-brand {
+.navbar-dark .navbar-brand {
     color: var(--accent-color);
 }
 
@@ -68,4 +68,61 @@ body {
 .page-link:hover {
     color: var(--accent-color);
     text-decoration: underline;
+}
+
+/* Card styles */
+.card {
+    border: none;
+    background-color: var(--dark-bg);
+    margin-bottom: 1rem;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.card-title {
+    color: var(--light-text);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: var(--light-text);
+    font-size: 1rem;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.1);
+}
+
+.author {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: var(--light-text);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Adjusting the heart icon */
+.fa-heart {
+    color: var(--secondary-color);
 }
