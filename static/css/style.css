@@ -1,0 +1,71 @@
+/* Color variables */
+:root {
+    --primary-color: #004d4d;
+    /* Turquoise */
+    --secondary-color: #9c27b0;
+    /* Purple/Pink */
+    --accent-color: #ffeb3b;
+    /* Yellow */
+    --dark-bg: #0d0d0d;
+    /* Dark background */
+    --light-text: #ffffff;
+    /* Light text */
+}
+
+/* Basic body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--primary-color);
+}
+
+.navbar-brand {
+    color: var(--accent-color);
+}
+
+.nav-link {
+    color: var(--light-text);
+}
+
+.nav-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--primary-color);
+    color: var(--light-text);
+}
+
+/* Button styles */
+.btn-primary,
+.btn-signup {
+    background-color: var(--secondary-color);
+    color: var(--light-text);
+}
+
+.btn-primary:hover,
+.btn-signup:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-bg);
+}
+
+/* Link styles */
+.link,
+.post-link,
+.page-link {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+.link:hover,
+.post-link:hover,
+.page-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
