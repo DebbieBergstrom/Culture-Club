@@ -291,37 +291,43 @@ Clicking on your profile image in the navigation bar opens up access to specific
 
 
 ### Wireframes
-The wireframes serve as a visual blueprint for our web applicationClick on each page to view the wireframe.
+The wireframes serve as a visual blueprint for the application. Click on each page to view the wireframe.
 
 <details><summary>Landing page</summary>
-<img src="docs/wireframes/FILEPATH">
+<img src="docs//readme/wireframes/landig_spage_signin.png">
 </details>
 <details><summary>About us</summary>
-<img src="docs/wireframes/FILEPATH">
+<img src="docs/readme/wireframes/about_us.png">
 </details>
 <details><summary>Join the Club</summary>
-<img src="docs/wireframes/FILEPATH">
+<img src="docs/readme/wireframes/create_account.png">
 </details>
-<details><summary>Log In</summary>
-<img src="docs/wireframes/FILEPATH">
+<details><summary>Home Page - Post Overview</summary>
+<img src="docs/readme/wireframes/home_post_overview.png">
 </details>
-<details><summary>Home page (Blog Posts)</summary>
-<img src="docs/wireframes/FILEPATH">
+<details><summary>Full Post View</summary>
+<img src="docs/readme/wireframes/full_post_view.png">
 </details>
-<details><summary>Contact us</summary>
-<img src="docs/wireframes/FILEPATH">
+<details><summary>Create New Post</summary>
+<img src="docs/readme/wireframes/create_new_post.png">
 </details>
-<details><summary>My Posts(Profile)</summary>
-<img src="docs/wireframes/FILEPATH">
+<details><summary>Edit / Update Post</summary>
+<img src="docs/readme/wireframes/edit_update_post.png">
 </details>
-<details><summary>Create Post</summary>
-<img src="docs/wireframes/FILEPATH">
+<details><summary>My Posts / Bookmarked</summary>
+<img src="docs/readme/wireframes/my_posts_bookmarked.png">
 </details>
-<details><summary>Blog Post View</summary>
-<img src="docs/wireframes/FILEPATH">
+<details><summary>Manage Account</summary>
+<img src="docs/readme/wireframes/manage_account.png">
+</details>
+<details><summary>My Profile</summary>
+<img src="docs/readme/wireframes/my_profile.png">
+</details>
+<details><summary>User Profile</summary>
+<img src="docs/readme/wireframes/user_profile.png">
 </details>
 <details><summary>Log Out</summary>
-<img src="docs/wireframes/FILEPATH">
+<img src="docs/readme/wireframes/FILEPATH">
 </details>
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
