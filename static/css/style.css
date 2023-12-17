@@ -1,21 +1,16 @@
 /* Color variables */
 :root {
-    --primary-color: #0c5858;
-    /* Turquoise */
-    --secondary-color: #9c27b0;
-    /* Purple/Pink */
-    --accent-color: #e6cf08;
-    /* Yellow */
-    --dark-bg: #0d0d0d;
-    /* Dark background */
-    --light-text: #ffffff;
-    /* Light text */
+    --primary-color: #012326;
+    --secondary-color: #bd53c0;
+    --accent-color: #ffd0e6;
+    --dark-bg: #0000006b;
+    --light-text: #a6c9d1;
 }
 
 /* Basic body styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: var(--dark-bg);
+    background-image: linear-gradient(to right bottom, #01030b, #081118, #091a22, #05232a, #012c30);
     color: var(--light-text);
 }
 
@@ -83,6 +78,12 @@ body {
 
 .card-body {
     padding: 1rem;
+    -webkit-box-shadow: 5px 5px 5px 0px #000000,
+        inset 4px 4px 15px 0px #000000,
+        15px 4px 48px 15px rgba(18, 18, 18, 0.55);
+    box-shadow: 5px 5px 5px 0px #000000,
+        inset 4px 4px 15px 0px #000000,
+        15px 4px 48px 15px rgba(18, 18, 18, 0.55);
 }
 
 .card-title {
