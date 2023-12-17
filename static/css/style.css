@@ -73,16 +73,16 @@ body {
 }
 
 .card:hover {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px 0 rgba(15, 15, 15, 0.2);
 }
 
 .card-body {
     padding: 1rem;
-    -webkit-box-shadow: 5px 5px 5px 0px #000000,
-        inset 4px 4px 15px 0px #000000,
+    -webkit-box-shadow: 5px 5px 5px 0px #0000006b,
+        inset 4px 4px 15px 0px #0000006b,
         15px 4px 48px 15px rgba(18, 18, 18, 0.55);
-    box-shadow: 5px 5px 5px 0px #000000,
-        inset 4px 4px 15px 0px #000000,
+    box-shadow: 5px 5px 5px 0px #0000006b,
+        inset 4px 4px 15px 0px #0000006b,
         15px 4px 48px 15px rgba(18, 18, 18, 0.55);
 }
 
