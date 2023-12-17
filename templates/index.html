@@ -14,10 +14,10 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in blogpost.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
+                                <img class="card-img-top img-fluid aspect-ratio-3-2"
+                                    src="https://github.com/DebbieBergstrom/Culture-Club/raw/main/media/placeholder_images/culture_club_logo.webp">
                                 {% else %}
-                                <img class="card-img-top"
+                                <img class="card-img-top img-fluid aspect-ratio-3-2"
                                     src=" {{ blogpost.featured_image.url }}">
                                 {% endif %}
                                 <div class="image-flash">
