@@ -19,8 +19,16 @@ body {
     background-color: var(--primary-color);
 }
 
-.navbar-dark .navbar-brand {
+.navbar-dark {
     color: var(--accent-color);
+}
+
+.navbar-logo {
+    font-family: Lato, sans-serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+    text-decoration: none;
 }
 
 .nav-link {
@@ -50,6 +58,19 @@ body {
     color: var(--dark-bg);
 }
 
+.btn-like {
+    color: #E84610;
+    border: none;
+    background: transparent;
+}
+
+.btn-like:hover,
+.btn-like:active {
+    color: #E84610;
+    background: transparent;
+    border: none;
+}
+
 /* Link styles */
 .link,
 .post-link,
@@ -63,6 +84,16 @@ body {
 .page-link:hover {
     color: var(--accent-color);
     text-decoration: underline;
+}
+
+.post-title {
+    margin-top: 20%;
+    margin-left: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
 }
 
 /* Card styles */
@@ -121,18 +152,53 @@ body {
     transform: scale(1.1);
 }
 
+
+
 .author {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
+    bottom: -5px;
+    left: 6px;
     color: var(--light-text);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px;
-    border-radius: 5px;
-    font-size: 0.9rem;
+    background-color: rgba(1, 55, 48, 0.5);
+    padding: 3px;
+    border-radius: 2px;
+    font-size: 0.7rem;
 }
 
 /* Adjusting the heart icon */
 .fa-heart {
     color: var(--secondary-color);
+}
+
+.masthead {
+    margin-top: 10px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    height: 33vh;
+    width: 100%;
+}
+
+.masthead-text {
+    background-color: rgba(1, 55, 48, 0.5);
+    color: var(--light-text);
+    position: relative;
+}
+
+.masthead-image {
+    position: relative;
+}
+
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
+    height: 100%;
+    width: 150%;
+    background-color: rgba(1, 55, 48, 0.5);
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    transform: skew(20deg);
+    z-index: 100;
 }

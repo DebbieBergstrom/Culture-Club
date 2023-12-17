@@ -15,10 +15,12 @@
                             <div class="image-container">
                                 {% if "placeholder" in blogpost.featured_image.url %}
                                 <img class="card-img-top img-fluid aspect-ratio-3-2"
-                                    src="https://github.com/DebbieBergstrom/Culture-Club/raw/main/media/placeholder_images/culture_club_logo.webp">
+                                    src="https://github.com/DebbieBergstrom/Culture-Club/raw/main/media/placeholder_images/culture_club_logo.webp"
+                                    alt="Blog Post Image">
                                 {% else %}
                                 <img class="card-img-top img-fluid aspect-ratio-3-2"
-                                    src=" {{ blogpost.featured_image.url }}">
+                                    src=" {{ blogpost.featured_image.url }}"
+                                    alt="Blog Post Image">
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author:
@@ -26,8 +28,10 @@
                                     </p>
                                 </div>
                             </div>
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ blogpost.title }}
+                            <a href="{% url 'blogpost_detail' blogpost.slug  %}"
+                                class="post-link">
+                                <h2 class="card-title">
+                                    {{ blogpost.blog_title }}
                                 </h2>
                                 <p class="card-text">{{ blogpost.excerpt }}</p>
                             </a>
