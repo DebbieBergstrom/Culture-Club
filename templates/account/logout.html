@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block head_title %}{% trans "Sign Up" %}{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mt-3 offset-md-2">
+            <h3>{% trans "You have successfully logged out" %}</h3>
+
+            <p>{% blocktrans %}Click <a class="link" href="{{ login_url }}">Log
+                    In</a>
+                to re-enter the club.{% endblocktrans %}</p>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
