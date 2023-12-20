@@ -116,7 +116,7 @@ class Comment(models.Model):
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    post = models.ForeignKey('Blogpost', on_delete=models.CASCADE, related_name='comments')
+    blogpost = models.ForeignKey('Blogpost', on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
