@@ -12,34 +12,36 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
-                            <div class="image-container">
-                                {% if "placeholder" in blogpost.featured_image.url %}
-                                <img class="card-img-top img-fluid aspect-ratio-3-2"
-                                    src="https://github.com/DebbieBergstrom/Culture-Club/raw/main/media/placeholder_images/culture_club_logo.webp"
-                                    alt="Blog Post Image">
-                                {% else %}
-                                <img class="card-img-top img-fluid aspect-ratio-3-2"
-                                    src=" {{ blogpost.featured_image.url }}"
-                                    alt="Blog Post Image">
-                                {% endif %}
-                                <div class="image-flash">
-                                    <p class="author">Author:
-                                        {{ blogpost.author }}
-                                    </p>
+                            <a href="{% url 'blogpost_detail' blogpost.slug %}"
+                                class="image-container-link">
+                                <div class="image-container">
+                                    {% if "placeholder" in blogpost.featured_image.url %}
+                                    <img class="card-img-top img-fluid aspect-ratio-3-2"
+                                        src="https://github.com/DebbieBergstrom/Culture-Club/raw/main/media/placeholder_images/culture_club_logo.webp"
+                                        alt="Blog Post Image">
+                                    {% else %}
+                                    <img class="card-img-top img-fluid aspect-ratio-3-2"
+                                        src="{{ blogpost.featured_image.url }}"
+                                        alt="Blog Post Image">
+                                    {% endif %}
+                                    <div class="image-flash">
+                                        <p class="author">Author:
+                                            {{ blogpost.author }}</p>
+                                    </div>
                                 </div>
-                            </div>
-                            <a href="{% url 'blogpost_detail' blogpost.slug  %}"
+                            </a>
+                            <a href="{% url 'blogpost_detail' blogpost.slug %}"
                                 class="post-link">
                                 <h2 class="card-title">
-                                    {{ blogpost.blog_title }}
-                                </h2>
-                                <p class="card-text">{{ blogpost.excerpt }}</p>
+                                    {{ blogpost.blog_title }}</h2>
                             </a>
+                            <p class="card-text">{{ blogpost.excerpt }}</p>
                             <hr />
                             <p class="card-text text-muted h6">
-                                {{ blogpost.created_on}} <i
+                                {{ blogpost.created_on }} <i
                                     class="far fa-heart"></i>
-                                {{ blogpost.number_of_likes }}</p>
+                                {{ blogpost.number_of_likes }}
+                            </p>
                         </div>
                     </div>
                 </div>
