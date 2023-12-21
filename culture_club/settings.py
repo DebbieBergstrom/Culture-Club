@@ -15,7 +15,7 @@ import os
 import dj_database_url
 
 if os.path.isfile("env.py"):
-   import env
+    import env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,12 +26,13 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
+DEBUG = DEVELOPMENT
 
-ALLOWED_HOSTS = ['8000-debbiebergs-cultureclub-ukuc5dyjnw0.ws-eu106.gitpod.io', '8000-debbiebergs-cultureclub-ukuc5dyjnw0.ws-eu107.gitpod.io','culture-club.herokuapp.com', 'culture-club-5c87709e95e2.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME')), 'localhost']
 
 
 # Application definition
