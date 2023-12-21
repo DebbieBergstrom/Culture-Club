@@ -12,8 +12,14 @@ class BlogPostList(generic.ListView):
     paginate_by = 6
     
     def dispatch(self, request, *args, **kwargs):
+        """
+    Override the dispatch method to check user authentication status.
+    This method is called before any other method in the view. It checks if the user
+    is authenticated. If the user is not authenticated, they are redirected to the login
+    page. Otherwise, the normal flow of the ListView is executed.
+    """
         if not request.user.is_authenticated:
-            return redirect('account_login')  # Replace 'account_login' with the name of your login URL
+            return redirect('account_login')
         return super().dispatch(request, *args, **kwargs)
 
 
@@ -49,7 +55,7 @@ class BlogPostDetail(View):
         if comment_form.is_valid():
             comment = comment_form.save(commit=False)
             comment.blogpost = blogpost
-            comment.user = request.user  # Assign the current user to the comment
+            comment.user = request.user
             comment.save()
         else:
             comment_form = CommentForm()
