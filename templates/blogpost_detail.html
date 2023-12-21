@@ -34,6 +34,26 @@
                     </p>
                     <div class="row">
                         <div class="col-1">
+                            <strong>
+                                {% if user.is_authenticated %}
+                                <form class="d-inline"
+                                    action="{% url 'like_unlike' blogpost.slug %}"
+                                    method="POST">
+                                    {% csrf_token %}
+                                    {% if liked %}
+                                    <button type="submit" name="blogpost_id"
+                                        value="{{blogpost.slug}}"
+                                        class="btn-like"><i
+                                            class="fas fa-heart"></i></button>
+                                    {% else %}
+                                    <button type="submit" name="blogpost_id"
+                                        value="{{blogpost.slug}}"
+                                        class="btn-like"><i
+                                            class="far fa-heart"></i></button>
+                                    {% endif %}
+                                </form>
+                                {% endif %}
+                            </strong>
                             <strong class="text-secondary"><i
                                     class="far fa-heart"></i>
                                 {{ blogpost.number_of_likes }}</strong>
@@ -73,14 +93,12 @@
             </div>
             <div class="col-md-4 card mb-4 mt-3">
                 <div class="card-body">
-                    <!-- For later -->
                     {% if commented %}
                     <div class="alert alert-success" role="alert">
-                        Your comment is awaiting approval
+                        Your comment awaits approval
                     </div>
                     {% else %}
                     {% if user.is_authenticated %}
-
                     <h3>Leave a comment:</h3>
                     <p>Posting as: {{ user.username }}</p>
                     <form method="post" style="margin-top: 1.3em;">
