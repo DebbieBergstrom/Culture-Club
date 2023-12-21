@@ -23,4 +23,4 @@ urlpatterns = [
     path("", include("blog.urls"), name="blog-urls"),
     path('summernote/', include('django_summernote.urls')),
     path('accounts/', include('allauth.urls')),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # 
