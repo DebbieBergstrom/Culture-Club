@@ -4,12 +4,18 @@
 
 <div class="container col-md-6">
     <div class="masthead">
-        <div class="container">
+        <div class="container card-body">
             <div class="row g-0">
                 <div class="col-md-6 masthead-text">
                     <h1 class="post-title">{{ blogpost.blog_title }}</h1>
-                    <p class="post-subtitle">{{ blogpost.author }} |
-                        {{ blogpost.created_on }}</p>
+                    <div>
+                        <p class="post-subtitle">Author
+                            <a
+                                href="{% url 'other_user_profile' blogpost.author.username %}">{{ blogpost.author }}</a>
+                            |
+                            {{ blogpost.created_on }}
+                        </p>
+                    </div>
                 </div>
                 <div class="d-none d-md-block col-md-6 masthead-image">
                     {% if "placeholder" in blogpost.featured_image.url %}
@@ -24,6 +30,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="container">
         <div class="row">

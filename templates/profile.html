@@ -2,17 +2,24 @@
 {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 mt-3 left top">
+    <div class="row justify-content-center">
+        <div class="col-lg-4 col-md-6 col-sm-12">
             <div class="card-body">
                 <div class="row">
                     <!-- Displaying UserProfile fields -->
                     <img class="rounded-circle account-img"
-                        src="{{ userprofile.profile_image.url }}"
+                        src="{{ profile.profile_image.url }}"
                         alt="Profile Image">
-                    <h3 class="account-heading">{{ user.username }}</h3>
-                    <p class="card-text">Bio: {{ userprofile.bio }}</p>
-                    <p>Country: {{ userprofile.country }}</p>
+                    <h3 class="account-heading">{{ profile.user.username }}
+                    </h3>
+                    {% if is_own_profile %}
+                    <div class="profile-links">
+                        <a href="{% url 'profile_edit' %}">Edit Profile</a>
+                        <a href="#">Manage Account</a>
+                    </div>
+                    {% endif %}
+                    <p class="card-text">Bio: {{ profile.bio }}</p>
+                    <p>Country: {{ profile.country }}</p>
                     <p>Top Movies: {{ profile.top_movies }}</p>
                     <p>Top Series: {{ profile.top_series }}</p>
                     <p>Top Music Albums: {{ profile.top_music_albums }}</p>
@@ -24,4 +31,5 @@
         </div>
     </div>
 </div>
+
 {% endblock content %}
