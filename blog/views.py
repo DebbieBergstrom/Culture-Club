@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Blogpost, Comment, MediaCategory
+from .models import Blogpost
 from .forms import CommentForm
 
 
@@ -29,7 +29,7 @@ class BlogPostDetail(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Blogpost.objects.filter(status=1)
         blogpost = get_object_or_404(queryset, slug=slug)
-        comments = blogpost.comments.filter(approved=True).order_by("created_on")
+        comments = blogpost.comments.filter(approved=False).order_by("created_on")
         liked = False
         if blogpost.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -49,7 +49,7 @@ class BlogPostDetail(View):
     def post(self, request, slug, *args, **kwargs):
         queryset = Blogpost.objects.filter(status=1)
         blogpost = get_object_or_404(queryset, slug=slug)
-        comments = blogpost.comments.filter(approved=True).order_by("created_on")
+        comments = blogpost.comments.filter(approved=False).order_by("created_on")
         liked = blogpost.likes.filter(id=request.user.id).exists()
 
         comment_form = CommentForm(data=request.POST)
