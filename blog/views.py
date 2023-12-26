@@ -4,8 +4,9 @@ from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from .models import Blogpost, UserProfile
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.decorators import method_decorator
-from .forms import CommentForm
+from .forms import CommentForm, UserProfileForm
 
 
 class BlogPostList(generic.ListView):
@@ -93,7 +94,8 @@ class ProfileView(View):
     def get(self, request):
         user_profile = UserProfile.objects.get(user=request.user)
         context = {
-            'profile': user_profile
+            'profile': user_profile,
+            'is_own_profile': True
         }
         return render(request, 'profile.html', context)
         
@@ -103,7 +105,20 @@ class OtherUserProfileView(View):
         user = get_object_or_404(User, username=username)
         user_profile = get_object_or_404(UserProfile, user=user)
         context = {
-            'profile': user_profile,
+            'other_user_profile': user_profile,
             'is_own_profile': request.user == user
         }
         return render(request, 'profile.html', context)
+
+
+class ProfileEditView(LoginRequiredMixin, View):
+    def get(self, request):
+        form = UserProfileForm(instance=request.user.userprofile)
+        return render(request, 'profile_edit.html', {'form': form})
+
+    def post(self, request):
+        form = UserProfileForm(request.POST, request.FILES, instance=request.user.userprofile)
+        if form.is_valid():
+            form.save()
+            return redirect('profile')
+        return render(request, 'profile_edit.html', {'form': form})
