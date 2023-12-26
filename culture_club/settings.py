@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'django_summernote',
     'crispy_forms',
-    'blog',
+    'blog.apps.BlogConfig',
 ]
 
 SITE_ID = 1
