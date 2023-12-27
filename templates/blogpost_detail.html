@@ -91,12 +91,11 @@
         <div class="col card mb-6 mt-3">
             <div class="card-body">
                 <h3>Post a comment:</h3>
-                <p>from: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
                     {{ comment_form | crispy }}
                     {% csrf_token %}
                     <button type="submit"
-                        class="btn btn-signup btn-lg">Submit</button>
+                        class="btn btn-signup btn-lg mt-3">Submit</button>
                 </form>
             </div>
         </div>
@@ -107,7 +106,10 @@
                     {% for comment in comments %}
                     <div class="comments" style="padding: 10px;">
                         <p class="font-weight-bold">
-                            {{ comment.user.username }}
+                            <a
+                                href="
+                                {% url 'other_user_profile' comment.user.username %}">{{ comment.user.username }}</a>
+
                             <span class=" text-muted font-weight-normal">
                                 {{ comment.created_on }}
                             </span> wrote:

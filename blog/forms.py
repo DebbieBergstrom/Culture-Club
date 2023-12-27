@@ -9,6 +9,9 @@ class CommentForm(forms.ModelForm):
         widgets = {
             'body': forms.Textarea(attrs={'rows': 2, 'cols': 50, 'placeholder': 'Write your comment here...', 'max_length': '1000'}),
         }
+        labels = {
+            'body': '',
+        }
 
 
 class UserProfileForm(forms.ModelForm):
