@@ -2,7 +2,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="container col-md-6">
+<div class="container col-md-8 col-sm-12">
     <div class="masthead">
         <div class="container card-body">
             <div class="row g-0">
@@ -32,15 +32,21 @@
     </div>
 
 
-    <div class="container">
+    <div class="container col-sm-12">
         <div class="row">
-            <div class="col card mb-4 mt-3 left top">
+            <div class="col card mb-6 mt-3 left top">
                 <div class="card-body">
                     <p class="card-text">
                         {{ blogpost.content | safe }}
                     </p>
                     <div class="row">
-                        <div class="col-1">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Likes (Heart Icon and Count) -->
+                        <div class="col-12 d-flex justify-content-between">
                             <strong>
                                 {% if user.is_authenticated %}
                                 <form class="d-inline"
@@ -50,26 +56,27 @@
                                     {% if liked %}
                                     <button type="submit" name="blogpost_id"
                                         value="{{blogpost.slug}}"
-                                        class="btn-like"><i
-                                            class="fas fa-heart"></i></button>
+                                        class="btn-like">
+                                        <i class="fas fa-heart"></i>
+                                    </button>
                                     {% else %}
                                     <button type="submit" name="blogpost_id"
                                         value="{{blogpost.slug}}"
-                                        class="btn-like"><i
-                                            class="far fa-heart"></i></button>
+                                        class="btn-like">
+                                        <i class="far fa-heart"></i>
+                                    </button>
                                     {% endif %}
+                                    <strong
+                                        class="text-secondary">{{ blogpost.number_of_likes }}</strong>
                                 </form>
                                 {% endif %}
                             </strong>
-                            <strong class="text-secondary"><i
-                                    class="far fa-heart"></i>
-                                {{ blogpost.number_of_likes }}</strong>
-                        </div>
-                        <div class="col-1">
+                            <!-- Comments (Comment Icon and Count) -->
                             {% with comments.count as total_comments %}
-                            <strong class="text-secondary"><i
-                                    class="far fa-comments"></i>
-                                {{ total_comments }}</strong>
+                            <strong class="text-secondary">
+                                <i class="far fa-comments ml-5"></i>
+                                {{ total_comments }}
+                            </strong>
                             {% endwith %}
                         </div>
                     </div>
@@ -81,14 +88,8 @@
                 <hr>
             </div>
         </div>
-        <div class="col card mb-4 mt-3">
+        <div class="col card mb-6 mt-3">
             <div class="card-body">
-                {% if commented %}
-                <div class="alert alert-success" role="alert">
-                    Your comment awaits approval
-                </div>
-                {% else %}
-                {% if user.is_authenticated %}
                 <h3>Post a comment:</h3>
                 <p>from: {{ user.username }}</p>
                 <form method="post" style="margin-top: 1.3em;">
@@ -97,12 +98,10 @@
                     <button type="submit"
                         class="btn btn-signup btn-lg">Submit</button>
                 </form>
-                {% endif %}
-                {% endif %}
             </div>
         </div>
         <div class="row">
-            <div class="col card mb-4 mt-3">
+            <div class="col card mb-6 mt-3">
                 <h3>Comments:</h3>
                 <div class="card-body">
                     {% for comment in comments %}
