@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
-DEBUG = DEVELOPMENT
+DEBUG = True #set to DEVELOPMENT when test deploy
 
 ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME')), 'localhost']
 
