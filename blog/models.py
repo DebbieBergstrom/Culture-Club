@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
@@ -98,6 +99,11 @@ class Blogpost(models.Model):
     bookmarks = models.ManyToManyField(
         User, related_name='blogpost_bookmarks', blank=True
     )
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.blog_title)
+        super(Blogpost, self).save(*args, **kwargs)
 
     def number_of_likes(self):
         return self.likes.count()
