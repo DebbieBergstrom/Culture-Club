@@ -1,12 +1,28 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
+from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
 from .models import Blogpost, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.decorators import method_decorator
-from .forms import CommentForm, UserProfileForm
+from django.urls import reverse_lazy
+from .forms import CommentForm, UserProfileForm, BlogpostForm
+
+
+class BlogpostCreateView(CreateView):
+    model = Blogpost
+    form_class = BlogpostForm
+    template_name = 'blogpost_create.html'
+    success_url = reverse_lazy('home')
+
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
+
+
 
 
 class BlogPostList(generic.ListView):
