@@ -6,7 +6,7 @@ from .models import Blogpost, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.decorators import method_decorator
-from .forms import CommentForm, UserProfileForm, ProfileEditForm
+from .forms import CommentForm, UserProfileForm
 
 
 class BlogPostList(generic.ListView):
@@ -16,7 +16,7 @@ class BlogPostList(generic.ListView):
     Pagination is applied to limit the number of posts displayed per page.
     """
     model = Blogpost
-    queryset = Blogpost.objects.filter(status=1).order_by('created_on')
+    queryset = Blogpost.objects.filter(status=1).order_by('-created_on')
     context_object_name = 'blogposts'
     template_name = 'index.html'
     paginate_by = 6
