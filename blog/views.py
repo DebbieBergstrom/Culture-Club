@@ -1,28 +1,47 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
-from django.views.generic.edit import CreateView, UpdateView
 from django.http import HttpResponseRedirect
 from django.contrib.auth.models import User
-from .models import Blogpost, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
+from .models import Blogpost, UserProfile
 from .forms import CommentForm, UserProfileForm, BlogpostForm
 
 
-class BlogpostCreateView(CreateView):
+class BlogpostCreateView(LoginRequiredMixin, generic.CreateView):
+    # A view for creating a new blog post
     model = Blogpost
     form_class = BlogpostForm
     template_name = 'blogpost_create.html'
-    success_url = reverse_lazy('home')
 
     def form_valid(self, form):
         form.instance.author = self.request.user
         return super().form_valid(form)
+    
+    def get_success_url(self):
+        return reverse_lazy('blogpost_detail', kwargs={'slug': self.object.slug})
 
 
+class BlogpostUpdateView(LoginRequiredMixin, generic.UpdateView):
+    model = Blogpost
+    form_class = BlogpostForm
+    template_name = 'blogpost_update.html'
+    success_url = reverse_lazy('blogpost_detail')
+    
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
 
+    def get_success_url(self):
+        return reverse_lazy('blogpost_detail', kwargs={'slug': self.object.slug})
+
+
+class BlogpostDeleteView(LoginRequiredMixin, generic.DeleteView):
+    model = Blogpost
+    template_name = 'blogpost_confirm_delete.html'
+    success_url = reverse_lazy('home') #later change redirect to the users list of its own blogposts
 
 
 class BlogPostList(generic.ListView):
