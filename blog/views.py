@@ -6,10 +6,15 @@ from .models import Blogpost, UserProfile
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.decorators import method_decorator
-from .forms import CommentForm, UserProfileForm
+from .forms import CommentForm, UserProfileForm, ProfileEditForm
 
 
 class BlogPostList(generic.ListView):
+    """
+    A view that displays a list of blog posts. It inherits from Django's generic ListView.
+    The view filters blog posts by their status and orders them by the creation date.
+    Pagination is applied to limit the number of posts displayed per page.
+    """
     model = Blogpost
     queryset = Blogpost.objects.filter(status=1).order_by('created_on')
     context_object_name = 'blogposts'
@@ -29,7 +34,11 @@ class BlogPostList(generic.ListView):
 
 
 class BlogPostDetail(View):
-
+    """
+    A view for displaying the detail of a specific blog post, identified by its slug.
+    It handles both GET requests to display the post and its comments, and POST requests
+    for submitting comments on the post.
+    """
     def get(self, request, slug, *args, **kwargs):
         queryset = Blogpost.objects.filter(status=1)
         blogpost = get_object_or_404(queryset, slug=slug)
@@ -79,6 +88,10 @@ class BlogPostDetail(View):
 
 
 class LikeUnlike(View):
+    """
+    A view for handling the liking and unliking of a blog post.
+    It updates the like status of a post for the logged-in user.
+    """
     def post(self, request, slug, *args, **kwargs):
         blogpost = get_object_or_404(Blogpost, slug=slug)
         if blogpost.likes.filter(id=request.user.id).exists():
@@ -91,6 +104,10 @@ class LikeUnlike(View):
 
 @method_decorator(login_required, name='dispatch')
 class ProfileView(View):
+    """
+    A view for displaying the profile of the currently logged-in user.
+    It fetches and displays the user's profile data.
+    """
     def get(self, request):
         user_profile = UserProfile.objects.get(user=request.user)
         context = {
@@ -101,17 +118,26 @@ class ProfileView(View):
         
 
 class OtherUserProfileView(View):
+    """
+    A view for displaying the profile of another user, specified by their username.
+    It retrieves and displays the profile information of the specified user.
+    """
     def get(self, request, username):
         user = get_object_or_404(User, username=username)
         user_profile = get_object_or_404(UserProfile, user=user)
         context = {
-            'other_user_profile': user_profile,
+            'profile': user_profile,
             'is_own_profile': request.user == user
         }
         return render(request, 'profile.html', context)
 
 
 class ProfileEditView(LoginRequiredMixin, View):
+    """
+    A view for editing the profile of the currently logged-in user.
+    It handles GET requests to display the profile edit form and POST requests
+    to submit the form and update the user's profile.
+    """
     def get(self, request):
         form = UserProfileForm(instance=request.user.userprofile)
         return render(request, 'profile_edit.html', {'form': form})
