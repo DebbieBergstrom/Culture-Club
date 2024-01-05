@@ -1,4 +1,6 @@
 from django import forms
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
 from .models import Comment, UserProfile, Blogpost
 import datetime
 
@@ -20,9 +22,19 @@ class BlogpostForm(forms.ModelForm):
             'blog_title': '',
             'content': '',
             'excerpt': '',
-            'release_year': '',
-            'media_link': '',
         }
+
+        def clean_media_link(self):
+            media_link = self.cleaned_data.get('media_link', '')
+            if media_link and not media_link.startswith(('http://', 'https://')):
+                media_link = 'http://' + media_link
+            # Validate URL
+            validate = URLValidator()
+            try:
+                validate(media_link)
+            except ValidationError as e:
+                raise forms.ValidationError("Invalid URL")
+            return media_link
 
 
 class CommentForm(forms.ModelForm):
