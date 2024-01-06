@@ -1,7 +1,9 @@
 from django.views.generic.list import ListView
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
+from django.views.generic import DeleteView
 from django.http import HttpResponseRedirect
+from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -194,3 +196,22 @@ class ProfileEditView(LoginRequiredMixin, View):
             form.save()
             return redirect('profile')
         return render(request, 'profile_edit.html', {'form': form})
+
+
+class ProfileDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    View for deleting the currently logged-in user's account. 
+    This view ensures that only the logged-in user can delete their own account. 
+    After successful deletion, the user is logged out and redirected to the login page.
+    """
+    model = User
+    template_name = "account_manage.html"
+    success_url = reverse_lazy('account_login')
+
+    def get_object(self, queryset=None):
+        return self.request.user
+
+    def delete(self, request, *args, **kwargs):
+        response = super().delete(request, *args, **kwargs)
+        logout(request)
+        return response
