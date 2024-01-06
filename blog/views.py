@@ -1,3 +1,4 @@
+from django.views.generic.list import ListView
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
@@ -40,8 +41,18 @@ class BlogpostUpdateView(LoginRequiredMixin, generic.UpdateView):
 
 class BlogpostDeleteView(LoginRequiredMixin, generic.DeleteView):
     model = Blogpost
-    template_name = 'blogpost_confirm_delete.html'
-    success_url = reverse_lazy('home') #later change redirect to the users list of its own blogposts
+    template_name = 'blogpost_delete.html'
+    success_url = reverse_lazy('my_posts')
+
+
+class MyBlogPostsView(LoginRequiredMixin, ListView):
+    model = Blogpost
+    template_name = 'my_posts.html'
+    context_object_name = 'my_blogposts'
+    paginate_by = 6
+
+    def get_queryset(self):
+        return Blogpost.objects.filter(author=self.request.user).order_by('-created_on')
 
 
 class BlogPostList(generic.ListView):

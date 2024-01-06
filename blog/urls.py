@@ -16,6 +16,9 @@ urlpatterns = [
 
     # Delete a blog post
     path('blogpost/delete/<slug:slug>/', views.BlogpostDeleteView.as_view(), name='blogpost_delete'),
+    
+    # Display list of the logged in users own posts
+    path('my-posts/', views.MyBlogPostsView.as_view(), name='my_posts'),
 
     # Like or unlike a blog post
     path('blogpost/like/<slug:slug>/', views.LikeUnlike.as_view(), name='like_unlike'),
