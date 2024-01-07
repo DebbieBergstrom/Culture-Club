@@ -1,34 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <h2 class="text-center">Manage Account</h2>
-            <hr>
-
-            <!-- Delete Account Section -->
-            <div class="account-delete-section">
-                <h3>Delete Account</h3>
-                <p><strong>Warning:</strong> Deleting your account is
-                    irreversible. This will permanently remove your whole
-                    profile and
-                    everything associated with it.</p>
-                <form method="post"
-                    action="{% url 'account_delete' request.user.pk %}">
-                    {% csrf_token %}
-                    <button type="submit" class="btn btn-danger"
-                        onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
-                        Delete My Account
-                    </button>
-                    <a href="{% url 'profile' %}" class="btn btn-secondary">No,
-                        Go Back</a>
-                </form>
+<div class="container col-md-8 col-sm-12">
+    <!-- Masthead Section -->
+    <div class="masthead">
+        <div class="container card-body">
+            <div class="row g-0">
+                <div class="col-md-12 masthead-text">
+                    <h1 class="post-title">Manage Account</h1>
+                </div>
             </div>
-
-            <!-- Change Password Section -->
         </div>
     </div>
-</div>
 
-{% endblock content %}
+    <!-- Content Section -->
+    <div class="row">
+        <div class="col card mb-4">
+            <div class="card-body">
+                <!-- Delete Account Section -->
+                <div class="account-delete-section">
+                    <h3 class="text-center mt-3">Delete Account</h3>
+                    <p class="text-center px-4"><strong>Warning:</strong>
+                        Deleting your account is irreversible. This will
+                        permanently remove your whole profile and everything
+                        associated with it.</p>
+                    <form method="post"
+                        action="{% url 'account_delete' request.user.pk %}"
+                        class="text-center">
+                        {% csrf_token %}
+                        <button type="submit"
+                            class="btn btn-danger btn-lg mt-3"
+                            onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">Delete
+                            My Account</button>
+                        <a href="{% url 'profile' %}"
+                            class="btn btn-secondary btn-lg mt-3">No, Go
+                            Back</a>
+                    </form>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+
+                <!-- Change Password Section -->
+            </div>
+        </div>
+    </div>
+
+    {% endblock content %}

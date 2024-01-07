@@ -7,32 +7,55 @@
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign Up" %}</h3>
+<div class="container col-md-8 col-sm-12">
+    <!-- Masthead Section -->
+    <div class="masthead">
+        <div class="container card-body">
+            <div class="row g-0">
+                <div class="col-md-12 masthead-text">
+                    <h1 class="post-title">{% trans "Sign Up" %}</h1>
 
-            <p>{% blocktrans %}Welcome to join the Culture Club!
-                <p>Not convinced yet? Read <a class="link" href="#">About
-                        Us</a>
-                    first.{% endblocktrans %}</p>
-            </p>
+                </div>
+            </div>
         </div>
     </div>
+
+    <!-- Content Section -->
     <div class="row">
-        <div class="col-md-8 mt-3 offset-md-2">
-            <form class="signup" id="signup_form" method="post"
-                action="{% url 'account_signup' %}">
-                {% csrf_token %}
-                {{ form.as_p }}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}"
-                    value="{{ redirect_field_value }}" />
-                {% endif %}
-                <button class="btn btn-signup right"
-                    type="submit">{% trans "Sign Up" %} &raquo;</button>
-            </form>
+        <div class="col card mb-4">
+            <div class="card-body">
+                <p class="text-center px-4">
+                    {% trans "Welcome to join the Culture Club!" %}
+                    <br>
+                    <small>
+                        {% trans "Not convinced yet? Read" %}
+                        <a class="link"
+                            href="{% url 'about_us' %}">{% trans "About Us" %}</a>
+                        {% trans "first." %}
+                    </small>
+                </p>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+
+                <form class="signup mt-4" id="signup_form" method="post"
+                    action="{% url 'account_signup' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    {% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}"
+                        value="{{ redirect_field_value }}" />
+                    {% endif %}
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-lg"
+                            type="submit">{% trans "Sign Up" %}</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
+
 {% endblock %}
