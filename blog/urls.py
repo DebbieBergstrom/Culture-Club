@@ -1,4 +1,5 @@
 from django.urls import path
+from django.views.generic.base import TemplateView
 from . import views
 
 urlpatterns = [
@@ -31,4 +32,7 @@ urlpatterns = [
 
     # Edit the profile of the current user
     path('profile/edit/', views.ProfileEditView.as_view(), name='profile_edit'),
+    
+    # Display the 'About Us' page
+    path('about-us/', TemplateView.as_view(template_name='about_us.html'), name='about_us'),
 ]
