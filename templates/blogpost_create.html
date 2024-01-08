@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 <div class="container col-md-8 col-sm-12">
@@ -8,11 +10,6 @@
             <div class="row g-0">
                 <div class="col-md-12 masthead-text">
                     <h1 class="post-title">Create a New Blog Post</h1>
-                    <div class="row">
-                        <div class="col">
-                            <hr>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -24,9 +21,11 @@
             <div class="card-body">
                 <form method="post" enctype="multipart/form-data">
                     {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="btn btn-primary">Create
-                        Post</button>
+                    {{ form|crispy }}
+                    <div class="text-center mt-4">
+                        <button type="submit"
+                            class="btn btn-primary btn-lg">Create Post</button>
+                    </div>
                 </form>
             </div>
         </div>

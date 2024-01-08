@@ -18,23 +18,17 @@ class BlogpostForm(forms.ModelForm):
             'media_link': forms.URLInput(attrs={'placeholder': 'http://www.example.com'}),
         }
 
-        labels = {
-            'blog_title': '',
-            'content': '',
-            'excerpt': '',
-        }
-
-        def clean_media_link(self):
-            media_link = self.cleaned_data.get('media_link', '')
-            if media_link and not media_link.startswith(('http://', 'https://')):
-                media_link = 'http://' + media_link
-            # Validate URL
-            validate = URLValidator()
-            try:
-                validate(media_link)
-            except ValidationError as e:
-                raise forms.ValidationError("Invalid URL")
-            return media_link
+        # def clean_media_link(self):
+        #     media_link = self.cleaned_data.get('media_link', '')
+        #     if media_link and not media_link.startswith(('http://', 'https://')):
+        #         media_link = 'http://' + media_link
+        #     # Validate URL
+        #     validate = URLValidator()
+        #     try:
+        #         validate(media_link)
+        #     except ValidationError as e:
+        #         raise forms.ValidationError("Invalid URL")
+        #     return media_link
 
 
 class CommentForm(forms.ModelForm):
