@@ -1,13 +1,19 @@
-/* Color variables */
+/* Importing the Font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Merriweather:wght@300&display=swap');
+
+/* --- Color Variables --- */
 :root {
     --primary-color: #012326;
-    --secondary-color: #bd53c0;
-    --accent-color: #ffd0e6;
+    --secondary-color: #de81e1;
+    --third-color: #af46b3;
+    --accent-color: #08a2b6;
     --dark-bg: #0000006b;
-    --light-text: #a6c9d1;
+    --light-text-gr: #cbeaf1;
+    --light-text-pi: #fac7f1;
+    --white-text: #ffffff;
 }
 
-/* Basic body styles */
+/* --- Basic Body Styles --- */
 body {
     font-family: 'Roboto', sans-serif;
     background-image: linear-gradient(to right bottom, #01030b, #081118, #091a22, #05232a, #012c30);
@@ -15,10 +21,20 @@ body {
     background-attachment: fixed;
     background-size: cover;
     min-height: 100vh;
-    color: var(--light-text);
+    color: var(--light-text-gr);
 }
 
-/* Navbar styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 500;
+}
+
+/* --- Navbar Styles --- */
 .navbar {
     background-color: var(--primary-color);
 }
@@ -31,51 +47,91 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--secondary-color);
+    color: var(--accent-color);
     text-decoration: none;
+    transition: transform 0.1s ease;
+}
+
+.navbar-logo:hover {
+    transform: scale(1.1);
 }
 
 .nav-link {
-    color: var(--light-text);
+    color: var(--light-text-gr);
 }
 
 .nav-link:hover {
-    color: var(--secondary-color);
+    color: var(--white-text);
 }
 
-/* Footer styles */
+.nav-link.dropdown-toggle i.fas.fa-user-circle {
+    color: var(--accent-color);
+    transition: transform 0.1s ease;
+}
+
+.nav-link.dropdown-toggle i.fas.fa-user-circle:hover {
+    transform: scale(1.1);
+}
+
+/* --- Footer Styles --- */
 .footer {
     background-color: var(--primary-color);
-    color: var(--light-text);
+    color: var(--light-text-gr);
 }
 
-/* Button styles */
+.footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: transform 0.1s ease;
+}
+
+.footer a:hover {
+    color: var(--light-text-gr);
+    text-decoration: underline;
+    transform: scale(1.1);
+}
+
+/* --- Button Styles --- */
 .btn-primary,
 .btn-signup {
-    background-color: var(--secondary-color);
-    color: var(--light-text);
+    background-color: var(--third-color);
+    color: var(--dark-bg);
+    border: none;
 }
 
 .btn-primary:hover,
 .btn-signup:hover {
-    background-color: var(--accent-color);
-    color: var(--dark-bg);
+    background-color: var(--secondary-color);
+    color: #ffff;
 }
 
 .btn-like {
-    color: #E84610;
     border: none;
     background: transparent;
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: #E84610;
     background: transparent;
     border: none;
 }
 
-/* Link styles */
+/* --- Link Styles --- */
+a {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--third-color),
+        text-decoration: underline;
+}
+
+a:active {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
 .link,
 .post-link,
 .page-link {
@@ -100,7 +156,8 @@ body {
     color: lightgray;
 }
 
-/* Card styles */
+
+/* --- Card Styles --- */
 .card {
     border: none;
     background-color: var(--dark-bg);
@@ -122,13 +179,13 @@ body {
 }
 
 .card-title {
-    color: var(--light-text);
+    color: var(--light-text-gr);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
 }
 
 .card-text {
-    color: var(--light-text);
+    color: var(--light-text-gr);
     font-size: 1rem;
 }
 
@@ -160,16 +217,15 @@ body {
     position: absolute;
     bottom: -5px;
     left: 6px;
-    color: var(--light-text);
+    color: var(--light-text-gr);
     background-color: rgba(1, 55, 48, 0.5);
     padding: 3px;
     border-radius: 2px;
     font-size: 0.7rem;
 }
 
-/* Adjusting the heart icon */
 .fa-heart {
-    color: var(--secondary-color);
+    color: var(--third-color);
 }
 
 .masthead {
@@ -183,7 +239,7 @@ body {
 
 .masthead-text {
     background-color: rgba(1, 55, 48, 0.5);
-    color: var(--light-text);
+    color: var(--light-text-gr);
     position: relative;
 }
 
@@ -206,15 +262,10 @@ body {
 } */
 
 
-/* PROFILE */
+/* --- Profile Section Styles --- */
 .profile-details {
     margin: 0 auto;
     padding: 20px;
-}
-
-.profile-links a {
-    margin-right: 10px;
-    /* Space between links */
 }
 
 .profile-table {
@@ -256,15 +307,6 @@ body {
     width: 100%;
     max-width: 230px;
     height: auto;
-    border-radius: 50%;
     display: inline-block;
     object-fit: cover;
-}
-
-@media (max-width: 767px) {
-
-    /* On small screens */
-    .profile-img {
-        margin-bottom: 20px;
-    }
 }

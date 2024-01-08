@@ -9,7 +9,7 @@
                 <div class="row align-items-center">
                     <!-- Profile Image -->
                     <div class="col-md-6 col-sm-12 text-center">
-                        <img class="rounded-circle profile-img"
+                        <img class="profile-img"
                             src="{{ profile.profile_image.url }}"
                             alt="Profile Image">
                     </div>
@@ -19,7 +19,7 @@
                         <h1 class="account-heading">{{ profile.user.username }}
                         </h1>
                         {% if is_own_profile %}
-                        <div class="profile-links">
+                        <div class="profile-links m-3">
                             <a href="{% url 'profile_edit' %}"><i
                                     class="fas fa-edit"></i> Edit Profile</a>
                             <a
