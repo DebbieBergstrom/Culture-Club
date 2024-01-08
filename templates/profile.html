@@ -3,34 +3,91 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-6 col-sm-12">
-            <div class="card-body">
-                <div class="row">
-                    <!-- Displaying UserProfile fields -->
-                    <img class="rounded-circle account-img"
-                        src="{{ profile.profile_image.url }}"
-                        alt="Profile Image">
-                    <h3 class="account-heading">{{ profile.user.username }}
-                    </h3>
-                    {% if is_own_profile %}
-                    <div class="profile-links">
-                        <a href="{% url 'profile_edit' %}">Edit Profile</a>
-                        <a href="{% url 'account_delete' request.user.pk %}">Manage
-                            Account</a>
+        <div class="col-md-8 col-sm-12">
+            <div class="card-body mt-5">
+                <!-- Profile Header Section -->
+                <div class="row align-items-center">
+                    <!-- Profile Image -->
+                    <div class="col-md-6 col-sm-12 text-center">
+                        <img class="rounded-circle profile-img"
+                            src="{{ profile.profile_image.url }}"
+                            alt="Profile Image">
                     </div>
-                    {% endif %}
-                    <p class="card-text">Bio: {{ profile.bio }}</p>
-                    <p>Country: {{ profile.country }}</p>
-                    <p>Top Movies: {{ profile.top_movies }}</p>
-                    <p>Top Series: {{ profile.top_series }}</p>
-                    <p>Top Music Albums: {{ profile.top_music_albums }}</p>
-                    <p>Top Books: {{ profile.top_books }}</p>
-                    <p>Top Podcasts: {{ profile.top_podcasts }}</p>
-                    <p>Top Miscellaneous: {{ profile.top_miscellaneous }}</p>
+
+                    <!-- User Info and Links -->
+                    <div class="col-md-6 col-sm-12">
+                        <h1 class="account-heading">{{ profile.user.username }}
+                        </h1>
+                        {% if is_own_profile %}
+                        <div class="profile-links">
+                            <a href="{% url 'profile_edit' %}"><i
+                                    class="fas fa-edit"></i> Edit Profile</a>
+                            <a
+                                href="{% url 'account_delete' request.user.pk %}"><i
+                                    class="fa fa-cog"></i>
+                                Manage Account</a>
+                        </div>
+                        {% endif %}
+                        <p class="category-label-top mt-4"><i
+                                class="fa fa-pencil-alt"></i> Bio:
+                            {{ profile.bio }}
+                        </p>
+                        <p class="category-label-top mt-4"><i
+                                class="fa fa-globe"></i> Country:
+                            {{ profile.country }}</p>
+                    </div>
+                </div>
+
+                <!-- Spacing between tables -->
+                <div class="table-spacing"></div>
+                <div class="profile-details">
+                    <!-- Heading for Top Categories -->
+                    <h3 class="top-categories-heading mb-3">Favorites Curated
+                        by
+                        {{ profile.user.username }}</h3>
+
+                    <!-- Second Table for Top categories -->
+                    <table class="profile-table top-categories">
+                        <tr>
+                            <td class="category-label"><i
+                                    class="fa fa-film"></i> Top<br>Movies:</td>
+                            <td>{{ profile.top_movies }}</td>
+                        </tr>
+                        <tr>
+                            <td class="category-label"><i class="fa fa-tv"></i>
+                                Top<br>Series:</td>
+                            <td>{{ profile.top_series }}</td>
+                        </tr>
+                        <tr>
+                            <td class="category-label"><i
+                                    class="fa fa-music"></i> Top<br>Music
+                                Albums:
+                            </td>
+                            <td>{{ profile.top_music_albums }}</td>
+                        </tr>
+                        <tr>
+                            <td class="category-label"><i
+                                    class="fa fa-book"></i> Top<br>Books:</td>
+                            <td>{{ profile.top_books }}</td>
+                        </tr>
+                        <tr>
+                            <td class="category-label"><i
+                                    class="fa fa-microphone"></i>
+                                Top<br>Podcasts:
+                            </td>
+                            <td>{{ profile.top_podcasts }}</td>
+                        </tr>
+                        <tr>
+                            <td class="category-label"><i
+                                    class="fa fa-star"></i>
+                                Top<br>Miscellaneous:</td>
+                            <td>{{ profile.top_miscellaneous }}</td>
+                        </tr>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-{% endblock content %}
+
+    {% endblock content %}
