@@ -2,7 +2,7 @@
 name: Bug
 about: bug template
 title: 'BUG:'
-labels: ''
+labels: bug
 assignees: DebbieBergstrom
 
 ---
@@ -10,9 +10,10 @@ assignees: DebbieBergstrom
 **Describe the bug:**
 
 
-**To Reproduce**
-
-
 **Expected behavior:**
 
-**Additional context**
+
+**Solution:**
+
+
+**Solved:**
