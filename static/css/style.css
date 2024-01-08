@@ -91,18 +91,44 @@ h6 {
     transform: scale(1.1);
 }
 
-/* --- Button Styles --- */
+/* Primary Button Styling */
 .btn-primary,
 .btn-signup {
     background-color: var(--third-color);
-    color: var(--dark-bg);
+    color: var(--light-text-gr);
     border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
 }
 
+/* Button Hover Styling */
 .btn-primary:hover,
 .btn-signup:hover {
+    background-color: #cb50cf;
+    color: var(--light-text-gr);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Shadow for depth */
+}
+
+/* Button Active (Click) Styling */
+.btn-primary:active,
+.btn-signup:active {
     background-color: var(--secondary-color);
-    color: #ffff;
+    color: var(--light-text-gr);
+    transform: scale(0.95);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Focus Styling */
+.btn-primary:focus,
+.btn-signup:focus {
+    background-color: var(--third-color);
+    color: var(--light-text-gr);
+    outline: none;
+    box-shadow: 0 0 0 2px var(--bg);
 }
 
 .btn-like {
@@ -278,15 +304,28 @@ a:active {
     border-bottom: 1px solid #dfc7c7;
 }
 
+.category-label-top,
+.category-label-top i {
+    color: var(--accent-color);
+    font-weight: bolder;
+}
+
 .category-label-top {
     text-align: left;
+    width: 100%;
+    line-height: 1.5;
 }
 
 .category-label {
-    font-weight: bold;
+    font-weight: bolder;
     text-align: right;
     width: 26%;
     line-height: 1.5;
+}
+
+.category-label,
+.category-label i {
+    color: var(--accent-color);
 }
 
 .top-categories-heading {
@@ -296,11 +335,22 @@ a:active {
 }
 
 .table-spacing {
-    height: 60px;
+    height: 40px;
 }
 
 .top-categories td:first-child {
     text-align: right;
+}
+
+.bio-text {
+    color: var(--light-text-gr);
+    font-weight: 100;
+    font-size: small;
+    width: 100%;
+}
+
+.bio-height {
+    min-height: 50px;
 }
 
 .profile-img {
@@ -309,4 +359,13 @@ a:active {
     height: auto;
     display: inline-block;
     object-fit: cover;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 767px) {
+
+    /* On small screens */
+    .profile-img {
+        margin-bottom: 20px;
+    }
 }

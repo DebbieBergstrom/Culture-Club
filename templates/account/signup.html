@@ -13,7 +13,7 @@
         <div class="container card-body">
             <div class="row g-0">
                 <div class="col-md-12 masthead-text">
-                    <h1 class="post-title">{% trans "Sign Up" %}</h1>
+                    <h1 class="post-title">{% trans "Join Us" %}</h1>
                 </div>
             </div>
         </div>
@@ -24,13 +24,25 @@
         <div class="col card mb-4">
             <div class="card-body">
                 <p class="text-center px-4">
-                    {% trans "Welcome to join the Culture Club!" %}
+                    {% trans "Welcome to sign up & join the Culture Club!" %}
                     <br>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
                     <small>
                         {% trans "Not convinced yet? Read" %}
                         <a class="link"
                             href="{% url 'about_us' %}">{% trans "About Us" %}</a>
                         {% trans "first." %}
+                    </small>
+                    <br>
+                    <small>
+                        {% trans "Already a member?" %}
+                        <a class="link"
+                            href="{% url 'account_login' %}">{% trans "Log In" %}</a>
+                        {% trans "." %}
                     </small>
                 </p>
                 <div class="row">

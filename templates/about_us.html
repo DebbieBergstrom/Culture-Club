@@ -18,48 +18,74 @@
     <!-- Content Section -->
     <div class="row">
         <div class="col card mb-4">
-            <div class="card-body">
-                <h2 class="text-center"><strong>A vibrant community where
-                        culture is celebrated, explored, and shared.</strong>
-                </h2>
-                <div class="row">
-                    <div class="col">
-                        <hr>
+            <div class="card-body px-3 px-md-5">
+                <div class="px-3 px-md-5">
+                    <h2 class="text-center medium"><strong>A vibrant community
+                            where
+                            culture is celebrated, explored, and
+                            shared.</strong>
+                    </h2>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
                     </div>
-                </div>
-                <p class="mt-3 text-center px-4"><strong>At Culture Club, every
-                        melody, scene, story, and discussion adds to the
-                        collective cultural journey. It's where your voice
-                        matters and your choices inspire, leading to
-                        discoveries and connections in the rich world of
-                        culture.</strong></p>
+                    <p class="mt-3 text-center px-4"><strong>At Culture Club,
+                            every
+                            melody, scene, story, and discussion adds to the
+                            collective cultural journey. It's where your voice
+                            matters and your choices inspire, leading to
+                            discoveries and connections in the rich world of
+                            culture.</strong></p>
 
-                <h3 class="mt-5 text-center">Join the Exploration</h3>
-                <p class="text-center">Create personalized profiles, manage
-                    curated collections of your favorite cultural artifacts,
-                    and engage with an interactive community. Here, every like,
-                    comment, and recommendation enriches the experience for
-                    all.</p>
+                    <h3 class="mt-5 text-center medium">..join the
+                        exploration..
+                    </h3>
+                    <p class="text-center">Create personalized profiles, manage
+                        curated collections of your favorite cultural
+                        artifacts,
+                        and engage with an interactive community. Here, every
+                        like,
+                        comment, and recommendation enriches the experience for
+                        all.</p>
 
-                <h3 class="mt-5 text-center">Why Culture Club?</h3>
-                <p class="text-center">We unite people through shared cultural
-                    passions, offering a platform that celebrates diversity and
-                    encourages exploration. Inspired by the iconic band we're
-                    named after, we offer a sanctuary for cultural aficionados.
-                </p>
+                    <h3 class="mt-5 text-center medium">..why culture club?..
+                    </h3>
+                    <p class="text-center">We unite people through shared
+                        cultural
+                        passions, offering a platform that celebrates diversity
+                        and
+                        encourages exploration. Inspired by the iconic band
+                        we're
+                        named after, we offer a sanctuary for cultural
+                        aficionados.
+                    </p>
 
-                <h3 class="mt-5 text-center">Your Cultural Gateway</h3>
-                <p class="text-center">"Culture Club" is your passage to a
-                    world where cultural expressions thrive. Sign up and become
-                    part of a community where culture thrives in harmony and
-                    diversity, and where your explorations know no bounds.</p>
+                    <h3 class="mt-5 text-center medium">..your cultural
+                        gateway..
+                    </h3>
+                    <p class="text-center">"Culture Club" is your passage to a
+                        world where cultural expressions thrive. Sign up and
+                        become
+                        part of a community where culture thrives in harmony
+                        and
+                        diversity, and where your explorations know no bounds.
+                    </p>
 
-                <div class="text-center mt-5">
-                    <a href="{% url 'account_signup' %}"
-                        class="btn btn-primary btn-lg">Join the Club</a>
-                    <p class="mt-3"><small>Already have an account? <a
-                                href="{% url 'account_login' %}">Log
-                                in</a></small></p>
+                    <div class="text-center mt-5">
+                        {% if user.is_authenticated %}
+                        <!-- Button for authenticated users -->
+                        <a href="{% url 'home' %}"
+                            class="btn btn-primary btn-lg">Back to Home</a>
+                        {% else %}
+                        <!-- Links for non-authenticated users -->
+                        <a href="{% url 'account_signup' %}"
+                            class="btn btn-primary btn-lg">Join the Club</a>
+                        <p class="mt-3"><small>Already have an account? <a
+                                    href="{% url 'account_login' %}">Log
+                                    in</a></small></p>
+                        {% endif %}
+                    </div>
                 </div>
             </div>
         </div>
