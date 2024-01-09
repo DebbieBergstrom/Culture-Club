@@ -91,35 +91,42 @@ h6 {
     transform: scale(1.1);
 }
 
-/* Primary Button Styling */
+/* Primary Button Styling with Inset Shadow */
 .btn-primary,
 .btn-signup {
     background-color: var(--third-color);
+    /* Your button color */
     color: var(--light-text-gr);
+    /* Your text color */
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
+    /* Your specified border-radius */
     text-transform: uppercase;
     font-weight: bold;
-    transition: background-color 0.3s, transform 0.1s;
+    transition: background-color 0.3s, box-shadow 0.1s;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    /* Inset shadow */
 }
 
 /* Button Hover Styling */
 .btn-primary:hover,
 .btn-signup:hover {
     background-color: #cb50cf;
+    /* Your hover color */
     color: var(--light-text-gr);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Shadow for depth */
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.7);
+    /* Darker inset shadow */
 }
 
 /* Button Active (Click) Styling */
 .btn-primary:active,
 .btn-signup:active {
     background-color: var(--secondary-color);
+    /* Active state color */
     color: var(--light-text-gr);
-    transform: scale(0.95);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.9);
+    /* Even deeper inset shadow */
 }
 
 /* Button Focus Styling */
@@ -128,8 +135,10 @@ h6 {
     background-color: var(--third-color);
     color: var(--light-text-gr);
     outline: none;
-    box-shadow: 0 0 0 2px var(--bg);
+    box-shadow: inset 0 0 0 2px var(--accent-color);
+    /* Inset focus outline */
 }
+
 
 .btn-like {
     border: none;
@@ -303,6 +312,11 @@ a:active {
     padding: 16px;
     border-bottom: 1px solid #dfc7c7;
 }
+
+.profile-links a {
+    margin-right: 10px;
+}
+
 
 .category-label-top,
 .category-label-top i {
