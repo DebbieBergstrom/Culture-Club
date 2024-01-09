@@ -19,8 +19,8 @@
             <div class="card-body">
                 <!-- Delete Account Section -->
                 <div class="account-delete-section">
-                    <h3 class="text-center mt-3">Delete Account</h3>
-                    <p class="text-center px-4"><strong>Warning:</strong>
+                    <h3 class="text-center mt-5">Delete Account</h3>
+                    <p class="text-center px-4 m-5"><strong>WARNING:</strong>
                         Deleting your account is irreversible. This will
                         permanently remove your whole profile and everything
                         associated with it.</p>
@@ -28,12 +28,11 @@
                         action="{% url 'account_delete' request.user.pk %}"
                         class="text-center">
                         {% csrf_token %}
-                        <button type="submit"
-                            class="btn btn-danger btn-lg mt-3"
+                        <button type="submit" class="btn btn-danger btn-lg m-2"
                             onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">Delete
-                            My Account</button>
+                            Account</button>
                         <a href="{% url 'profile' %}"
-                            class="btn btn-secondary btn-lg mt-3">No, Go
+                            class="btn btn-secondary btn-lg m-2">No, Go
                             Back</a>
                     </form>
                 </div>

@@ -91,55 +91,82 @@ h6 {
     transform: scale(1.1);
 }
 
-/* Primary Button Styling with Inset Shadow */
+/* --- Primary Button Styling with Inset Shadow --- */
 .btn-primary,
-.btn-signup {
+.btn-signup,
+.btn-secondary,
+.btn-danger {
     background-color: var(--third-color);
-    /* Your button color */
     color: var(--light-text-gr);
-    /* Your text color */
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
-    /* Your specified border-radius */
     text-transform: uppercase;
     font-weight: bold;
     transition: background-color 0.3s, box-shadow 0.1s;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
-    /* Inset shadow */
 }
 
 /* Button Hover Styling */
 .btn-primary:hover,
-.btn-signup:hover {
+.btn-signup:hover,
+.btn-secondary:hover,
+.btn-danger:hover {
     background-color: #cb50cf;
-    /* Your hover color */
     color: var(--light-text-gr);
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.7);
-    /* Darker inset shadow */
 }
 
 /* Button Active (Click) Styling */
 .btn-primary:active,
-.btn-signup:active {
+.btn-signup:active,
+.btn-secondary:active,
+.btn-danger:active {
     background-color: var(--secondary-color);
-    /* Active state color */
     color: var(--light-text-gr);
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.9);
-    /* Even deeper inset shadow */
 }
 
 /* Button Focus Styling */
 .btn-primary:focus,
-.btn-signup:focus {
+.btn-signup:focus,
+.btn-secondary:focus,
+.btn-danger:focus {
     background-color: var(--third-color);
     color: var(--light-text-gr);
     outline: none;
     box-shadow: inset 0 0 0 2px var(--accent-color);
-    /* Inset focus outline */
 }
 
+/* Specific Colors for .btn-secondary */
+.btn-secondary {
+    background-color: var(--accent-color);
+    color: var(--light-text-gr);
+}
 
+.btn-secondary:hover {
+    background-color: #38becf;
+}
+
+.btn-secondary:active {
+    background-color: #226c79;
+}
+
+/* Specific Colors for .btn-danger */
+.btn-danger {
+    background-color: #9b055d;
+    color: var(--light-text-gr);
+}
+
+.btn-danger:hover {
+    background-color: #b1066a;
+}
+
+.btn-danger:active {
+    background-color: #83044e;
+}
+
+/* 'Like' Button */
 .btn-like {
     border: none;
     background: transparent;
@@ -296,6 +323,14 @@ a:active {
     z-index: 100;
 } */
 
+/* Targeting fields within crispy forms */
+.form-control,
+select,
+textarea {
+    background-color: var(--light-text-gr);
+    color: black;
+    border: 1px solid black;
+}
 
 /* --- Profile Section Styles --- */
 .profile-details {
