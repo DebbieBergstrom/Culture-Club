@@ -231,11 +231,15 @@ a:active {
     color: var(--light-text-gr);
     font-size: 1.2rem;
     margin-bottom: 0.5rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .card-text {
     color: var(--light-text-gr);
     font-size: 1rem;
+    text-overflow: ellipsis;
 }
 
 .aspect-ratio-3-2 {
@@ -343,11 +347,28 @@ a:active {
 
 .post-title {
     margin: 5%;
+    font-size: xx-large;
 }
 
 .post-subtitle {
     margin-left: 5%;
     color: var(--light-text-gr);
+}
+
+.card-excerpt {
+    font-size: small;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Number of lines to show */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Other styles */
+}
+
+.blogpost-card {
+    height: 460px;
+    overflow: hidden;
 }
 
 
@@ -528,10 +549,14 @@ textarea {
     .masthead-image img {
         max-height: 300px;
     }
+
+    .blogpost-card {
+        height: 518px;
+    }
 }
 
 /* Responsive adjustments for smaller screens */
-@media (max-width: 576px) {
+@media (max-width: 580px) {
     h1 {
         font-size: 1.2em;
     }
@@ -565,6 +590,10 @@ textarea {
         padding: 5px 10px;
         font-size: 0.8em;
     }
+
+    .blogpost-card {
+        height: 508px;
+    }
 }
 
 
@@ -591,5 +620,16 @@ textarea {
         margin-left: -18px !important;
         margin-right: -18px !important;
         padding: 8px;
+    }
+
+    .blogpost-card {
+        height: 470px;
+    }
+}
+
+/* Responsive adjustments for min width 320px */
+@media (max-width: 400px) {
+    .blogpost-card {
+        height: 420px;
     }
 }
