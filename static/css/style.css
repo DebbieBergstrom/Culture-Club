@@ -1,5 +1,7 @@
 /* Importing the Font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Arvo&family=Merriweather:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
 
 /* --- Color Variables --- */
 :root {
@@ -44,7 +46,7 @@ h6 {
 }
 
 .navbar-logo {
-    font-family: Lato, sans-serif;
+    font-family: 'Russo One', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--accent-color);
@@ -410,11 +412,112 @@ textarea {
     object-fit: cover;
 }
 
-/* --- Media Queries --- */
-@media (max-width: 767px) {
+.login-page-container {
+    position: relative;
+    min-height: 100vh;
+    /* Full viewport height */
+    display: flex;
+    align-items: center;
+    /* Vertically center */
+    justify-content: center;
+    /* Horizontally center */
+    padding: 20px;
+}
 
-    /* On small screens */
+.h2-login {
+    margin: 0px;
+}
+
+.card-login {
+    padding: 14px;
+    margin-left: 20px;
+}
+
+.login-culture-club {
+    font-family: 'Russo One',
+        sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: var(--accent-color);
+    text-shadow: 5px 2px 2px rgba(0, 0, 0, 0.71);
+}
+
+/* Large screen styles */
+.login-logo img {
+    height: 600px;
+    /* Fixed height for larger screens */
+    margin-top: -125px;
+    margin bottom: 10px;
+    max-width: 100%;
+    /* Ensure it doesn't overflow its container */
+}
+
+/* Responsive adjustments for tablets and Kindle-sized devices */
+@media (max-width: 1024px) {
+    .login-page-container {
+        flex-direction: column;
+        /* Stack logo and form on tablets */
+        min-height: auto;
+        /* Allow container to shrink to content size */
+        padding-top: 10px;
+        /* Reduced padding */
+        padding-bottom: 10px;
+    }
+
+    .login-logo img {
+        height: auto;
+        /* Reset to auto for tablets */
+        max-height: 40vh;
+        /* Adjust the max height for tablets */
+        margin-top: 0;
+        /* Reset margin */
+    }
+}
+
+
+/* --- Media Queries --- */
+
+
+/* Responsive adjustments for small screens */
+@media (max-width: 767px) {
     .profile-img {
         margin-bottom: 20px;
+    }
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 576px) {
+    h1 {
+        font-size: 1.2em;
+        /* Even smaller font size for small screens */
+    }
+
+    .login-logo img {
+        max-height: 30vh;
+        /* Further reduce max height on smaller screens */
+    }
+}
+
+/* Responsive adjustments for extra small screens */
+@media (max-width: 480px) {
+    .login-logo img {
+        max-height: 27vh;
+        margin-top: -32px;
+    }
+
+    .h2-login {
+        padding: 7px;
+        margin: -22px;
+    }
+
+    .login-culture-club {
+        margin-top: 2px;
+        font-size: 24px;
+        margin-bottom: 32 !important;
+    }
+
+    .card-login {
+        margin: -18px !important;
+        padding: 8px;
     }
 }
