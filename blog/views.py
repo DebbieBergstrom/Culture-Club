@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.utils.decorators import method_decorator
 from django.urls import reverse_lazy
-from .models import Blogpost, UserProfile
+from .models import Blogpost, UserProfile, MediaCategory
 from .forms import CommentForm, UserProfileForm, BlogpostForm
 
 
@@ -57,6 +57,24 @@ class MyBlogPostsView(LoginRequiredMixin, ListView):
         return Blogpost.objects.filter(author=self.request.user).order_by('-created_on')
 
 
+# def CategoryIndex(request):
+#     categories = MediaCategory.objects.all()
+#     print(categories)  # This line will print the categories in the console
+
+#     selected_category = request.GET.get('category')
+
+#     if selected_category:
+#         blogposts = Blogpost.objects.filter(media_category__media_name=selected_category, status=1).order_by('-created_on')
+#     else:
+#         blogposts = Blogpost.objects.filter(status=1).order_by('-created_on')
+
+#     context = {
+#         'blogposts': blogposts,
+#         'categories': categories
+#     }
+#     return render(request, 'index.html', context)
+
+
 class BlogPostList(generic.ListView):
     """
     A view that displays a list of blog posts. It inherits from Django's generic ListView.
@@ -64,7 +82,6 @@ class BlogPostList(generic.ListView):
     Pagination is applied to limit the number of posts displayed per page.
     """
     model = Blogpost
-    queryset = Blogpost.objects.filter(status=1).order_by('-created_on')
     context_object_name = 'blogposts'
     template_name = 'index.html'
     paginate_by = 6
@@ -79,6 +96,20 @@ class BlogPostList(generic.ListView):
         if not request.user.is_authenticated:
             return redirect('account_login')
         return super().dispatch(request, *args, **kwargs)
+        
+    def get_queryset(self):
+        queryset = Blogpost.objects.filter(status=1).order_by('-created_on')
+        media_category = self.request.GET.get('category')
+        if media_category:
+            queryset = queryset.filter(media_category__media_name=media_category)
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        # Lägg till kategorier i kontexten för att visa i mallen
+        context['categories'] = MediaCategory.objects.all()
+        # Lägg till övriga relevanta data i kontexten
+        return context
 
 
 class BlogPostDetail(View):
