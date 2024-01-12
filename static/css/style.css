@@ -483,6 +483,22 @@ textarea {
     .login-logo img {
         max-height: 30vh;
     }
+
+    .card-body {
+        padding: 2px;
+    }
+
+    .top-categories td:first-child {
+        text-align: left;
+    }
+
+    .profile-details {
+        padding: 0px;
+    }
+
+    .profile-table td {
+        padding: 4px;
+    }
 }
 
 /* Responsive adjustments for extra small screens */
