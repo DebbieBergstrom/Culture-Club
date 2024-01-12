@@ -26,14 +26,9 @@ body {
     color: var(--light-text-gr);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    font-family: 'Merriweather', sans-serif;
-    font-weight: 500;
+h1 {
+    font-family: 'Russo One', sans-serif;
+    font-weight: 400;
 }
 
 /* --- Navbar Styles --- */
@@ -412,15 +407,15 @@ textarea {
     object-fit: cover;
 }
 
+
+/* --- LOGIN / LANDING PAGE --- */
+
 .login-page-container {
     position: relative;
     min-height: 100vh;
-    /* Full viewport height */
     display: flex;
     align-items: center;
-    /* Vertically center */
     justify-content: center;
-    /* Horizontally center */
     padding: 20px;
 }
 
@@ -442,15 +437,16 @@ textarea {
     text-shadow: 5px 2px 2px rgba(0, 0, 0, 0.71);
 }
 
-/* Large screen styles */
+/* Login image on large screen */
 .login-logo img {
     height: 600px;
-    /* Fixed height for larger screens */
     margin-top: -125px;
     margin bottom: 10px;
     max-width: 100%;
-    /* Ensure it doesn't overflow its container */
 }
+
+
+/* --- MEDIA QUERIES --- */
 
 /* Responsive adjustments for tablets and Kindle-sized devices */
 @media (max-width: 1024px) {
@@ -466,17 +462,10 @@ textarea {
 
     .login-logo img {
         height: auto;
-        /* Reset to auto for tablets */
         max-height: 40vh;
-        /* Adjust the max height for tablets */
         margin-top: 0;
-        /* Reset margin */
     }
 }
-
-
-/* --- Media Queries --- */
-
 
 /* Responsive adjustments for small screens */
 @media (max-width: 767px) {
@@ -489,12 +478,10 @@ textarea {
 @media (max-width: 576px) {
     h1 {
         font-size: 1.2em;
-        /* Even smaller font size for small screens */
     }
 
     .login-logo img {
         max-height: 30vh;
-        /* Further reduce max height on smaller screens */
     }
 }
 
@@ -517,7 +504,9 @@ textarea {
     }
 
     .card-login {
-        margin: -18px !important;
+        margin-top: 6px !important;
+        margin-left: -18px !important;
+        margin-right: -18px !important;
         padding: 8px;
     }
 }
