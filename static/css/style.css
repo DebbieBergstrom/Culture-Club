@@ -96,7 +96,7 @@ h1 {
     background-color: var(--third-color);
     color: var(--light-text-gr);
     border: none;
-    padding: 10px 20px;
+    padding: 8px 16px;
     border-radius: 4px;
     text-transform: uppercase;
     font-weight: bold;
@@ -205,18 +205,8 @@ a:active {
     text-decoration: underline;
 }
 
-.post-title {
-    margin-top: 20%;
-    margin-left: 5%;
-}
 
-.post-subtitle {
-    margin-left: 5%;
-    color: lightgray;
-}
-
-
-/* --- Card Styles --- */
+/* --- CARD STYLES --- */
 .card {
     border: none;
     background-color: var(--dark-bg);
@@ -283,6 +273,30 @@ a:active {
     font-size: 0.7rem;
 }
 
+/* Bookmark Button Styles */
+.btn-bookmark {
+    border: none;
+    background: transparent;
+    color: var(--secondary-color);
+    margin-bottom: 4px;
+}
+
+.btn-bookmark:hover,
+.btn-bookmark:active {
+    background: transparent;
+    border: none;
+    color: var(--light-text-gr);
+}
+
+.fa-bookmark {
+    color: var(--light-text-gr);
+}
+
+.post-bookmark {
+    margin-left: 5%;
+    color: var(--light-text-gr);
+}
+
 .fa-heart {
     color: var(--third-color);
 }
@@ -296,6 +310,10 @@ a:active {
     width: 100%;
 }
 
+.masthead .row {
+    display: flex;
+}
+
 .masthead-text {
     background-color: rgba(1, 55, 48, 0.5);
     color: var(--light-text-gr);
@@ -306,19 +324,32 @@ a:active {
     position: relative;
 }
 
-/* .masthead-image:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 90%;
+.masthead-image .image-container {
     height: 100%;
-    width: 150%;
-    background-color: rgba(1, 55, 48, 0.5);
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    transform: skew(20deg);
-    z-index: 100;
-} */
+    width: 100%;
+    overflow: hidden;
+}
+
+.masthead-text,
+.masthead-image {
+    padding: 0px;
+}
+
+.masthead-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-title {
+    margin: 5%;
+}
+
+.post-subtitle {
+    margin-left: 5%;
+    color: var(--light-text-gr);
+}
+
 
 /* Targeting fields within crispy forms */
 .form-control,
@@ -420,7 +451,7 @@ textarea {
 }
 
 .h2-login {
-    margin: 0px;
+    margin: -16px;
 }
 
 .card-login {
@@ -452,11 +483,8 @@ textarea {
 @media (max-width: 1024px) {
     .login-page-container {
         flex-direction: column;
-        /* Stack logo and form on tablets */
         min-height: auto;
-        /* Allow container to shrink to content size */
         padding-top: 10px;
-        /* Reduced padding */
         padding-bottom: 10px;
     }
 
@@ -467,10 +495,38 @@ textarea {
     }
 }
 
+/* Responsive adjustments for medium screens (tablets) */
+@media (max-width: 992px) {
+
+    .masthead .row {
+        flex-wrap: wrap;
+        /* Allows items to wrap as needed */
+    }
+
+    .masthead-text,
+    .masthead-image {
+        flex-basis: 100%;
+        /* Each takes full width on smaller screens */
+    }
+}
+
 /* Responsive adjustments for small screens */
 @media (max-width: 767px) {
     .profile-img {
         margin-bottom: 20px;
+    }
+
+    .masthead-text h1 {
+        font-size: 1.5em;
+    }
+
+    .masthead-text .post-subtitle,
+    .masthead-text .post-bookmark {
+        font-size: 0.9em;
+    }
+
+    .masthead-image img {
+        max-height: 300px;
     }
 }
 
@@ -499,7 +555,18 @@ textarea {
     .profile-table td {
         padding: 4px;
     }
+
+    .masthead-image {
+        order: -1;
+        /* Switches place for image (above the text) */
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.8em;
+    }
 }
+
 
 /* Responsive adjustments for extra small screens */
 @media (max-width: 480px) {

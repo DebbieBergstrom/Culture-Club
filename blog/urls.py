@@ -35,4 +35,10 @@ urlpatterns = [
     
     # Display the 'About Us' page
     path('about-us/', TemplateView.as_view(template_name='about_us.html'), name='about_us'),
+    
+    # Display the 'Saved For Later' page
+    path('saved-for-later/', views.bookmarked, name='bookmarked'),
+    
+    # Bookmark or un-bookmark a post
+    path('bookmark-unbookmark/<slug:slug>/', views.BookmarkUnbookmark.as_view(), name='bookmark_unbookmark'),
 ]
