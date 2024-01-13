@@ -7,7 +7,7 @@
 :root {
     --primary-color: #012326;
     --secondary-color: #de81e1;
-    --third-color: #af46b3;
+    --third-color: #9b055d;
     --accent-color: #08a2b6;
     --dark-bg: #0000006b;
     --light-text-gr: #cbeaf1;
@@ -26,7 +26,9 @@ body {
     color: var(--light-text-gr);
 }
 
-h1 {
+h1,
+h2,
+h3 {
     font-family: 'Russo One', sans-serif;
     font-weight: 400;
 }
@@ -157,7 +159,7 @@ h1 {
 
 /* Specific Colors for .btn-danger */
 .btn-danger {
-    background-color: #9b055d;
+    background-color: var(--third-color);
     color: var(--light-text-gr);
 }
 
@@ -179,6 +181,10 @@ h1 {
 .btn-like:active {
     background: transparent;
     border: none;
+}
+
+.fa-heart {
+    color: var(--third-color);
 }
 
 /* --- Link Styles --- */
@@ -235,7 +241,7 @@ a:active {
 
 .card-title {
     color: var(--light-text-gr);
-    font-size: 1.2rem;
+    font-size: 16px;
     margin-bottom: 0.5rem;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -244,7 +250,7 @@ a:active {
 
 .card-text {
     color: var(--light-text-gr);
-    font-size: 1rem;
+    font-size: 14px;
     text-overflow: ellipsis;
 }
 
@@ -307,10 +313,7 @@ a:active {
     color: var(--light-text-gr);
 }
 
-.fa-heart {
-    color: var(--third-color);
-}
-
+/* Masthead Styles */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -325,13 +328,18 @@ a:active {
 }
 
 .masthead-text {
-    background-color: rgba(1, 55, 48, 0.5);
+    background-color: rgba(1, 43, 48);
     color: var(--light-text-gr);
     position: relative;
+    overflow: hidden;
+    box-shadow: 45px 13px 31px -16px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: 45px 13px 31px -16px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: 45px 13px 31px -16px rgba(0, 0, 0, 0.75) inset;
 }
 
 .masthead-image {
     position: relative;
+    overflow: hidden;
 }
 
 .masthead-image .image-container {
@@ -353,7 +361,7 @@ a:active {
 
 .post-title {
     margin: 5%;
-    font-size: xx-large;
+    font-size: x-large;
 }
 
 .post-subtitle {
@@ -362,7 +370,6 @@ a:active {
 }
 
 .card-excerpt {
-    font-size: small;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     /* Number of lines to show */
@@ -378,7 +385,17 @@ a:active {
 }
 
 
-/* Targeting fields within crispy forms */
+/* CRISPY FORMS FIELD TARGETING */
+
+.form-control {
+    margin-bottom: 15px;
+}
+
+.form-control[type="file"],
+.form-control[name="bio"] {
+    margin-bottom: 20px;
+}
+
 .form-control,
 select,
 textarea {
@@ -387,7 +404,7 @@ textarea {
     border: 1px solid black;
 }
 
-/* --- Profile Section Styles --- */
+/* --- PROFILE SECTION --- */
 .profile-details {
     margin: 0 auto;
     padding: 20px;
@@ -522,6 +539,21 @@ textarea {
     }
 }
 
+/* Styles for large screens (992px and above) */
+@media (min-width: 992px) {
+    .masthead-image::before {
+        content: '';
+        position: absolute;
+        right: 100%;
+        top: 0;
+        width: 50%;
+        height: 100%;
+        background-color: rgba(1, 43, 48);
+        transform: skew(15deg);
+        transform-origin: top right;
+    }
+}
+
 /* Responsive adjustments for medium screens (tablets) */
 @media (max-width: 992px) {
 
@@ -533,7 +565,6 @@ textarea {
     .masthead-text,
     .masthead-image {
         flex-basis: 100%;
-        /* Each takes full width on smaller screens */
     }
 }
 
@@ -544,7 +575,7 @@ textarea {
     }
 
     .masthead-text h1 {
-        font-size: 1.5em;
+        font-size: 14px;
     }
 
     .masthead-text .post-subtitle,
@@ -564,7 +595,7 @@ textarea {
 /* Responsive adjustments for smaller screens */
 @media (max-width: 580px) {
     h1 {
-        font-size: 1.2em;
+        font-size: 14px;
     }
 
     .login-logo img {

@@ -57,24 +57,6 @@ class MyBlogPostsView(LoginRequiredMixin, ListView):
         return Blogpost.objects.filter(author=self.request.user).order_by('-created_on')
 
 
-# def CategoryIndex(request):
-#     categories = MediaCategory.objects.all()
-#     print(categories)  # This line will print the categories in the console
-
-#     selected_category = request.GET.get('category')
-
-#     if selected_category:
-#         blogposts = Blogpost.objects.filter(media_category__media_name=selected_category, status=1).order_by('-created_on')
-#     else:
-#         blogposts = Blogpost.objects.filter(status=1).order_by('-created_on')
-
-#     context = {
-#         'blogposts': blogposts,
-#         'categories': categories
-#     }
-#     return render(request, 'index.html', context)
-
-
 class BlogPostList(generic.ListView):
     """
     A view that displays a list of blog posts. It inherits from Django's generic ListView.
@@ -139,6 +121,11 @@ class BlogPostDetail(View):
         )
     
     def post(self, request, slug, *args, **kwargs):
+        """
+        Processes the submission of a comment on a blog post. Validates and saves the 
+        comment, then re-renders the blog post detail page with the new comment and 
+        a cleared comment form.
+        """
         queryset = Blogpost.objects.filter(status=1)
         blogpost = get_object_or_404(queryset, slug=slug)
         comments = blogpost.comments.filter(approved=False).order_by("created_on")
@@ -150,7 +137,6 @@ class BlogPostDetail(View):
             comment.blogpost = blogpost
             comment.user = request.user
             comment.save()
-        else:
             comment_form = CommentForm()
 
         return render(
@@ -159,7 +145,7 @@ class BlogPostDetail(View):
             {
                 "blogpost": blogpost,
                 "comments": comments,
-                "commented": True,
+                "commented": comment_form.is_valid(),
                 "liked": liked,
                 "comment_form": comment_form
             },
