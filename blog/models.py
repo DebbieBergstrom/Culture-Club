@@ -68,31 +68,50 @@ class UserProfile(models.Model):
 
 class Blogpost(models.Model):
     """
-    The Blogpost model represents a blog post in the Culture Club
-    application. It contains information about the blog title, slug,
-    author, created and updated timestamps, the content of the post,
-    an excerpt, the post status (draft or published), an image for the
-    post, the category of media it pertains to, and the year of release
-    if applicable. Users can also like or bookmark posts, which is
-    represented by many-to-many relationships with the User model.
+    Represents a blog post in the Culture Club application. It includes details
+    like the title, slug, author, timestamps, content, excerpt, status, featured image,
+    media category, and the year of release. It also supports likes and bookmarks
+    through many-to-many relationships with the User model.
     """
+
+    # Title of the blog post; must be unique
     blog_title = models.CharField(max_length=200, unique=True)
+
+    # URL-friendly slug for the blog post; generated automatically from the title and must be unique
     slug = models.SlugField(max_length=200, unique=True)
+
+    # Reference to the User model; indicates the author of the blog post
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog_posts'
     )
+    # Timestamps for when the post was created and last updated
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+
+    # Main content of the blog post
     content = models.TextField()
+
+    # Short excerpt or summary of the blog post; optional
     excerpt = models.TextField(blank=True)
+
+    # Indicates the current status of the blog post (e.g., draft, published)
     status = models.IntegerField(choices=STATUS, default=1)
-    featured_image = CloudinaryField('image', default='placeholder')
+
+    # CloudinaryField for storing images, with a default placeholder image
+    featured_image = CloudinaryField('image', default='blogpost_placeholder')
+
+    # Reference to a MediaCategory instance; categorizes the blog post
     media_category = models.ForeignKey(
-        'MediaCategory', on_delete=models.SET_NULL,
-        related_name='blog_posts', blank=True, null=True
-    ) # temporary set to optional, change back to required later
+        'MediaCategory', on_delete=models.SET_NULL, 
+        related_name='blog_posts', null=True, blank=False  
+    )
+    # Year of release for the media being discussed; validated by validate_year
     release_year = models.IntegerField(validators=[validate_year])
+
+    # Optional URL field for linking to external media or references
     media_link = models.URLField()
+
+    # Many-to-many relationships for likes and bookmarks; users can like or bookmark the post
     likes = models.ManyToManyField(
         User, related_name='blogpost_likes', blank=True
     )
@@ -101,15 +120,24 @@ class Blogpost(models.Model):
     )
 
     def save(self, *args, **kwargs):
+        # Automatically generate a slug from the blog title if not provided
         if not self.slug:
             self.slug = slugify(self.blog_title)
+
+        # Set default image only if none is provided
+        if not self.featured_image:
+            self.featured_image = 'blogpost_placeholder'
+
         super(Blogpost, self).save(*args, **kwargs)
 
     def number_of_likes(self):
+        # Return the count of likes for the blog post
         return self.likes.count()
 
     def number_of_bookmarks(self):
+        # Return the count of bookmarks for the blog post
         return self.bookmarks.count()
+
 
 
 class Comment(models.Model):

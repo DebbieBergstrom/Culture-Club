@@ -14,14 +14,33 @@ class BlogpostForm(forms.ModelForm):
             'blog_title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter a title for your post...(max length 50 characters)', 'maxlength': '50'}),
             'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': 'Write your blog content here (max length 2000 characters)...', 'maxlength': '2000'}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control', 'rows': 2, 'placeholder': 'Write a short excerpt...(max length 70 characters)', 'maxlength': '70'}),
-            'media_category': forms.Select(attrs={'class': 'form-control'}),
+            'media_category': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select Category'}),
             'release_year': forms.NumberInput(attrs={'class': 'form-control', 'min': 1800, 'max': datetime.datetime.now().year, 'placeholder': 'Format YYYY'}),
             'media_link': forms.URLInput(attrs={'class': 'form-control'}),
         }
+        labels = {
+            'blog_title': 'Blog Title',
+            'content': 'Content',
+            'excerpt': 'Excerpt',
+            'status': 'Status',
+            'featured_image': 'Upload Image',
+            'media_category': 'Media Category',
+            'release_year': 'Release Year',
+            'media_link': 'Media Link / Reference',
+}
 
     def __init__(self, *args, **kwargs):
         super(BlogpostForm, self).__init__(*args, **kwargs)
         self.fields['media_link'].initial = 'http://www.'
+
+    def clean(self):
+        cleaned_data = super().clean()
+        featured_image = cleaned_data.get('featured_image')
+
+        if not featured_image:
+            cleaned_data['featured_image'] = 'blogpost_placeholder'  # default image name
+
+        return cleaned_data
 
 
 class CommentForm(forms.ModelForm):

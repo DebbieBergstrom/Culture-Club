@@ -36,16 +36,10 @@
 
                 <div
                     class="col-lg-6 col-md-6 col-sm-12 masthead-image d-flex align-items-center">
-                    {% if "placeholder" in blogpost.featured_image.url %}
-                    <img class="img-fluid" src="placeholder_image_url"
-                        alt="Placeholder Image">
-                    {% else %}
                     <img class="img-fluid"
                         src="{{ blogpost.featured_image.url }}"
-                        alt="{{ blogpost.blog_title }}">
-                    {% endif %}
+                        alt="{{ blogpost.blog_title }} Image">
                 </div>
-
             </div>
         </div>
 
