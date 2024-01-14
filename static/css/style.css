@@ -6,12 +6,12 @@
 /* --- Color Variables --- */
 :root {
     --primary-color: #012326;
-    --secondary-color: #de81e1;
-    --third-color: #9b055d;
-    --accent-color: #08a2b6;
+    --secondary-color: #e2da83;
+    --yellow-accent: #fce982;
+    --third-color: #b9581b;
+    --accent-color: #0794a7;
     --dark-bg: #0000006b;
     --light-text-gr: #cbeaf1;
-    --light-text-pi: #fac7f1;
     --white-text: #ffffff;
 }
 
@@ -33,9 +33,22 @@ h3 {
     font-weight: 400;
 }
 
+.alert-container {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    width: 100%;
+    padding: 2px;
+}
+
 /* --- Navbar Styles --- */
 .navbar {
     background-color: var(--primary-color);
+    box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
+    -webkit-box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
+    -moz-box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
 }
 
 .navbar-dark {
@@ -74,8 +87,11 @@ h3 {
 
 /* --- Footer Styles --- */
 .footer {
-    background-color: var(--primary-color);
+    background-color: #050b12;
     color: var(--light-text-gr);
+    box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
+    -webkit-box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
+    -moz-box-shadow: 43px 142px 69px -151px rgba(7, 29, 37, 0.75) inset;
 }
 
 .footer a {
@@ -117,8 +133,8 @@ h3 {
 .btn-signup:hover,
 .btn-secondary:hover,
 .btn-danger:hover {
-    background-color: #cb50cf;
-    color: var(--light-text-gr);
+    background-color: #a14d19;
+    color: var(--dark-bg);
     box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.7);
 }
 
@@ -337,6 +353,7 @@ a:active {
     -moz-box-shadow: 45px 13px 31px -16px rgba(0, 0, 0, 0.75) inset;
 }
 
+
 .masthead-image {
     position: relative;
     overflow: hidden;
@@ -361,7 +378,7 @@ a:active {
 
 .post-title {
     margin: 5%;
-    font-size: x-large;
+    font-size: 28px;
 }
 
 .post-subtitle {
@@ -450,7 +467,7 @@ textarea {
 }
 
 .top-categories-heading {
-    color: var(--secondary-color);
+    color: var(--yellow-accent);
     text-align: center;
     font-weight: bolder;
 }
@@ -574,13 +591,13 @@ textarea {
         margin-bottom: 20px;
     }
 
-    .masthead-text h1 {
-        font-size: 14px;
-    }
-
     .masthead-text .post-subtitle,
     .masthead-text .post-bookmark {
         font-size: 0.9em;
+    }
+
+    .masthead-text h1 {
+        font-size: 20px;
     }
 
     .masthead-image img {
@@ -590,13 +607,14 @@ textarea {
     .blogpost-card {
         height: 518px;
     }
+
+    h2 {
+        font-size: 18px;
+    }
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 580px) {
-    h1 {
-        font-size: 14px;
-    }
 
     .login-logo img {
         max-height: 30vh;
