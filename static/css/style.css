@@ -236,6 +236,12 @@ a:active {
     text-decoration: underline;
 }
 
+.custom-page-number {
+    background: none;
+    color: var(--accent-color);
+    padding: 5px;
+    margin: 5px;
+}
 
 /* --- CARD STYLES --- */
 .card {
