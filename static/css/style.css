@@ -117,7 +117,7 @@ h3 {
     background-color: var(--third-color);
     color: var(--light-text-gr);
     border: none;
-    padding: 8px 16px;
+    padding: 4px 8px;
     border-radius: 4px;
     text-transform: uppercase;
     font-weight: bold;
@@ -304,7 +304,6 @@ a:active {
 }
 
 .author {
-    position: absolute;
     bottom: -5px;
     left: 6px;
     color: var(--light-text-gr);
@@ -619,7 +618,16 @@ textarea {
     }
 
     h2 {
+        font-size: 20px;
+    }
+
+    h3 {
         font-size: 18px;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 0.8em;
     }
 }
 
@@ -649,11 +657,6 @@ textarea {
     .masthead-image {
         order: -1;
         /* Switches place for image (above the text) */
-    }
-
-    .btn {
-        padding: 5px 10px;
-        font-size: 0.8em;
     }
 
     .blogpost-card {

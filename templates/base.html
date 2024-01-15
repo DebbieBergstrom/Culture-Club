@@ -24,8 +24,8 @@
 <body class="d-flex flex-column h-100">
 
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" aria-label=" Main
-        navigation">
+    <nav class="navbar navbar-expand-lg navbar-dark"
+        aria-label="Main navigation">
         <div class="container-fluid mx-3">
             <!-- Brand Logo and Link -->
             <a class="navbar-logo me-2"
@@ -39,11 +39,12 @@
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <!-- Navbar Items -->
             <div class="collapse navbar-collapse" id="navbarContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <ul class="navbar-nav me-auto">
                     <!-- About Us Link -->
-                    <li class="nav-item me-2">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'about_us' %}"
                             aria-label="About Us">
                             <i class="fas fa-info-circle"></i> About Us
@@ -51,7 +52,7 @@
                     </li>
                     <!-- Conditional Signup Link -->
                     {% if not user.is_authenticated %}
-                    <li class="nav-item me-2">
+                    <li class="nav-item">
                         <a class="nav-link" href="{% url 'account_signup' %}"
                             aria-label="Join the Club">
                             <i class="fas fa-user-friends"></i> Join
@@ -60,25 +61,40 @@
                     </li>
                     {% endif %}
                 </ul>
-                <!-- User Authentication and Profile Dropdown -->
+
                 {% if user.is_authenticated %}
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item me-2"><a class="nav-link"
-                            href="{% url 'blogpost_create' %}">
+                <ul class="navbar-nav ms-auto">
+                    <!-- Links for authenticated users -->
+                    <!-- Latest Posts Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'home' %}">
+                            <i class="fas fa-home"
+                                aria-label="Latest Posts"></i> Latest
+                            Posts
+                        </a>
+                    </li>
+                    <!-- Create New Post Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'blogpost_create' %}">
                             <i class="fas fa-plus"
                                 aria-label="Create New Post"></i>
-                            Create New
-                            Post</a></li>
-                    <li class="nav-item me-2"><a class="nav-link"
-                            href="{% url 'my_posts' %}"><i
-                                class="fas fa-file-alt"
-                                aria-label="My Posts"></i> My
-                            Posts</a></li>
-                    <li class="nav-item me-2"><a class="nav-link"
-                            href="{% url 'bookmarked' %}"><i
-                                class="fas fa-bookmark"
-                                aria-label="Bookmarked"></i>
-                            Bookmarked</a></li>
+                            Create New Post
+                        </a>
+                    </li>
+                    <!-- My Posts Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'my_posts' %}">
+                            <i class="fas fa-file-alt"
+                                aria-label="My Posts"></i> My Posts
+                        </a>
+                    </li>
+                    <!-- Bookmarked Link -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'bookmarked' %}">
+                            <i class="fas fa-bookmark"
+                                aria-label="Bookmarked"></i> Bookmarked
+                        </a>
+                    </li>
                     <!-- Dropdown for User Profile -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#"
@@ -92,27 +108,23 @@
                             <li><a class="dropdown-item"
                                     href="{% url 'profile' %}"><i
                                         class="fas fa-user-circle"
-                                        aria-label="My Profile"></i>
-                                    My
-                                    Profile</a>
-                            </li>
+                                        aria-label="My Profile"></i> My
+                                    Profile</a></li>
                             <li><a class="dropdown-item"
                                     href="{% url 'profile_edit' %}"><i
                                         class="fas fa-edit"
-                                        aria-label="Edit Profile"></i>
-                                    Edit
+                                        aria-label="Edit Profile"></i> Edit
                                     Profile</a></li>
                             <li><a class="dropdown-item"
                                     href="{% url 'account_delete' request.user.pk %}"><i
                                         class="fas fa-cog"
-                                        aria-label="Manage Account"></i>
-                                    Manage
+                                        aria-label="Manage Account"></i> Manage
                                     Account</a></li>
                             <li><a class="dropdown-item"
                                     href="{% url 'account_logout' %}"><i
                                         class="fas fa-sign-out-alt"
-                                        aria-label="Log out"></i>
-                                    Log Out</a></li>
+                                        aria-label="Log out"></i> Log Out</a>
+                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -173,9 +185,11 @@
     <!-- JavaScript for Message Dismissal -->
     <script>
         setTimeout(function () {
-            let messages = document.querySelectorAll('.message-alert');
+            let messages = document.querySelectorAll(
+                '.message-alert');
             messages.forEach(function (message) {
-                let alert = new bootstrap.Alert(message);
+                let alert = new bootstrap.Alert(
+                    message);
                 alert.close();
             });
         }, 2000);
