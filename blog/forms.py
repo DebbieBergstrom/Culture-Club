@@ -14,7 +14,7 @@ class BlogpostForm(forms.ModelForm):
             'blog_title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter a title for your post...(max length 50 characters)', 'maxlength': '50'}),
             'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 4, 'placeholder': 'Write your blog content here (max length 2000 characters)...', 'maxlength': '2000'}),
             'excerpt': forms.Textarea(attrs={'class': 'form-control', 'rows': 2, 'placeholder': 'Write a short excerpt...(max length 70 characters)', 'maxlength': '70'}),
-            'media_category': forms.Select(attrs={'class': 'form-control', 'placeholder': 'Select Category'}),
+            'media_category': forms.Select(attrs={'class': 'form-control'}),
             'release_year': forms.NumberInput(attrs={'class': 'form-control', 'min': 1800, 'max': datetime.datetime.now().year, 'placeholder': 'Format YYYY'}),
             'media_link': forms.URLInput(attrs={'class': 'form-control'}),
         }
