@@ -6,7 +6,7 @@ Inspired by the diversity and unity of the iconic band it's named after, 'Cultur
 
 <center> 
 
-![Mockup image](/docs/readme.md/FILENAME) 
+![Mockup image](/docs/readme/am_i_responsive_mockup.png) 
 
 </center>
 
@@ -383,25 +383,26 @@ The wireframes serve as a visual blueprint for the application. Click on each pa
 - **Balsamiq**: A wireframing tool used for sketching and visualizing the layout and structure of the web project.
 
 
-
 ### Supporting Libraries and Packages
-asgiref==3.7.2
-cloudinary==1.37.0
-dj-database-url==0.5.0
-dj3-cloudinary-storage==0.0.6
-Django==3.2.23
-django-allauth==0.59.0
-django-crispy-forms==1.14.0
-django-summernote==0.8.20.0
-gunicorn==21.2.0
-oauthlib==3.2.2
-psycopg2==2.9.9
-PyJWT==2.8.0
-python3-openid==3.2.0
-pytz==2023.3.post1
-requests-oauthlib==1.3.1
-sqlparse==0.4.4
-urllib3==1.26.15
+
+- `asgiref==3.7.2`
+- `cloudinary==1.37.0`
+- `dj-database-url==0.5.0`
+- `dj3-cloudinary-storage==0.0.6`
+- `Django==3.2.23`
+- `django-allauth==0.59.0`
+- `django-crispy-forms==1.14.0`
+- `django-summernote==0.8.20.0`
+- `gunicorn==21.2.0`
+- `oauthlib==3.2.2`
+- `psycopg2==2.9.9`
+- `PyJWT==2.8.0`
+- `python3-openid==3.2.0`
+- `pytz==2023.3.post1`
+- `requests-oauthlib==1.3.1`
+- `sqlparse==0.4.4`
+- `urllib3==1.26.15`
+
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
