@@ -236,58 +236,77 @@ This database schema lays out the structure for the Culture Club application, fa
 ---
 
 # Design
-Short description...
+
+The design of Culture Club is crafted with a blend of nostalgia and modernity, reflecting the essence of cultural appreciation that spans generations. The choices in colors, fonts, and layout are intended to evoke a sense of familiarity and warmth, welcoming users to a community where culture in all its forms is cherished and discussed.
 
 ### Design Choices
-Our design choices were made thinking of.....
+
+Design choices were made with the intention of creating an inviting and user-friendly interface that also resonates with the theme of cultural nostalgia. The darker theme breaks from the contemporary trend of minimalistic and bright designs, offering a unique visual experience that aligns with the interests of culture enthusiasts who often have a fondness for timeless classics in movies, music, books, and more.
 
 ### Color
-short description using 60–30–10 rule for creating balanced interfaces.
 
-![Color Palette image](/docs/FILEPATH)
-**Dominant (60%):** 
+In creating balanced interfaces that are both visually appealing and functional, we carefully selected a color palette that complements the overall theme of the site.
 
-Choice of a ?color?, represented by #code as the dominant color, reflects...
+![Color Palette image](/workspace/Culture-Club/docs/readme/colorpalette.png)
 
-**Secondary (30%):** 
+**Dominant:**
 
-The secondary color, ?color?, represented by #code ...
+The choice of 'Gunmetal' Green, represented by #012326, as the dominant color, reflects the depth and richness of cultural history. This dark green hue sets a strong foundation for the site's design, providing a serene and focused backdrop for content exploration.
 
-**Accent (10%):** 
+**Secondary:**
 
-Accent color...
+'Munsell Blue', represented by #0794A7, serves as the secondary color. This choice is a nod to the vibrancy and dynamism of the cultural sphere. It not only complements the darker green but also adds a splash of energy and modern flair to the design.
 
+**Accent:**
+
+Our accent color is a carefully chosen shade of 'Burnt Orange', represented by #B9581B. This color provides a striking contrast to the greens and blue, drawing attention to important elements like buttons and calls to action. It brings a sense of excitement and highlights the interactive aspects of the site.
+
+**Other colors:**
+A softer shade of yellow 'Flax, represented by #E2DA83, used for inline links and smaller elements, adds a subtle yet effective highlight, ensuring that navigation elements are easily identifiable.
+
+Instead of regular white text color, a bit more "greenbluish" shade of white called 'Light Cyan'represented by #CBEAF1, were chosen to blend well with all colors, yet still have great contrast. 
 
 ### Fonts
-The Culture Club site embraces the default fonts offered by Bootstrap 5, without any specific alterations, as they significantly enhance the overall aesthetics and user experience.
+
+For the Culture Club site, we selected fonts that harmonize with our theme of blending the nostalgic with the contemporary. The H1 headers feature a distinctive font, 'Russo One', that resonates with the nostalgic 80-90's aspect of the site, while the classic Roboto font is used for the body text, ensuring readability and a modern touch. This combination of fonts not only enhances the aesthetic appeal but also contributes to an enjoyable user experience.
 
 ### Structure
 
-User-friendly structure, ensuring seamless navigation and easy access to the website's content. Here's an overview of the website's structure:
+The Culture Club website is designed with a user-friendly structure, ensuring seamless navigation and easy access to the website's diverse content about movies, music, books, podcasts, and more. Below is an overview of the website's structure:
 
-#### Before User logs in:
+#### Before User Logs In:
 
-- **Landing Page:** The landing page... <br>
-- **About Us:** The About Us page provides... <br>
-- **Sign Up:** For new Users, the Join Us page is ... <br>
-- **Log In:** Registered users can securely access their accounts and unlock the full potential of our website through the Log In page.<br>
+- **Landing Page with Sign In Form:** Upon arrival, users are greeted by a visually engaging landing page that doubles as a login portal. The page showcases a large, thematic image representing the site's focus on various cultural elements. Adjacent to the image is the login form, enabling existing users to quickly access their accounts. For newcomers, convenient links to the 'About Us' page and 'Sign Up' form are prominently displayed, inviting them to join the community.
 
+- **About Us:** This page provides insightful information about the Culture Club, its mission, and what new members can expect upon joining. It serves as an introduction to the site's ethos and community spirit.
 
-#### After User logged in:
-Once the User is logged in additional features is provided with the following pages:
+- **Sign Up:** A welcoming space for new users, the 'Join Us' page offers an easy and straightforward sign-up process, encouraging cultural enthusiasts to become a part of the vibrant Culture Club community.
 
-- **Home Page (Inside the Culture Club):** This is where the latest posts are revealed! The home page of Culture Club brings the User with new exiting posts.<br>
-- **Profile Page:** The Users' very own customized profile with profile picture, bio, 
-- **Contact Us:** If you encounter any issues or have questions, our friendly admins are just a message away. Feel free to reach out via the "Contact Us" page, and we'll assist you with any concerns or inquiries you may have.<br>
+#### After User Logs In:
 
+Post-login, users gain access to a range of interactive and personalized features:
+
+- **Home Page (Inside the Culture Club):** The heart of the site, the home page presents the latest posts. Users can enjoy a broad overview of all posts or filter content by categories using the category selection buttons. Each post is displayed as an engaging card, featuring a clickable image (to the full post view), the title, a brief excerpt, author's name, and the number of likes.
+
+- **Full Blog Post View:** Each blog post can be viewed in its entirety on a dedicated page. This full view not only presents the complete content of the post, including images and detailed text, but also fosters user interaction and community engagement. Below each post, a comment section allows users to share their thoughts, engage in discussions, and connect with others. The author's name is linked to their user profile. Similarly, every user who comments has a clickable name that directs to their profile, enabling a deeper exploration of the community and fostering connections among users with similar interests.
+
+- **Create New Post:** A creative space where users can share their cultural insights. This form allows for the inclusion of relevant images, titles, excerpts, detailed blog content, release year (for movies, for instance), media category, and reference URLs. New posts, once published, are prominently displayed on the home page.
+
+- **My Posts:** A personalized collection of the user's blog posts. This page not only showcases their contributions but also offers 'Edit' and 'Delete' options for each post, giving users full control over their content.
+
+- **Bookmarked:** A curated list of the user's bookmarked posts, allowing for quick access to favorite articles and discussions. Users can easily bookmark or remove bookmarks as they navigate through the site.
 
 #### Profile Navigation:
 
-Clicking on your profile image in the navigation bar opens up access to specific profile-related features:
+Accessing the profile icon in the navigation bar opens up more user-specific features:
 
-- **My Posts:** The "My Posts" page is ...<br>
-- **Create Post:** The "Create Post" page is ...<br>
-- **Log Out:** The "Log Out" button...<br>
+- **Profile Page:** A personal showcase featuring the user's profile picture, bio, country of origin, and their 'Top Selections' in various cultural categories like 'Movies', 'Series', 'Music Albums', etc. This page is a window into each user's unique tastes and interests.
+
+- **Edit Profile Page:** Users can update their profile details, ensuring their personal page reflects their evolving preferences and experiences.
+
+- **Manage Account:** A crucial feature for account management, this page allows users to delete their account. It includes clear warnings about the permanence of this action and requires confirmation to proceed, ensuring users make informed decisions.
+
+- **Log Out:** A simple yet secure logout process. Users are prompted to confirm their intention to log out, safeguarding their account access. Once logged out they get redirected to the log in landing page. 
 
 
 ### Wireframes
@@ -326,9 +345,7 @@ The wireframes serve as a visual blueprint for the application. Click on each pa
 <details><summary>User Profile</summary>
 <img src="docs/readme/wireframes/user_profile.png">
 </details>
-<details><summary>Log Out</summary>
-<img src="docs/readme/wireframes/FILEPATH">
-</details>
+
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -340,34 +357,52 @@ The wireframes serve as a visual blueprint for the application. Click on each pa
 - HTML
 - CSS
 - Python
+- JavaScript
 
 ### Frameworks
-- Django: A high-level Python web framework used for building the Culture Club web application.
-- Crispy Forms: A Django package used for rendering forms in a more efficient and customizable way.
-- Bootstrap v5.0: A popular CSS framework used for creating responsive and visually appealing user interfaces.
+- **Django**: A high-level Python web framework that encourages rapid development and clean, pragmatic design, used for building the Culture Club web application.
+- **Crispy Forms**: A Django package that simplifies form layout and styling, making forms more efficient and customizable.
+- **Bootstrap v5.0**: The latest version of the popular CSS framework, used for creating responsive and visually appealing user interfaces.
 
 ### Database
-- ElephantSQL: ElephantSQL is a PostgreSQL database as a service. It is used as the database for the Culture Club project, providing a reliable and scalable storage solution for the application's data.
+- **ElephantSQL**: A cloud-hosted PostgreSQL database service, offering a reliable and scalable storage solution for the application's data.
 
-### Media management platform
-- Cloudinary: A cloud-based media management platform used for storing and serving images.
+### Media Management Platform
+- **Cloudinary**: A cloud-based platform for media upload, storage, optimization, and delivery, used for managing images in the Culture Club project.
 
 ### Tools
-- **Git**: A distributed version control system used for tracking changes in the project's source code.
-- **GitHub**: A web-based hosting service for version control repositories, used for storing and managing the project's source code.
-- **Gitpod**: An online integrated development environment (IDE) used for developing and testing the Culture Club project.
-- **Heroku**: A cloud platform that enables deployment and hosting of web applications. Heroku was used for deploying the Culture Club project to a live server.
-- **Adobe Photoshop**: A professional image editing software used for advanced image manipulation.
-- **DB diagram**: An online database design and diagramming tool that simplifies the process of creating and visualizing database schemas. dbdiagram.io was used for designing and documenting the database schema of the Culture Club project.
-- **Google Fonts**: A collection of free and open-source fonts used for typography on Culture Club website.
-- **Font Awesome**: A library of icons used for adding scalable vector icons to Culture Clubs website.
-- **Mailtrap**: In this project, Mailtrap was integrated to power the contact form, providing a secure environment for users to reach out to Culture Club via email.
-- **Balsamiq
+- **Git**: A version control system for tracking changes in source code during software development.
+- **GitHub**: A platform for hosting and managing Git repositories, enabling collaboration and version control for the project's codebase.
+- **Gitpod**: A cloud-based IDE that provides a consistent and pre-configured development environment for the Culture Club project.
+- **Heroku**: A cloud application platform used for deploying and hosting the Culture Club web application.
+- **Adobe Photoshop**: A graphic design software used for editing and refining images for the website.
+- **DB Diagram**: A tool for visualizing and creating database schemas, used for planning the database structure of Culture Club.
+- **Google Fonts**: A library of free, open-source fonts, used to enhance typography on the website.
+- **Font Awesome**: A library of icons and social logos, used for adding graphical elements to the Culture Club interface.
+- **DALL-E**: An AI generative image tool utilized for creating unique images for the landing page and blog post placeholder.
+- **Balsamiq**: A wireframing tool used for sketching and visualizing the layout and structure of the web project.
 
 
 
 ### Supporting Libraries and Packages
-import list of packages from requirements.txt
+asgiref==3.7.2
+cloudinary==1.37.0
+dj-database-url==0.5.0
+dj3-cloudinary-storage==0.0.6
+Django==3.2.23
+django-allauth==0.59.0
+django-crispy-forms==1.14.0
+django-summernote==0.8.20.0
+gunicorn==21.2.0
+oauthlib==3.2.2
+psycopg2==2.9.9
+PyJWT==2.8.0
+python3-openid==3.2.0
+pytz==2023.3.post1
+requests-oauthlib==1.3.1
+sqlparse==0.4.4
+urllib3==1.26.15
+
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -402,7 +437,7 @@ Emphasizing that the project timeline is expedited, the iterative approach maint
 - **Wont-Have:**
 - **Task:** 
 
-For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/DebbieBergstrom/URLPATH).
+For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/DebbieBergstrom/projects/4/views/1).
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
 ---
