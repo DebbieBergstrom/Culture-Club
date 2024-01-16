@@ -408,7 +408,6 @@ a:active {
     overflow: hidden;
 }
 
-
 /* CRISPY FORMS FIELD TARGETING */
 
 .form-control {
@@ -516,22 +515,23 @@ textarea {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
 }
 
 .h2-login {
     margin: -16px;
+    font-size: 26px;
 }
 
 .card-login {
     padding: 14px;
     margin-left: 20px;
+    margin-top: 10px;
 }
 
 .login-culture-club {
     font-family: 'Russo One',
         sans-serif;
-    font-size: 60px;
+    font-size: 57px;
     font-weight: 700;
     color: var(--accent-color);
     text-shadow: 5px 2px 2px rgba(0, 0, 0, 0.71);
@@ -539,7 +539,7 @@ textarea {
 
 /* Login image on large screen */
 .login-logo img {
-    height: 600px;
+    height: 560px;
     margin-top: -125px;
     margin bottom: 10px;
     max-width: 100%;
