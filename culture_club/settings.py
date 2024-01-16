@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
-DEBUG = DEVELOPMENT #set to DEVELOPMENT when test deploy or back to True
+DEBUG = True #set to DEVELOPMENT when test deploy or back to True
 
 ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME')), 'localhost']
 
@@ -78,7 +78,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
 ]
 
