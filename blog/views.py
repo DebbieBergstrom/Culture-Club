@@ -2,7 +2,7 @@ from django.views.generic.list import ListView
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.views.generic import DeleteView
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponseForbidden, HttpResponseNotAllowed
 from django.contrib.auth import logout
 from django.contrib import messages
 from django.contrib.auth.models import User
@@ -285,3 +285,11 @@ class BookmarkUnbookmark(View):
             blogpost.bookmarks.add(request.user)
             messages.success(request, "Added to 'Bookmarked'.")
         return HttpResponseRedirect(reverse('blogpost_detail', args=[slug]))
+
+
+# --- ERROR PAGES ---
+def custom_403_error(request, exception):
+    return HttpResponseForbidden(render(request, '403.html'))
+
+def custom_405_error(request, exception):
+    return HttpResponseNotAllowed(render(request, '405.html'))
