@@ -411,7 +411,8 @@ a:active {
 /* CRISPY FORMS FIELD TARGETING */
 
 .form-control {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 12px;
 }
 
 .form-control[type="file"],

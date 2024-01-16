@@ -19,6 +19,9 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="icon" type="images/x-icon"
+        href="{% static 'path/to/favicon_c' %}">
+
 </head>
 
 <body class="d-flex flex-column h-100">
@@ -161,7 +164,7 @@
 
 
     <!-- Main Content Section -->
-    <main class="flex-shrink-0 container my-4" role="main">
+    <main class="flex-shrink-0 container my-4">
         {% block content %}
         <!-- Placeholder for Page Specific Content -->
         {% endblock content %}
