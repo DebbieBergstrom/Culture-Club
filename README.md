@@ -152,12 +152,15 @@ When using Culture Club, users can expect the following features and characteris
 
 ### User Stories
 
+User stories and tasks were put int o four 'epics' and are organized into three distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these milestones by clicking [here](https://github.com/DebbieBergstrom/Culture-Club/milestones), which will take you to the milestone overview.
+
 ### Epic 1: User Authentication & Profile Management
 This epic focuses on user account management, including registration, login/logout, and personal profile customization.
 - [User Account Registration (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/2)
 - [Log In and Out of User Account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3)
 - [Edit User Bio and Profile Picture (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/4)
 - [Favourite Lists in Personal Bio (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
+- [Password Reset (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/43)
 
 ### Epic 2: Blog Interaction & Content Management
 This epic deals with the core functionalities of the blog, such as creating, reading, editing, and deleting posts, as well as interacting with posts through comments and likes.
@@ -168,14 +171,14 @@ This epic deals with the core functionalities of the blog, such as creating, rea
 - [See Post Overview (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/11)
 - [Read Full Post Detail (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/12)
 - [Bookmark Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/29)
-- [Follow Other Users (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/30)
+- [Follow Other Users (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/30)
 
 ### Epic 3: Administration & Analytics
 This epic encompasses administrative control over the site, including user account management and content moderation, as well as tracking user engagement.
 - [Admin - Full Control Over User Accounts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/13)
 - [Admin - Review and Edit User-Submitted Blog Posts (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/14)
 - [Admin - Manage and Categorize Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/15)
-- [Admin - Track User Engagement and Analytics (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/16)
+- [Admin - Track User Engagement and Analytics (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/16)
 
 ### Epic 4: User Experience & Accessibility
 This epic is focused on the overall user experience on the site, such as the appearance of the homepage, ease of navigation, and accessibility of information.
@@ -183,13 +186,10 @@ This epic is focused on the overall user experience on the site, such as the app
 - [Navigate to About Us (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/18)
 - [Navigate to Join the Club Section (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/19)
 - [Easy Login from Landing Page (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/20)
-
+- [Navigate through a well designed website (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/33)
+- [Site pagination for easy navigation (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
 
 <br>
-
-The user stories and epics are organized into sprints (milestones) to establish a well-defined work structure. You can access the details of these sprints by clicking [here](https://github.com/DebbieBergstrom/Culture-Club//milestones), which will redirect you to the sprint information.
-
-![Sprints](/docs/readme.md/FILEPATH) 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -417,7 +417,7 @@ The Culture Club project follows a methodology inspired by agile principles, fos
 To streamline project management, GitHub Projects is employed as a central hub. User stories and tasks are structured as GitHub issues, creating an organized workflow. The GitHub project board serves as a visual representation, tracking progress effectively.
 
 ### User Stories as GitHub Issues
-Transforming user stories into GitHub issues captures user-centric functionalities. These issues interlink with respective user stories, simplifying access to criteria, tasks, and discussions.
+Transforming user stories into GitHub issues captures user-centric functionalities. These issues interlink with respective user stories, simplifying access to criteria, tasks, and comments.
 
 ### Bug Tracking for Seamless Development
 Bugs uncovered during development are documented as GitHub issues, offering insights into each bug's characteristics, impact, and reproduction steps. By hyperlinking these issues in README.md, users can stay updated on bug resolutions and contribute insights.
@@ -432,11 +432,36 @@ Emphasizing that the project timeline is expedited, the iterative approach maint
 
 **Labels and User Story Distribution (MoSCoW):**
 
-- **Must-Have:** example 10/15
-- **Should-Have:** 
-- **Could-Have:** 
-- **Wont-Have:**
-- **Task:** 
+### Must-Have:
+- User Account Registration [#2](https://github.com/DebbieBergstrom/Culture-Club/issues/2)
+- Log In and Out of User Account [#3](https://github.com/DebbieBergstrom/Culture-Club/issues/3)
+- Edit User Bio and Profile Picture [#4](https://github.com/DebbieBergstrom/Culture-Club/issues/4)
+- User Create & Edit Blog Posts [#7](https://github.com/DebbieBergstrom/Culture-Club/issues/7)
+- Comment Blog Posts + Edit [#8](https://github.com/DebbieBergstrom/Culture-Club/issues/8)
+- Read Full Post Detail [#12](https://github.com/DebbieBergstrom/Culture-Club/issues/12)
+- Admin - Full Control Over User Accounts [#13](https://github.com/DebbieBergstrom/Culture-Club/issues/13)
+- Navigate to Join the Club Section [#19](https://github.com/DebbieBergstrom/Culture-Club/issues/19)
+- Easy Login from Landing Page [#20](https://github.com/DebbieBergstrom/Culture-Club/issues/20)
+- Navigate through a well designed website [#33](https://github.com/DebbieBergstrom/Culture-Club/issues/33)
+
+### Should-Have:
+- Like/ Unlike Blog Posts [#9](https://github.com/DebbieBergstrom/Culture-Club/issues/9)
+- View Other Users' Profiles [#10](https://github.com/DebbieBergstrom/Culture-Club/issues/10)
+- See Post Overview [#11](https://github.com/DebbieBergstrom/Culture-Club/issues/11)
+- Admin - Review and Edit User-Submitted Blog Posts [#14](https://github.com/DebbieBergstrom/Culture-Club/issues/14)
+- Visually Appealing Landing Page [#17](https://github.com/DebbieBergstrom/Culture-Club/issues/17)
+- Navigate to About Us [#18](https://github.com/DebbieBergstrom/Culture-Club/issues/18)
+- Site pagination for easy navigation [#32](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
+
+### Could-Have:
+- Favourite Lists in Personal Bio [#5](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
+- Bookmark Blog Posts [#29](https://github.com/DebbieBergstrom/Culture-Club/issues/29)
+- Admin - Manage and Categorize Blog Posts [#15](https://github.com/DebbieBergstrom/Culture-Club/issues/15)
+
+### Won't-Have:
+- Password Reset [#43](https://github.com/DebbieBergstrom/Culture-Club/issues/43)
+- Follow Other Users [#30](https://github.com/DebbieBergstrom/Culture-Club/issues/30)
+- Admin - Track User Engagement and Analytics [#16](https://github.com/DebbieBergstrom/Culture-Club/issues/16)
 
 For a comprehensive view of the project's trajectory, user stories, and bug tracking, explore the [Kanban board](https://github.com/users/DebbieBergstrom/projects/4/views/1).
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
