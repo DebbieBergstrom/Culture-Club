@@ -4,6 +4,7 @@ from django.views import generic, View
 from django.views.generic import DeleteView
 from django.http import HttpResponseRedirect
 from django.contrib.auth import logout
+from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -14,46 +15,73 @@ from .forms import CommentForm, UserProfileForm, BlogpostForm
 
 
 class BlogpostCreateView(LoginRequiredMixin, generic.CreateView):
-    # A view for creating a new blog post
+    """
+    View for creating a new blog post. Requires user to be logged in.
+    """
     model = Blogpost
     form_class = BlogpostForm
     template_name = 'blogpost_create.html'
 
     def form_valid(self, form):
+        # Set the author to the current user and save the post
         form.instance.author = self.request.user
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        messages.success(self.request, "Your blog post has been created successfully.")
+        return response
     
     def get_success_url(self):
+        # Redirect to the detail view of the created post
         return reverse_lazy('blogpost_detail', kwargs={'slug': self.object.slug})
 
 
 class BlogpostUpdateView(LoginRequiredMixin, generic.UpdateView):
+    """
+    View for updating an existing blog post. Requires user to be logged in.
+    """
     model = Blogpost
     form_class = BlogpostForm
     template_name = 'blogpost_update.html'
-    success_url = reverse_lazy('blogpost_detail')
     
     def form_valid(self, form):
+        # Ensure the current user is set as the author of the post
         form.instance.author = self.request.user
-        return super().form_valid(form)
+        response = super().form_valid(form)
+        messages.success(self.request, "Your blog post has been updated successfully.")
+        return response
 
     def get_success_url(self):
+        # Redirect to the detail view of the updated post
         return reverse_lazy('blogpost_detail', kwargs={'slug': self.object.slug})
 
 
 class BlogpostDeleteView(LoginRequiredMixin, generic.DeleteView):
+    """
+    View for deleting an existing blog post. Requires user to be logged in.
+    """
     model = Blogpost
     template_name = 'blogpost_delete.html'
+    
+    def delete(self, request, *args, **kwargs):
+        # Delete the post and display a success message
+        response = super().delete(request, *args, **kwargs)
+        messages.success(request, "Your blog post has been deleted successfully.")
+        return response
+
+    # Define the URL to redirect to after deletion
     success_url = reverse_lazy('my_posts')
 
 
 class MyBlogPostsView(LoginRequiredMixin, ListView):
+    """
+    View that lists blog posts created by the logged-in user.
+    """
     model = Blogpost
     template_name = 'my_posts.html'
     context_object_name = 'my_blogposts'
     paginate_by = 6
 
     def get_queryset(self):
+        # Filter the posts to only those created by the current user
         return Blogpost.objects.filter(author=self.request.user).order_by('-created_on')
 
 
@@ -80,6 +108,7 @@ class BlogPostList(generic.ListView):
         return super().dispatch(request, *args, **kwargs)
         
     def get_queryset(self):
+        # Filter blog posts by status and optionally by media category
         queryset = Blogpost.objects.filter(status=1).order_by('-created_on')
         media_category = self.request.GET.get('category')
         if media_category:
@@ -87,10 +116,9 @@ class BlogPostList(generic.ListView):
         return queryset
 
     def get_context_data(self, **kwargs):
+        # Add media categories to the context for filtering in the template
         context = super().get_context_data(**kwargs)
-        # Lägg till kategorier i kontexten för att visa i mallen
         context['categories'] = MediaCategory.objects.all()
-        # Lägg till övriga relevanta data i kontexten
         return context
 
 
@@ -101,6 +129,7 @@ class BlogPostDetail(View):
     for submitting comments on the post.
     """
     def get(self, request, slug, *args, **kwargs):
+        # Fetch the blog post and its comments, determine if the current user liked the post
         queryset = Blogpost.objects.filter(status=1)
         blogpost = get_object_or_404(queryset, slug=slug)
         comments = blogpost.comments.filter(approved=False).order_by("created_on")
@@ -167,6 +196,7 @@ class LikeUnlike(View):
         return HttpResponseRedirect(reverse('blogpost_detail', args=[slug]))
 
 
+# --- PROFILES ---
 @method_decorator(login_required, name='dispatch')
 class ProfileView(View):
     """
@@ -211,6 +241,7 @@ class ProfileEditView(LoginRequiredMixin, View):
         form = UserProfileForm(request.POST, request.FILES, instance=request.user.userprofile)
         if form.is_valid():
             form.save()
+            messages.success(request, "Your profile has been updated successfully.")
             return redirect('profile')
         return render(request, 'profile_edit.html', {'form': form})
 
@@ -249,7 +280,8 @@ class BookmarkUnbookmark(View):
         blogpost = get_object_or_404(Blogpost, slug=slug)
         if blogpost.bookmarks.filter(id=request.user.id).exists():
             blogpost.bookmarks.remove(request.user)
+            messages.success(request, "Removed from 'Bookmarked'.")
         else:
             blogpost.bookmarks.add(request.user)
-
+            messages.success(request, "Added to 'Bookmarked'.")
         return HttpResponseRedirect(reverse('blogpost_detail', args=[slug]))
