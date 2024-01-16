@@ -105,21 +105,25 @@
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end"
                             aria-labelledby="navbarDropdownMenuLink">
+                            <!-- My Profile Link -->
                             <li><a class="dropdown-item"
                                     href="{% url 'profile' %}"><i
                                         class="fas fa-user-circle"
                                         aria-label="My Profile"></i> My
                                     Profile</a></li>
+                            <!-- Edit My Profile Link -->
                             <li><a class="dropdown-item"
                                     href="{% url 'profile_edit' %}"><i
                                         class="fas fa-edit"
                                         aria-label="Edit Profile"></i> Edit
                                     Profile</a></li>
+                            <!-- Manage Account Link -->
                             <li><a class="dropdown-item"
                                     href="{% url 'account_delete' request.user.pk %}"><i
                                         class="fas fa-cog"
                                         aria-label="Manage Account"></i> Manage
                                     Account</a></li>
+                            <!-- Log Out Link -->
                             <li><a class="dropdown-item"
                                     href="{% url 'account_logout' %}"><i
                                         class="fas fa-sign-out-alt"

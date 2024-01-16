@@ -6,20 +6,27 @@
 
 {% block content %}
 
+
 <div
     class="login-page-container d-flex align-items-center justify-content-center">
-    <!-- Logo Container -->
+    <!-- Logo Container for Branding -->
     <div class="login-logo mt-3 mb-2">
         <img src="{% static 'images/logo2.png' %}" alt="Culture Club Logo">
     </div>
 
-    <!-- Login Form Container -->
+    <!-- Container for the Login Form -->
     <div class="login-form-container col-lg-4 col-md-10 col-sm-12">
+        <!-- Heading for the Login Page, visible only on medium and larger screens -->
         <h1 class="text-center login-culture-club mb-2 d-none d-md-block">
             {% trans "CULTURE CLUB" %}</h1>
+
+        <!-- Container Login Form -->
         <div class="card-body card-login">
+            <!-- Login Heading -->
             <h2 class="text-center h2-login mt-2">{% trans "log in" %}</h2>
             <br>
+
+            <!-- Sign Up Link for New Users -->
             <small>
                 {% trans "Not a member yet? To read posts and interact with the community," %}
                 <a class="link" href="{{ signup_url }}">
@@ -27,16 +34,22 @@
                 </a>
                 {% trans "first." %}
             </small>
-            </p>
             <hr>
+
+            <!-- Login Form -->
             <form class="login mt-4" method="POST"
                 action="{% url 'account_login' %}">
                 {% csrf_token %}
+                <!-- Rendering the Form using Django Crispy Forms -->
                 {{ form|crispy }}
+
+                <!-- Redirect Field, if applicable -->
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}"
                     value="{{ redirect_field_value }}" />
                 {% endif %}
+
+                <!-- Submit Button -->
                 <div class="text-center mt-4">
                     <button class="btn btn-primary"
                         type="submit">{% trans "Log In" %}</button>

@@ -20,20 +20,24 @@
                         </h1>
                         {% if is_own_profile %}
                         <div class="profile-links mt-3 small">
+                            <!-- Edit Profile Link -->
                             <a href="{% url 'profile_edit' %}"><i
                                     class="fas fa-edit"></i> Edit Profile
                             </a>
+                            <!-- Manage Account Link -->
                             <a
                                 href="{% url 'account_delete' request.user.pk %}"><i
                                     class="fa fa-cog"></i>
                                 Manage Account</a>
                         </div>
                         {% endif %}
+                        <!-- Bio Field -->
                         <div class="category-label-top mt-4"><i class="fa fa-pencil-alt
                                 mr-3"></i> Bio:
                             <p class="bio-text bio-height m-2 pe-1">
                                 {{ profile.bio }}</p>
                         </div>
+                        <!-- Country Field -->
                         <div class="category-label-top mt-2"><i
                                 class="fa fa-globe mr-3"></i> Country:
                             <p class="bio-text m-2">

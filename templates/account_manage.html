@@ -1,12 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 
+
 <div class="container col-md-8 col-sm-12">
-    <!-- Masthead Section -->
+    <!-- Masthead Section-->
     <div class="masthead">
         <div class="container card-body justify-content-center">
             <div class="row g-0">
                 <div class="col-md-12 masthead-text">
+                    <!-- Title Manage Account -->
                     <h1 class="post-title text-center mb-5"><strong>Manage
                             Account</strong></h1>
                 </div>
@@ -14,32 +16,32 @@
         </div>
     </div>
 
-    <!-- Content Section -->
     <div class="row">
         <div class="row justify-content-center">
             <div class="col-md-8 col-sm-12">
-                <!-- Delete Account Section -->
                 <div class="account-delete-section">
                     <h3 class="text-center mt-5">Delete Account</h3>
+                    <!-- Warning Message for Account Deletion -->
                     <p class="text-center mt-5"><strong>WARNING:</strong>
                         Deleting your account is irreversible. This will
-                        permanently remove your whole profile and
-                        everything
+                        permanently remove your whole profile and everything
                         associated with it.</p>
+                    <!-- Form for Account Deletion -->
                     <form method="post"
                         action="{% url 'account_delete' request.user.pk %}"
                         class="text-center">
                         {% csrf_token %}
+                        <!-- Button to Confirm Account Deletion -->
                         <button type="submit" class="btn btn-danger btn-lg m-2"
                             onclick="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">Delete
                             Account</button>
+                        <!-- Link to Cancel and Go Back -->
                         <a href="{% url 'profile' %}"
                             class="btn btn-secondary btn-lg m-2">No, Go
                             Back</a>
                     </form>
                 </div>
             </div>
-            <!-- Change Password Section -->
         </div>
     </div>
 </div>

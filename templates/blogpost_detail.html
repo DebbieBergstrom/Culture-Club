@@ -3,24 +3,27 @@
 {% load crispy_forms_tags %}
 
 <div class="container col-lg-8 col-md-12 col-sm-12">
+    <!-- Masthead Section with Post Title and Author -->
     <div class="masthead">
         <div class="container card-body">
             <div class="row">
-                <!-- Text Content -->
+                <!-- Text Content: Title, Author, and Date -->
                 <div
                     class="col-lg-6 col-md-6 col-sm-12 masthead-text d-flex flex-column justify-content-center">
                     <h1 class="post-title">{{ blogpost.blog_title }}</h1>
                     <p class="post-subtitle mb-1">Author
                         <a
-                            href="{% url 'other_user_profile' blogpost.author.username %}">
-                            {{ blogpost.author }}
-                        </a> | {{ blogpost.created_on|date:"F d, Y" }}
+                            href="{% url 'other_user_profile' blogpost.author.username %}">{{ blogpost.author }}</a>
+                        | {{ blogpost.created_on|date:"F d, Y" }}
                     </p>
+                    <!-- Bookmark Functionality -->
                     {% if user.is_authenticated %}
+                    <!-- Bookmark Form -->
                     <form class="post-bookmark mb-2"
                         action="{% url 'bookmark_unbookmark' blogpost.slug %}"
                         method="POST">
                         {% csrf_token %}
+                        <!-- Toggle Bookmark Button -->
                         {% if user in blogpost.bookmarks.all %}
                         <button type="submit" class="btn-bookmark">
                             <i class="fas fa-bookmark"></i> Unsave This Post
@@ -34,6 +37,7 @@
                     {% endif %}
                 </div>
 
+                <!-- Image Content -->
                 <div
                     class="col-lg-6 col-md-6 col-sm-12 masthead-image d-flex align-items-center">
                     <img class="img-fluid"
@@ -43,30 +47,28 @@
             </div>
         </div>
 
-
+        <!-- Blog Content and Interactivity Section -->
         <div class="container col-sm-12">
             <div class="row">
                 <div class="col card mb-6 mt-3">
                     <div class="card-body">
+                        <!-- Excerpt -->
                         <p class="card-text">
                             <strong>{{ blogpost.excerpt }}</strong></p>
-                        <!-- Divider -->
                         <hr>
-                        <!-- Blog Content-->
-                        <p class="card-text">
-                            {{ blogpost.content | safe }}
-                        </p>
-                        <!-- Divider -->
+                        <!-- Full Blog Post Content -->
+                        <p class="card-text">{{ blogpost.content | safe }}</p>
                         <hr>
                         <div class="row">
-                            <!-- Likes (Heart Icon and Count) -->
                             <div class="col-12 d-flex justify-content-between">
                                 <strong>
                                     {% if user.is_authenticated %}
+                                    <!-- Like/Unlike Form -->
                                     <form class="d-inline"
                                         action="{% url 'like_unlike' blogpost.slug %}"
                                         method="POST">
                                         {% csrf_token %}
+                                        <!-- Toggle Like Button -->
                                         {% if liked %}
                                         <button type="submit"
                                             name="blogpost_id"
@@ -82,6 +84,7 @@
                                             <i class="far fa-heart"></i>
                                         </button>
                                         {% endif %}
+                                        <!-- Like Count -->
                                         <strong
                                             class="text-secondary">{{ blogpost.number_of_likes }}</strong>
                                     </form>
@@ -99,12 +102,14 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Comment Submission Section -->
             <div class="col card mb-6">
                 <div class="card-body">
                     <h3>Post a comment:</h3>
                     <p class="text-muted small">Your post will be displayed on
-                        the
-                        bottom of the comment section below</p>
+                        the bottom of the comment section below</p>
+                    <!-- Comment Form -->
                     <form method="post" class="mt-3">
                         {{ comment_form | crispy }}
                         {% csrf_token %}
@@ -113,19 +118,24 @@
                     </form>
                 </div>
             </div>
+
+            <!-- Comments Display Section -->
             <div class="row">
                 <div class="col card mb-6">
                     <div class="card-body">
                         <h3>Comments:</h3>
+                        <!-- Loop through Comments -->
                         {% for comment in comments %}
                         <div class="comments">
+                            <!-- Comment Author and Timestamp -->
                             <p class="font-weight-bold">
                                 <a
                                     href="{% url 'other_user_profile' comment.user.username %}">{{ comment.user.username }}</a>
-                                <span class=" text-muted font-weight-normal">
+                                <span class="text-muted font-weight-normal">
                                     {{ comment.created_on }}
                                 </span> wrote:
                             </p>
+                            <!-- Comment Body -->
                             {{ comment.body | linebreaks }}
                         </div>
                         <div class="row">
