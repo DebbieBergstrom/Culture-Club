@@ -17,8 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
-from blog.views import ProfileDeleteView, custom_403_error, custom_405_error
-from django.conf.urls import handler403, handler405
+from blog.views import ProfileDeleteView, custom_403_error
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -32,6 +31,8 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
-# Custom error handlers
+# Custom error handler for 403
+# This assignment tells Django to use the 'custom_403_error' view function to handle HTTP 403 Forbidden errors.
+# For other common HTTP errors like 404 (Not Found) and 500 (Internal Server Error), Django automatically uses its default views unless specified otherwise.
+# To use custom views for these errors, you can similarly define 'handler404' and 'handler500' here.
 handler403 = custom_403_error
-handler405 = custom_405_error
