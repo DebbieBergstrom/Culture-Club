@@ -646,7 +646,7 @@ By forking the GitHub Repository, can create a copy of the original repository w
    - Log into GitHub account or create one if you don't have one.
 
  **Locate the Repository:**
-   - Find the repository at [https://URLPATH).
+   - Find the repository at https://github.com/DebbieBergstrom/Culture-Club.
 
  **Fork the Repository:**
    - At the top right of the repository page, click "Fork" to create a copy in your own GitHub repository.
@@ -656,7 +656,7 @@ By forking the GitHub Repository, can create a copy of the original repository w
 Creating a clone allows you to have a local copy of the project. Follow these steps:
 
  **Repository URL:**
-   - Navigate to [https://URLPATH).
+   - Navigate to https://github.com/DebbieBergstrom/Culture-Club.
    - Click the green "Code" button at the top right.
 
  **Clone the Repository:**
@@ -681,7 +681,7 @@ To clone the repository, follow these steps:
 3. Select your preferred method for cloning: HTTPS, SSH, or GitHub CLI, and click the copy button to copy the repository URL to your clipboard.
 4. Open Git Bash (or your preferred terminal).
 5. Change the current working directory to the location where you want the cloned directory to be created.
-6. Type the command `git clone` followed by the URL you copied in step 3. The command should look like this: `git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY`.
+6. Type the command `git clone` followed by the URL you copied in step 3. The command should look like this: `git clone https://github.com/DebbieBergstrom/Culture-Club`.
 7. Press Enter to create your local clone.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
@@ -689,35 +689,51 @@ To clone the repository, follow these steps:
 ---
 
 # Credits
-I would like to express my gratitude to the following resources:
-
-### Media
-Images are taken from the following page:
-
+### Here's a collection of sites that were helpful in creating this website:
 
 ### Django Documentation:
 The official Django documentation with guidance on models, forms, templates, and various aspects of Django development.
 
 - [Models](https://docs.djangoproject.com/en/4.2/topics/db/models/)
 - [Validators](https://docs.djangoproject.com/en/5.0/ref/forms/validation/)
+- [DeleteView](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/)
+- [Mixins & Class based Views](https://docs.djangoproject.com/en/3.2/ref/class-based-views/generic-editing/)
+- [Authentication System](https://docs.djangoproject.com/en/3.2/topics/auth/default/)
+- [URL patterns](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
+- [Form Widgets](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/)
+- [Messages](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)
 
-
+### Bootstrap docs:
+- [Increase knowledge of Bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 ### W3 Schools:
 - [Overrite Bootstraps css variables](https://www.w3schools.com/css/css_important.asp)
-
-### Bootstrap docs:
-- [Increase knowledge of bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
+- [Refresh knowledge of JS addEventListener](https://www.w3schools.com/jsref/met_element_addeventlistener.asp)
+- [Explaining truncate word function](https://www.w3schools.com/django/ref_filters_truncatewords.php)
 
 ### Geeksforgeeks: 
-- [Using crisp form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
+- [Using Crispy Form](https://www.geeksforgeeks.org/styling-django-forms-with-django-crispy-forms/)
+
+### StackOverflow: 
+- [About Django Messages](https://stackoverflow.com/questions/28723266/django-display-message-after-post-form-submit)
+- [About Django Sort by Filter](https://stackoverflow.com/questions/72117712/django-filter-by-category)
+- [About Django Form Widgets](https://stackoverflow.com/questions/68736684/modify-django-model-form-field-with-widget)
 
 ### Tutorials and YouTube channels:
+- [How to Create User Profile](https://www.youtube.com/watch?v=FdVuKt_iuSI)
 
+### Other sites:
+- [Styling Crispy forms](https://blog.appseed.us/django-forms-styling-with-bootstrap/)
+- [Organize Imports](https://peps.python.org/pep-0008/)
+- [Generate Slugs](https://www.kodnito.com/posts/slugify-urls-django/)
+
+- Code Institute, Module 4 & Django Coding Walkthrough material.
+
+### Media
+- [Favicon Generator](https://favicon.io/) to create the blue 'C' favicon in the browser tab.
 
 ### Content
-
-- Paragraphs/text for the webpage/readme was written together with [ChatGPT](https://chat.openai.com/)
+- Content for the webpage and readme-file was written together with [ChatGPT](https://chat.openai.com/)
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
@@ -725,7 +741,13 @@ The official Django documentation with guidance on models, forms, templates, and
 ---
 
 # Acknowledgments
- List of....
+ I'd like to give recognition to the ones who have supported me in creating this project:
+
+* [Lauren_Nicole](https://github.com/CluelessBiker), my Code Institute Mentor. I cannot thank her enough for her invaluable guidance and assistance. 
+
+* [Sandra B](https://github.com/SandraBergstrom) and [Kim B](https://github.com/KimBergstroem), who are both great critics and support pillars.
+
+* Code Institute and their helpful staff, especially within our great Slack community.
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
