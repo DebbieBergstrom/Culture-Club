@@ -1,15 +1,21 @@
-from django.views.generic.list import ListView
-from django.shortcuts import render, get_object_or_404, redirect, reverse
-from django.views import generic, View
-from django.views.generic import DeleteView
-from django.http import HttpResponseRedirect, HttpResponseForbidden, HttpResponseNotAllowed
+# Standard library imports
+from django.http import (
+    HttpResponseRedirect, HttpResponseForbidden, HttpResponseNotAllowed
+)
 from django.contrib.auth import logout
-from django.contrib import messages
-from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.utils.decorators import method_decorator
+from django.contrib.auth.models import User
 from django.urls import reverse_lazy
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.utils.decorators import method_decorator
+
+# Third-party imports
+from django.views import generic, View
+from django.views.generic import DeleteView, ListView
+from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
+
+# Local application/library specific imports
 from .models import Blogpost, UserProfile, MediaCategory
 from .forms import CommentForm, UserProfileForm, BlogpostForm
 
@@ -26,12 +32,17 @@ class BlogpostCreateView(LoginRequiredMixin, generic.CreateView):
         # Set the author to the current user and save the post
         form.instance.author = self.request.user
         response = super().form_valid(form)
-        messages.success(self.request, "Your blog post has been created successfully.")
+        # Display success message
+        messages.success(self.request,
+                         "Your blog post has been created successfully.")
         return response
-    
+
     def get_success_url(self):
         # Redirect to the detail view of the created post
-        return reverse_lazy('blogpost_detail', kwargs={'slug': self.object.slug})
+        return reverse_lazy(
+            'blogpost_detail',
+            kwargs={'slug': self.object.slug}
+        )
 
 
 class BlogpostUpdateView(LoginRequiredMixin, generic.UpdateView):
@@ -41,17 +52,20 @@ class BlogpostUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Blogpost
     form_class = BlogpostForm
     template_name = 'blogpost_update.html'
-    
+
     def form_valid(self, form):
         # Ensure the current user is set as the author of the post
         form.instance.author = self.request.user
         response = super().form_valid(form)
-        messages.success(self.request, "Your blog post has been updated successfully.")
+        # Display success message
+        messages.success(self.request,
+                         "Your blog post has been updated successfully.")
         return response
 
     def get_success_url(self):
         # Redirect to the detail view of the updated post
-        return reverse_lazy('blogpost_detail', kwargs={'slug': self.object.slug})
+        return reverse_lazy(
+            'blogpost_detail', kwargs={'slug': self.object.slug})
 
 
 class BlogpostDeleteView(LoginRequiredMixin, generic.DeleteView):
@@ -60,11 +74,12 @@ class BlogpostDeleteView(LoginRequiredMixin, generic.DeleteView):
     """
     model = Blogpost
     template_name = 'blogpost_delete.html'
-    
+
     def delete(self, request, *args, **kwargs):
         # Delete the post and display a success message
         response = super().delete(request, *args, **kwargs)
-        messages.success(request, "Your blog post has been deleted successfully.")
+        messages.success(request,
+                         "Your blog post has been deleted successfully.")
         return response
 
     # Define the URL to redirect to after deletion
@@ -82,37 +97,41 @@ class MyBlogPostsView(LoginRequiredMixin, ListView):
 
     def get_queryset(self):
         # Filter the posts to only those created by the current user
-        return Blogpost.objects.filter(author=self.request.user).order_by('-created_on')
+        return Blogpost.objects.filter(author=self.request.user)\
+            .order_by('-created_on')
 
 
 class BlogPostList(generic.ListView):
     """
-    A view that displays a list of blog posts. It inherits from Django's generic ListView.
-    The view filters blog posts by their status and orders them by the creation date.
-    Pagination is applied to limit the number of posts displayed per page.
+    A view that displays a list of blog posts. It inherits from Django's
+    generic ListView. The view filters blog posts by their status and orders
+    them by the creation date.Pagination is applied to limit the number of
+    posts displayed per page.
     """
     model = Blogpost
     context_object_name = 'blogposts'
     template_name = 'index.html'
     paginate_by = 6
-    
+
     def dispatch(self, request, *args, **kwargs):
         """
     Override the dispatch method to check user authentication status.
-    This method is called before any other method in the view. It checks if the user
-    is authenticated. If the user is not authenticated, they are redirected to the login
-    page. Otherwise, the normal flow of the ListView is executed.
+    This method is called before any other method in the view. It checks if the
+    useris authenticated. If the user is not authenticated, they are redirected
+    to the login page. Otherwise, the normal flow of the ListView is executed.
     """
         if not request.user.is_authenticated:
             return redirect('account_login')
         return super().dispatch(request, *args, **kwargs)
-        
+
     def get_queryset(self):
         # Filter blog posts by status and optionally by media category
         queryset = Blogpost.objects.filter(status=1).order_by('-created_on')
         media_category = self.request.GET.get('category')
         if media_category:
-            queryset = queryset.filter(media_category__media_name=media_category)
+            queryset = queryset.filter(
+                media_category__media_name=media_category
+                )
         return queryset
 
     def get_context_data(self, **kwargs):
@@ -124,15 +143,17 @@ class BlogPostList(generic.ListView):
 
 class BlogPostDetail(View):
     """
-    A view for displaying the detail of a specific blog post, identified by its slug.
-    It handles both GET requests to display the post and its comments, and POST requests
-    for submitting comments on the post.
+    A view for displaying the detail of a specific blog post, identified by its
+    slug. It handles both GET requests to display the post and its comments,
+    and POST requests for submitting comments on the post.
     """
     def get(self, request, slug, *args, **kwargs):
-        # Fetch the blog post and its comments, determine if the current user liked the post
+        # Fetch the blog post and its comments, determine if the current
+        # user liked the post
         queryset = Blogpost.objects.filter(status=1)
         blogpost = get_object_or_404(queryset, slug=slug)
-        comments = blogpost.comments.filter(approved=False).order_by("created_on")
+        comments = blogpost.comments.filter(approved=False)\
+            .order_by("created_on")
         liked = False
         if blogpost.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -148,16 +169,17 @@ class BlogPostDetail(View):
                 "comment_form": CommentForm()
             },
         )
-    
+
     def post(self, request, slug, *args, **kwargs):
         """
-        Processes the submission of a comment on a blog post. Validates and saves the 
-        comment, then re-renders the blog post detail page with the new comment and 
-        a cleared comment form.
+        Processes the submission of a comment on a blog post. Validates and
+        saves the comment, then re-renders the blog post detail page with the
+        new comment and a cleared comment form.
         """
         queryset = Blogpost.objects.filter(status=1)
         blogpost = get_object_or_404(queryset, slug=slug)
-        comments = blogpost.comments.filter(approved=False).order_by("created_on")
+        comments = blogpost.comments.filter(approved=False)\
+            .order_by("created_on")
         liked = blogpost.likes.filter(id=request.user.id).exists()
 
         comment_form = CommentForm(data=request.POST)
@@ -210,12 +232,13 @@ class ProfileView(View):
             'is_own_profile': True
         }
         return render(request, 'profile.html', context)
-        
+
 
 class OtherUserProfileView(View):
     """
-    A view for displaying the profile of another user, specified by their username.
-    It retrieves and displays the profile information of the specified user.
+    A view for displaying the profile of another user, specified by their
+    username. It retrieves and displays the profile information of the
+    specified user.
     """
     def get(self, request, username):
         user = get_object_or_404(User, username=username)
@@ -234,23 +257,31 @@ class ProfileEditView(LoginRequiredMixin, View):
     to submit the form and update the user's profile.
     """
     def get(self, request):
+        # Display the form with the user's existing profile information
         form = UserProfileForm(instance=request.user.userprofile)
         return render(request, 'profile_edit.html', {'form': form})
 
     def post(self, request):
-        form = UserProfileForm(request.POST, request.FILES, instance=request.user.userprofile)
+        # Process the submitted profile edit form
+        form = UserProfileForm(request.POST, request.FILES,
+                               instance=request.user.userprofile)
         if form.is_valid():
+            # Save the updated profile information
             form.save()
-            messages.success(request, "Your profile has been updated successfully.")
+            # Display a success message and redirect to profile page
+            messages.success(request,
+                             "Your profile has been updated successfully.")
             return redirect('profile')
+        # Re-render the form with error messages if form is invalid
         return render(request, 'profile_edit.html', {'form': form})
 
 
 class ProfileDeleteView(LoginRequiredMixin, DeleteView):
     """
-    View for deleting the currently logged-in user's account. 
-    This view ensures that only the logged-in user can delete their own account. 
-    After successful deletion, the user is logged out and redirected to the login page.
+    View for deleting the currently logged-in user's account.
+    This view ensures that only the logged-in user can delete their own
+    account. After successful deletion, the user is logged out and redirected
+    to the login page.
     """
     model = User
     template_name = "account_manage.html"
@@ -266,16 +297,26 @@ class ProfileDeleteView(LoginRequiredMixin, DeleteView):
 
 
 def bookmarked(request):
+    """
+    This view displays the list of blog posts bookmarked by the logged-in user.
+    If the user is not authenticated, an empty list is returned.
+    It renders the 'bookmarked.html' template with the bookmarked posts.
+    """
     if request.user.is_authenticated:
         bookmarked_posts = Blogpost.objects.filter(bookmarks=request.user)
     else:
         bookmarked_posts = []
 
-    return render(request, 'bookmarked.html', {'bookmarked_posts': bookmarked_posts})
+    return render(request, 'bookmarked.html',
+                  {'bookmarked_posts': bookmarked_posts})
 
-    
 
 class BookmarkUnbookmark(View):
+    """
+    This view handles the addition or removal of a blog post from the user's
+    bookmarked list. It updates the bookmark status upon a POST request and
+    redirects to the blog post's detail page with a success message.
+    """
     def post(self, request, slug, *args, **kwargs):
         blogpost = get_object_or_404(Blogpost, slug=slug)
         if blogpost.bookmarks.filter(id=request.user.id).exists():
@@ -287,9 +328,19 @@ class BookmarkUnbookmark(View):
         return HttpResponseRedirect(reverse('blogpost_detail', args=[slug]))
 
 
-# --- ERROR PAGES ---
+# --- ERROR HANDLERS ---
 def custom_403_error(request, exception):
+    """
+    Custom error handler for HTTP 403 Forbidden errors. It renders the
+    '403.html' template to provide a user-friendly error message.
+    """
     return HttpResponseForbidden(render(request, '403.html'))
 
+
 def custom_405_error(request, exception):
+    """
+    Custom error handler for HTTP 405 Method Not Allowed errors. It renders
+    the '405.html' template to inform users when a HTTP method is not supported
+    for the requested URL.
+    """
     return HttpResponseNotAllowed(render(request, '405.html'))

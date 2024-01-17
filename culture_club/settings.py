@@ -31,9 +31,10 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
-DEBUG = DEVELOPMENT #set to DEVELOPMENT when test deploy or back to True
+DEBUG = DEVELOPMENT  # set to DEVELOPMENT when test deploy or back to True
 
-ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')), (os.environ.get('HEROKU_HOSTNAME')), 'localhost']
+ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')),
+                 (os.environ.get('HEROKU_HOSTNAME')), 'localhost']
 
 
 # Application definition
@@ -165,7 +166,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'# Database
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'  # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'

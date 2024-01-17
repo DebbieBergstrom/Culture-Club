@@ -23,6 +23,7 @@ def validate_year(value):
             params={'current_year': current_year},
         )
 
+
 STATUS = ((0, 'Draft'), (1, 'Published'))
 
 
@@ -45,10 +46,10 @@ class MediaCategory(models.Model):
 
 class UserProfile(models.Model):
     """
-    A UserProfile model extends the built-in User model to include 
-    additional user information. It is linked to the User model with a 
+    A UserProfile model extends the built-in User model to include
+    additional user information. It is linked to the User model with a
     OneToOneField, meaning each user will only have one profile. This model
-    includes fields for a profile image, bio, country, and personal top 
+    includes fields for a profile image, bio, country, and personal top
     picks in various media categories if the user wants to.
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
@@ -69,15 +70,16 @@ class UserProfile(models.Model):
 class Blogpost(models.Model):
     """
     Represents a blog post in the Culture Club application. It includes details
-    like the title, slug, author, timestamps, content, excerpt, status, featured image,
-    media category, and the year of release. It also supports likes and bookmarks
-    through many-to-many relationships with the User model.
+    like the title, slug, author, timestamps, content, excerpt, status,
+    featured image, media category, and the year of release. It also supports
+    likes and bookmarks through many-to-many relationships with the User model.
     """
 
     # Title of the blog post; must be unique
     blog_title = models.CharField(max_length=200, unique=True)
 
-    # URL-friendly slug for the blog post; generated automatically from the title and must be unique
+    # URL-friendly slug for the blog post; generated automatically from the
+    # title and must be unique
     slug = models.SlugField(max_length=200, unique=True)
 
     # Reference to the User model; indicates the author of the blog post
@@ -102,8 +104,8 @@ class Blogpost(models.Model):
 
     # Reference to a MediaCategory instance; categorizes the blog post
     media_category = models.ForeignKey(
-        'MediaCategory', on_delete=models.SET_NULL, 
-        related_name='blog_posts', null=True, blank=False  
+        'MediaCategory', on_delete=models.SET_NULL,
+        related_name='blog_posts', null=True, blank=False
     )
     # Year of release for the media being discussed; validated by validate_year
     release_year = models.IntegerField(validators=[validate_year])
@@ -111,7 +113,8 @@ class Blogpost(models.Model):
     # Optional URL field for linking to external media or references
     media_link = models.URLField()
 
-    # Many-to-many relationships for likes and bookmarks; users can like or bookmark the post
+    # Many-to-many relationships for likes and bookmarks; users can like or
+    # bookmark the post
     likes = models.ManyToManyField(
         User, related_name='blogpost_likes', blank=True
     )
@@ -139,18 +142,19 @@ class Blogpost(models.Model):
         return self.bookmarks.count()
 
 
-
 class Comment(models.Model):
     """
     The Comment model represents a comment made on a blog post.
-    It stores the content of the comment, the creation date and time, and a boolean flag to indicate 
-    whether the comment has been approved by the site administrators. Each comment is linked to a specific 
-    blog post and user who authored the comment.
+    It stores the content of the comment, the creation date and time, and a
+    boolean flag to indicate whether the comment has been approved by the site
+    administrators. Each comment is linked to a specific blog post and user who
+    authored the comment.
     """
     body = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
-    blogpost = models.ForeignKey('Blogpost', on_delete=models.CASCADE, related_name='comments')
+    blogpost = models.ForeignKey('Blogpost', on_delete=models.CASCADE,
+                                 related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
