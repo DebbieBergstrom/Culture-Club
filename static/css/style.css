@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
 
-/* --- Color Variables --- */
+/* --- COLOR VARIABLES --- */
 :root {
     --primary-color: #012326;
     --secondary-color: #e2da83;
@@ -14,7 +14,7 @@
     --white-text: #ffffff;
 }
 
-/* --- Basic Body Styles --- */
+/* --- BODY --- */
 body {
     font-family: 'Roboto', sans-serif;
     background-image: linear-gradient(to right bottom, #01030b, #081118, #091a22, #05232a, #012c30);
@@ -45,7 +45,7 @@ h3 {
     padding: 2px;
 }
 
-/* --- Navbar Styles --- */
+/* --- NAVBAR --- */
 .navbar {
     background-color: var(--primary-color);
     box-shadow: 43px -130px 61px -136px rgba(0, 0, 0, 0.75) inset;
@@ -87,7 +87,7 @@ h3 {
     transform: scale(1.1);
 }
 
-/* --- Footer Styles --- */
+/* --- FOOTER --- */
 .footer {
     background-color: #050b12;
     color: var(--light-text-gr);
@@ -108,7 +108,8 @@ h3 {
     transform: scale(1.1);
 }
 
-/* --- Primary Button Styling with Inset Shadow --- */
+/* --- BUTTONS --- */
+/* Primary Button Styling with Inset Shadow */
 .btn-primary,
 .btn-signup,
 .btn-secondary,
@@ -123,12 +124,6 @@ h3 {
     transition: background-color 0.3s, box-shadow 0.1s;
     box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
 }
-
-.btn.ctg.active {
-    background-color: #226c79;
-    color: var(--light-text-gr);
-}
-
 
 /* Button Hover Styling */
 .btn-primary:hover,
@@ -175,21 +170,13 @@ h3 {
     background-color: #226c79;
 }
 
-/* Specific Colors for .btn-danger */
-/* .btn-danger {
-    background-color: var(--third-color);
+/* Selected Category Button - active */
+.btn.ctg.active {
+    background-color: #226c79;
     color: var(--light-text-gr);
 }
 
-.btn-danger:hover {
-    background-color: #c05a06;
-}
-
-.btn-danger:active {
-    background-color: #83044e;
-} */
-
-/* 'Like' Button */
+/* 'Like' Button with heart icon */
 .btn-like {
     border: none;
     background: transparent;
@@ -205,15 +192,15 @@ h3 {
     color: var(--third-color);
 }
 
-/* --- Link Styles --- */
+/* --- LINKS --- */
 a {
     color: var(--secondary-color);
     text-decoration: none;
 }
 
 a:hover {
-    color: var(--third-color),
-        text-decoration: underline;
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 a:active {
@@ -312,7 +299,7 @@ a:active {
     font-size: 0.7rem;
 }
 
-/* Bookmark Button Styles */
+/* Bookmark Icon */
 .btn-bookmark {
     border: none;
     background: transparent;
@@ -336,7 +323,7 @@ a:active {
     color: var(--light-text-gr);
 }
 
-/* Masthead Styles */
+/* Masthead Top Section in Cards w/ Title & Image  */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -396,11 +383,9 @@ a:active {
 .card-excerpt {
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    /* Number of lines to show */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    /* Other styles */
 }
 
 .blogpost-card {
@@ -408,7 +393,7 @@ a:active {
     overflow: hidden;
 }
 
-/* CRISPY FORMS FIELD TARGETING */
+/* --- FORMS FIELD TARGETING --- */
 
 .form-control {
     margin-bottom: 10px;
@@ -428,7 +413,7 @@ textarea {
     border: 1px solid black;
 }
 
-/* --- PROFILE SECTION --- */
+/* --- USER PROFILE w/ CATEGORY FIELDS --- */
 .profile-details {
     margin: 0 auto;
     padding: 20px;
@@ -507,9 +492,7 @@ textarea {
     object-fit: cover;
 }
 
-
 /* --- LOGIN / LANDING PAGE --- */
-
 .login-page-container {
     position: relative;
     min-height: 100vh;
@@ -542,7 +525,7 @@ textarea {
 .login-logo img {
     height: 560px;
     margin-top: -125px;
-    margin bottom: 10px;
+    margin-bottom: 10px;
     max-width: 100%;
 }
 
@@ -585,7 +568,6 @@ textarea {
 
     .masthead .row {
         flex-wrap: wrap;
-        /* Allows items to wrap as needed */
     }
 
     .masthead-text,
@@ -680,18 +662,18 @@ textarea {
     .login-culture-club {
         margin-top: 2px;
         font-size: 24px;
-        margin-bottom: 32 !important;
+        margin-bottom: 32px !important;
     }
 
     .card-login {
         margin-top: 6px !important;
-        margin-left: -18px !important;
-        margin-right: -18px !important;
+        margin-left: 8px !important;
+        margin-right: 8px !important;
         padding: 8px;
     }
 
     .card-body {
-        padding: 12px;
+        padding: 20px;
     }
 
     .blogpost-card {
@@ -703,9 +685,5 @@ textarea {
 @media (max-width: 400px) {
     .blogpost-card {
         height: 420px;
-    }
-
-    .card-body {
-        padding: 8px;
     }
 }
