@@ -507,7 +507,7 @@ Here are some exciting features that I would like to add to the Culture Club in 
 
 The Culture Club website went through a comprehensive testing process to guarantee its functionality, accessibility, and performance. This included checking the code, such as code validation, accessibility assessment, performance testing, cross-device testing, verification of browser compatibility, assessment of user stories, and the integration of user feedback to enhance the overall user experience.
 
-All testing, including both manual and automated testing, was carried out and documented in [Testing.md](TESTING.md). 
+All testing was carried out and documented in [test.md](/URLLLLLLLLLL). 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
