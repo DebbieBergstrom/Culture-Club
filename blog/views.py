@@ -62,6 +62,10 @@ class BlogpostUpdateView(LoginRequiredMixin, generic.UpdateView):
         return reverse_lazy(
             'blogpost_detail', kwargs={'slug': self.object.slug})
 
+    def get_queryset(self):
+        # Only allow editing posts owned by the user
+        return Blogpost.objects.filter(author=self.request.user)
+
 
 class BlogpostDeleteView(LoginRequiredMixin, generic.DeleteView):
     """
@@ -77,6 +81,10 @@ class BlogpostDeleteView(LoginRequiredMixin, generic.DeleteView):
         return response
 
     success_url = reverse_lazy('my_posts')
+
+    def get_queryset(self):
+        # Only allow deleting posts owned by the user
+        return Blogpost.objects.filter(author=self.request.user)
 
 
 class MyBlogPostsView(LoginRequiredMixin, ListView):
@@ -108,9 +116,10 @@ class BlogPostList(generic.ListView):
     def dispatch(self, request, *args, **kwargs):
         """
         Override the dispatch method to check user authentication status.
-        This method is called before any other method in the view. It checks if the
-        user is authenticated. If the user is not authenticated, they are redirected
-        to the login page. Otherwise, the normal flow of the ListView is executed.
+        This method is called before any other method in the view. It checks if
+        the user is authenticated. If the user is not authenticated, they are
+        redirected to the login page. Otherwise, the normal flow of the
+        ListView is executed.
         """
         if not request.user.is_authenticated:
             return redirect('account_login')
@@ -216,7 +225,7 @@ class ProfileView(View):
     It fetches and displays the user's profile data.
     """
     def get(self, request):
-        user_profile = UserProfile.objects.get(user=request.user)
+        user_profile = get_object_or_404(UserProfile, user=request.user)
         context = {
             'profile': user_profile,
             'is_own_profile': True
@@ -224,7 +233,7 @@ class ProfileView(View):
         return render(request, 'profile.html', context)
 
 
-class OtherUserProfileView(View):
+class OtherUserProfileView(LoginRequiredMixin, View):
     """
     A view for displaying the profile of another user, specified by their
     username. It retrieves and displays the profile information of the
@@ -247,12 +256,15 @@ class ProfileEditView(LoginRequiredMixin, View):
     to submit the form and update the user's profile.
     """
     def get(self, request):
-        form = UserProfileForm(instance=request.user.userprofile)
+        # Ensure that a UserProfile exists for the user
+        user_profile = get_object_or_404(UserProfile, user=request.user)
+        form = UserProfileForm(instance=user_profile)
         return render(request, 'profile_edit.html', {'form': form})
 
     def post(self, request):
+        user_profile = get_object_or_404(UserProfile, user=request.user)
         form = UserProfileForm(request.POST, request.FILES,
-                               instance=request.user.userprofile)
+                               instance=user_profile)
         if form.is_valid():
             form.save()
             messages.success(request,
