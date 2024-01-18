@@ -37,7 +37,7 @@
                                 <h2 class="card-title mt-2">
                                     {{ blogpost.blog_title }}</h2>
                             </a>
-                            <hr />
+                            <hr>
                             <!-- Blog Post Metadata (Date and Likes) -->
                             <p class="card-text text-muted h6">
                                 {{ blogpost.created_on }} <i
@@ -54,6 +54,8 @@
                         </div>
                     </div>
                 </div>
+                {% empty %}
+                <p>You have no blog posts yet.</p>
                 {% endfor %}
             </div>
         </div>
