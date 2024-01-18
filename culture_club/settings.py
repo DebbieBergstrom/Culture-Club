@@ -170,3 +170,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'  # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'

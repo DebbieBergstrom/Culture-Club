@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load i18n crispy_forms_tags %}
+{% load i18n %}
 {% load static %}
 
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
@@ -40,10 +40,10 @@
             <form class="login mt-4" method="POST"
                 action="{% url 'account_login' %}">
                 {% csrf_token %}
-                <!-- Rendering the Form using Django Crispy Forms -->
-                {{ form|crispy }}
+                <!-- Rendering the Form targeting specific fields -->
+                {{ form.login.label_tag }} {{ form.login }}
+                {{ form.password.label_tag }} {{ form.password }}
 
-                <!-- Redirect Field, if applicable -->
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}"
                     value="{{ redirect_field_value }}" />
