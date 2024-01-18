@@ -247,7 +247,7 @@ Design choices were made with the intention of creating an inviting and user-fri
 
 In creating balanced interfaces that are both visually appealing and functional, we carefully selected a color palette that complements the overall theme of the site.
 
-![Color Palette image](/workspace/Culture-Club/docs/readme/colorpalette.png)
+![Color Palette image](docs/readme/colorpalette.png)
 
 **Dominant:**
 
@@ -385,23 +385,24 @@ The wireframes serve as a visual blueprint for the application. Click on each pa
 
 ### Supporting Libraries and Packages
 
-- `asgiref==3.7.2`
-- `cloudinary==1.37.0`
-- `dj-database-url==0.5.0`
-- `dj3-cloudinary-storage==0.0.6`
-- `Django==3.2.23`
-- `django-allauth==0.59.0`
-- `django-crispy-forms==1.14.0`
-- `django-summernote==0.8.20.0`
-- `gunicorn==21.2.0`
-- `oauthlib==3.2.2`
-- `psycopg2==2.9.9`
-- `PyJWT==2.8.0`
-- `python3-openid==3.2.0`
-- `pytz==2023.3.post1`
-- `requests-oauthlib==1.3.1`
-- `sqlparse==0.4.4`
-- `urllib3==1.26.15`
+- `asgiref==3.7.2`: foundational package for Django to support asynchronous web protocols like WebSockets.
+- `cloudinary==1.37.0`: integration library for Cloudinary - cloud service for storing and managing media files and assets.
+- `dj-database-url==0.5.0`: utility to help you configure your Django application's database from the DATABASE_URL environment variable.
+- `dj3-cloudinary-storage==0.0.6`: Django storage backend for Cloudinary to handle media and static files.
+- `Django==3.2.23`: Django web framework; the core framework for the web application.
+- `django-allauth==0.59.0`: integrated set of Django applications addressing authentication, registration, account management, and third-party (social) account authentication.
+- `django-crispy-forms==1.14.0`: Django app that provides a way to render Django forms in a DRY, configurable, and reusable way.
+- `django-summernote==0.8.20.0`: Django app that integrates the Summernote WYSIWYG editor for text fields.
+- `gunicorn==21.2.0`: Python WSGI HTTP Server for UNIX - robust and performant server to serve the Django application.
+- `oauthlib==3.2.2`: generic, spec-compliant implementation of OAuth for use as a foundation for OAuth consumers and providers.
+- `psycopg2==2.9.9`: PostgreSQL database adapter for Python, a prerequisite for using PostgreSQL with Django.
+- `PyJWT==2.8.0`: Python library to encode and decode JSON Web Tokens (JWT), often used in authentication mechanisms.
+- `python3-openid==3.2.0`: Python 3 port of the Python OpenID library, used for OpenID authentication.
+- `pytz==2023.3.post1`: Python library that allows accurate and cross-platform timezone calculations.
+- `requests-oauthlib==1.3.1`: An OAuthlib authentication support for Requests, which allows you to use OAuth to authenticate with APIs.
+- `sqlparse==0.4.4`: non-validating SQL parser for Python, useful for parsing and splitting SQL statements.
+- `urllib3==1.26.15`: powerful HTTP client for Python. Used by Requests internally.
+
 
 
 
