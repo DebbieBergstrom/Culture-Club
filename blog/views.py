@@ -29,16 +29,13 @@ class BlogpostCreateView(LoginRequiredMixin, generic.CreateView):
     template_name = 'blogpost_create.html'
 
     def form_valid(self, form):
-        # Set the author to the current user and save the post
         form.instance.author = self.request.user
         response = super().form_valid(form)
-        # Display success message
         messages.success(self.request,
                          "Your blog post has been created successfully.")
         return response
 
     def get_success_url(self):
-        # Redirect to the detail view of the created post
         return reverse_lazy(
             'blogpost_detail',
             kwargs={'slug': self.object.slug}
@@ -57,13 +54,11 @@ class BlogpostUpdateView(LoginRequiredMixin, generic.UpdateView):
         # Ensure the current user is set as the author of the post
         form.instance.author = self.request.user
         response = super().form_valid(form)
-        # Display success message
         messages.success(self.request,
                          "Your blog post has been updated successfully.")
         return response
 
     def get_success_url(self):
-        # Redirect to the detail view of the updated post
         return reverse_lazy(
             'blogpost_detail', kwargs={'slug': self.object.slug})
 
@@ -76,13 +71,11 @@ class BlogpostDeleteView(LoginRequiredMixin, generic.DeleteView):
     template_name = 'blogpost_delete.html'
 
     def delete(self, request, *args, **kwargs):
-        # Delete the post and display a success message
         response = super().delete(request, *args, **kwargs)
         messages.success(request,
                          "Your blog post has been deleted successfully.")
         return response
 
-    # Define the URL to redirect to after deletion
     success_url = reverse_lazy('my_posts')
 
 
@@ -96,7 +89,6 @@ class MyBlogPostsView(LoginRequiredMixin, ListView):
     paginate_by = 6
 
     def get_queryset(self):
-        # Filter the posts to only those created by the current user
         return Blogpost.objects.filter(author=self.request.user)\
             .order_by('-created_on')
 
@@ -115,17 +107,17 @@ class BlogPostList(generic.ListView):
 
     def dispatch(self, request, *args, **kwargs):
         """
-    Override the dispatch method to check user authentication status.
-    This method is called before any other method in the view. It checks if the
-    useris authenticated. If the user is not authenticated, they are redirected
-    to the login page. Otherwise, the normal flow of the ListView is executed.
-    """
+        Override the dispatch method to check user authentication status.
+        This method is called before any other method in the view. It checks if the
+        user is authenticated. If the user is not authenticated, they are redirected
+        to the login page. Otherwise, the normal flow of the ListView is executed.
+        """
         if not request.user.is_authenticated:
             return redirect('account_login')
         return super().dispatch(request, *args, **kwargs)
 
     def get_queryset(self):
-        # Filter blog posts by status and optionally by media category
+        # Filter blog posts by media category
         queryset = Blogpost.objects.filter(status=1).order_by('-created_on')
         media_category = self.request.GET.get('category')
         if media_category:
@@ -148,8 +140,6 @@ class BlogPostDetail(View):
     and POST requests for submitting comments on the post.
     """
     def get(self, request, slug, *args, **kwargs):
-        # Fetch the blog post and its comments, determine if the current
-        # user liked the post
         queryset = Blogpost.objects.filter(status=1)
         blogpost = get_object_or_404(queryset, slug=slug)
         comments = blogpost.comments.filter(approved=False)\
@@ -257,22 +247,18 @@ class ProfileEditView(LoginRequiredMixin, View):
     to submit the form and update the user's profile.
     """
     def get(self, request):
-        # Display the form with the user's existing profile information
         form = UserProfileForm(instance=request.user.userprofile)
         return render(request, 'profile_edit.html', {'form': form})
 
     def post(self, request):
-        # Process the submitted profile edit form
         form = UserProfileForm(request.POST, request.FILES,
                                instance=request.user.userprofile)
         if form.is_valid():
-            # Save the updated profile information
             form.save()
-            # Display a success message and redirect to profile page
             messages.success(request,
                              "Your profile has been updated successfully.")
             return redirect('profile')
-        # Re-render the form with error messages if form is invalid
+
         return render(request, 'profile_edit.html', {'form': form})
 
 
