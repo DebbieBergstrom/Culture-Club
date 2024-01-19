@@ -1,4 +1,5 @@
 from django import forms
+from django_summernote.widgets import SummernoteWidget
 from .models import Comment, UserProfile, Blogpost
 import datetime
 
@@ -26,7 +27,7 @@ class BlogpostForm(forms.ModelForm):
                     'maxlength': '50'
                 }
             ),
-            'content': forms.Textarea(
+            'content': SummernoteWidget(
                 attrs={
                     'class': 'form-control',
                     'rows': 4,
@@ -50,7 +51,7 @@ class BlogpostForm(forms.ModelForm):
             'release_year': forms.NumberInput(
                 attrs={
                     'class': 'form-control',
-                    'min': 1800,
+                    'min': 0000,
                     'max': datetime.datetime.now().year,
                     'placeholder': 'Format YYYY'
                 }
