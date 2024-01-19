@@ -13,7 +13,7 @@ class BlogpostForm(forms.ModelForm):
     class Meta:
         model = Blogpost
         fields = [
-            'blog_title', 'content', 'excerpt', 'status',
+            'blog_title', 'content', 'excerpt',
             'featured_image', 'media_category',
             'release_year', 'media_link'
         ]
@@ -64,7 +64,6 @@ class BlogpostForm(forms.ModelForm):
             'blog_title': 'Blog Title',
             'content': 'Content',
             'excerpt': 'Excerpt',
-            'status': 'Status',
             'featured_image': 'Upload Image',
             'media_category': 'Media Category',
             'release_year': 'Release Year',
