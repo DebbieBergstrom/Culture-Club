@@ -54,8 +54,8 @@ class UserProfile(models.Model):
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_image = CloudinaryField('image', default='placeholder')
-    bio = models.TextField(blank=True)
-    country = models.CharField(max_length=100, blank=True)
+    bio = models.TextField(max_length=350, blank=True)
+    country = models.CharField(max_length=70, blank=True)
     top_movies = models.CharField(max_length=255, blank=True)
     top_series = models.CharField(max_length=255, blank=True)
     top_music_albums = models.CharField(max_length=255, blank=True)
@@ -91,10 +91,10 @@ class Blogpost(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     # Main content of the blog post
-    content = models.TextField()
+    content = models.TextField(max_length=10000)
 
     # Short excerpt or summary of the blog post; optional
-    excerpt = models.TextField(blank=True)
+    excerpt = models.TextField(max_length=70, blank=True)
 
     # Indicates the current status of the blog post (e.g., draft, published)
     status = models.IntegerField(choices=STATUS, default=1)
@@ -150,7 +150,7 @@ class Comment(models.Model):
     administrators. Each comment is linked to a specific blog post and user who
     authored the comment.
     """
-    body = models.TextField()
+    body = models.TextField(max_length=1000)
     created_on = models.DateTimeField(auto_now_add=True)
     approved = models.BooleanField(default=False)
     blogpost = models.ForeignKey('Blogpost', on_delete=models.CASCADE,

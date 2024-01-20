@@ -23,8 +23,8 @@ class BlogpostForm(forms.ModelForm):
                 attrs={
                     'class': 'form-control',
                     'placeholder': 'Enter a title for your post...'
-                    '(max length 50 characters)',
-                    'maxlength': '50'
+                    '(max length 200 characters)',
+                    'maxlength': '200'
                 }
             ),
             'content': SummernoteWidget(
@@ -32,8 +32,8 @@ class BlogpostForm(forms.ModelForm):
                     'class': 'form-control',
                     'rows': 4,
                     'placeholder': 'Write your blog content here...'
-                    '(max length 2000 characters)',
-                    'maxlength': '2000'
+                    '(max length 10000 characters)',
+                    'maxlength': '10000'
                 }
             ),
             'excerpt': forms.Textarea(
@@ -88,6 +88,7 @@ class CommentForm(forms.ModelForm):
     Form for submitting a comment on a blog post.
     Consists of a single textarea for the comment body.
     """
+
     class Meta:
         model = Comment
         fields = ('body',)
@@ -98,7 +99,7 @@ class CommentForm(forms.ModelForm):
                     'rows': 2,
                     'cols': 50,
                     'placeholder': 'Write your comment here...',
-                    'max_length': '1000'
+                    'maxlength': '1000'
                 }
             ),
         }
@@ -138,43 +139,43 @@ class UserProfileForm(forms.ModelForm):
                 attrs={
                     'class': 'form-control',
                     'placeholder': 'Let us know where you are from',
-                    'maxlength': '20'
+                    'maxlength': '70'
                 }
             ),
             'top_movies': forms.TextInput(
                 attrs={
                     'placeholder': 'Hit us with your favorite movies...',
-                    'maxlength': '200'
+                    'maxlength': '255'
                 }
             ),
             'top_series': forms.TextInput(
                 attrs={
                     'placeholder': 'Series you binge-watched...',
-                    'maxlength': '200'
+                    'maxlength': '255'
                 }
             ),
             'top_music_albums': forms.TextInput(
                 attrs={
                     'placeholder': 'Albums that make you dance or cry...',
-                    'maxlength': '200'
+                    'maxlength': '255'
                 }
             ),
             'top_books': forms.TextInput(
                 attrs={
                     'placeholder': 'Books you could not let go...',
-                    'maxlength': '200'
+                    'maxlength': '255'
                 }
             ),
             'top_podcasts': forms.TextInput(
                 attrs={
                     'placeholder': 'Awesome podcasts you enjoy...',
-                    'maxlength': '200'
+                    'maxlength': '255'
                 }
             ),
             'top_miscellaneous': forms.TextInput(
                 attrs={
                     'placeholder': 'Anything else like art, festivals, etc...',
-                    'maxlength': '200'
+                    'maxlength': '255'
                 }
             ),
         }
