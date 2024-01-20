@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url
 from django.contrib.messages import constants as messages
 
@@ -31,7 +32,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
-DEBUG = DEVELOPMENT  # set to DEVELOPMENT when test deploy or back to True
+DEBUG = True  # set to DEVELOPMENT when test deploy or back to True
 
 ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')),
                  (os.environ.get('HEROKU_HOSTNAME')), 'localhost']
@@ -114,9 +115,25 @@ WSGI_APPLICATION = 'culture_club.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+# DATABASES = {
+#     'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+# }
+
+# TEMPORARY TEST SECTION - remove before production
+# Checks if the 'test' or 'test_coverage' argument is in sys.argv
+if 'test' in sys.argv or 'test_coverage' in sys.argv:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    # production database configuration using dj-database-url.
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+
 
 
 # Password validation
