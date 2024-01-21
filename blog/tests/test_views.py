@@ -1,7 +1,8 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 from django.contrib.auth.models import User
-from blog.models import Blogpost, MediaCategory, Comment
+from blog.models import Blogpost, MediaCategory, Comment, UserProfile
+import datetime
 
 
 class TestViews(TestCase):
@@ -9,7 +10,7 @@ class TestViews(TestCase):
     def setUp(self):
         """
         Set up initial data for testing: creating users, blogposts,
-        and amedia category.
+        and media category.
         """
         self.client = Client()
 
@@ -74,6 +75,25 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'blogpost_create.html')
 
 
+    def test_create_blogpost(self):
+        """
+        Test the creation of a new blog post.
+        """
+        self.client.login(username='owneruser', password='123password')
+        post_data = {
+            'blog_title': 'New Post',
+            'content': 'Content for new post',
+            'excerpt': 'Short excerpt',
+            'media_category': self.category.id,
+            'release_year': datetime.datetime.now().year,
+            'media_link': 'http://www.example.com'
+        }
+        response = self.client.post(reverse('blogpost_create'), post_data)
+        self.assertEqual(response.status_code, 302)
+        new_post = Blogpost.objects.get(blog_title='New Post')
+        self.assertRedirects(response, reverse('blogpost_detail', args=[new_post.slug]))
+
+
     def test_BlogpostUpdateView_GET(self):
         """
         Test BlogpostUpdateView to load correctly for the post's owner.
@@ -84,6 +104,26 @@ class TestViews(TestCase):
         self.assertTemplateUsed(response, 'blogpost_update.html')
 
 
+    def test_update_blogpost(self):
+        """
+        Test updating an existing blog post.
+        """
+        self.client.login(username='owneruser', password='123password')
+        update_data = {
+            'blog_title': 'Updated Post',
+            'content': 'Updated content',
+            'excerpt': 'Updated excerpt',
+            'media_category': self.category.id,
+            'release_year': datetime.datetime.now().year,
+            'media_link': 'http://www.updated.com'
+        }
+        response = self.client.post(reverse('blogpost_update', args=[self.owner_blogpost.slug]), update_data)
+        self.assertEqual(response.status_code, 302)
+        self.assertRedirects(response, reverse('blogpost_detail', args=[self.owner_blogpost.slug]))
+        self.owner_blogpost.refresh_from_db()
+        self.assertEqual(self.owner_blogpost.content, 'Updated content')
+
+
     def test_BlogpostDeleteView_GET(self):
         """
         Test BlogpostDeleteView to load correctly for the post's owner.
@@ -92,6 +132,16 @@ class TestViews(TestCase):
         response = self.client.get(reverse('blogpost_delete', args=[self.owner_blogpost.slug]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blogpost_delete.html')
+
+
+    def test_delete_blogpost(self):
+        """
+        Test the deletion of a blog post.
+        """
+        self.client.login(username='owneruser', password='123password')
+        response = self.client.post(reverse('blogpost_delete', args=[self.owner_blogpost.slug]))
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(Blogpost.objects.filter(slug=self.owner_blogpost.slug).exists())
 
 
     def test_MyBlogPostsView_GET(self):
@@ -120,6 +170,21 @@ class TestViews(TestCase):
         response = self.client.get(reverse('blogpost_detail', args=[self.owner_blogpost.slug]))
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'blogpost_detail.html')
+
+
+    def test_submit_comment(self):
+        """
+        Test the submission of a comment on a blog post.
+        """
+        self.client.login(username='owneruser', password='123password')
+        comment_data = {'body': 'This is a test comment.'}
+        response = self.client.post(reverse('blogpost_detail', args=[self.owner_blogpost.slug]), comment_data)
+        # Check if the response is successful (status code 200), as the view renders the same page
+        self.assertEqual(response.status_code, 200)
+        # Verify that the comment has been added to the database
+        new_comment = Comment.objects.filter(blogpost=self.owner_blogpost, user=self.owner_user).last()
+        self.assertIsNotNone(new_comment)
+        self.assertEqual(new_comment.body, 'This is a test comment.')
 
 
     def test_LikeUnlike_POST(self):
@@ -192,6 +257,28 @@ class TestViews(TestCase):
         self.assertEqual(response.status_code, 200)
 
 
+    def test_edit_user_profile(self):
+        """
+        Test updating an existing user profile.
+        """
+        self.client.login(username='owneruser', password='123password')
+        update_data = {
+            'bio': 'Updated bio',
+            'country': 'Updated country',
+            'top_movies': 'Updated movies',
+            'top_series': 'Updated series',
+            'top_music_albums': 'Updated music albums',
+            'top_books': 'Updated books',
+            'top_podcasts': 'Updated podcasts',
+            'top_miscellaneous': 'Updated miscellaneous',
+        }
+        response = self.client.post(reverse('profile_edit'), update_data)
+        self.assertEqual(response.status_code, 302)
+        updated_profile = UserProfile.objects.get(user__username='owneruser')
+        self.assertEqual(updated_profile.bio, 'Updated bio')
+        self.assertEqual(updated_profile.country, 'Updated country')
+
+
     def test_ProfileDeleteView_GET(self):
         """
         Test ProfileDeleteView for successful GET by the profile owner.
@@ -209,6 +296,16 @@ class TestViews(TestCase):
         self.client.login(username='otheruser', password='123password')
         response = self.client.get(reverse('account_delete', args=[self.other_user.pk]))
         self.assertEqual(response.status_code, 200)
+
+
+    def test_delete_user_profile(self):
+        """
+        Test deleting the user's own account.
+        """
+        self.client.login(username='owneruser', password='123password')
+        response = self.client.post(reverse('account_delete', args=[self.owner_user.pk]))
+        self.assertEqual(response.status_code, 302)
+        self.assertFalse(User.objects.filter(username='owneruser').exists())
 
 
 # ERROR HANDLER RELATED TESTS
