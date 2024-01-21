@@ -23,8 +23,10 @@
                         class="btn ctg btn-secondary m-2">All</a>
                     <a href="?category=Movies/Series"
                         class="btn ctg btn-secondary m-2">Movies/Series</a>
+                    <!-- 'Music Albums' uses '+' for space in URL and a template tag for the active class -->
                     <a href="?category=Music+Albums"
-                        class="btn ctg btn-secondary m-2">Music Albums</a>
+                        class="btn ctg btn-secondary m-2 {% if request.GET.category == 'Music Albums' %}active{% endif %}">
+                        Music Albums</a>
                     <a href="?category=Books"
                         class="btn ctg btn-secondary m-2">Books</a>
                     <a href="?category=Podcasts"

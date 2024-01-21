@@ -172,7 +172,7 @@ h3 {
 
 /* Selected Category Button - active */
 .btn.ctg.active {
-    background-color: #226c79;
+    background-color: #193f46;
     color: var(--light-text-gr);
 }
 
