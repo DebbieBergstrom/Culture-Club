@@ -2,19 +2,23 @@ from django.test import TestCase
 from django.contrib.auth.models import User
 from blog.models import UserProfile, MediaCategory, Blogpost, Comment
 
+
 class TestModels(TestCase):
     """
     Test cases for models in the Culture Club app
     """
 
     def setUp(self):
-        # Create a test user. The signal will automatically create a UserProfile.
+        # Create a test user.
+        # The signal will automatically create a UserProfile
         self.test_user = User.objects.create_user(
             username="testuser", password="testpassword"
         )
-        
+
         # Create a test media category
-        self.test_category = MediaCategory.objects.create(media_name="Test Category")
+        self.test_category = MediaCategory.objects.create(
+            media_name="Test Category"
+        )
 
         # Create a test blog post
         self.test_blogpost = Blogpost.objects.create(
@@ -35,27 +39,33 @@ class TestModels(TestCase):
 
     def test_user_profile_creation(self):
         """
-        Test if a user profile is automatically created when a new user is created
+        Test if a user profile is automatically created when
+        a new user is created.
         """
-        self.assertTrue(UserProfile.objects.filter(user=self.test_user).exists())
+        self.assertTrue(
+            UserProfile.objects.filter(user=self.test_user).exists()
+        )
 
     def test_media_category_creation(self):
         """
-        Test if a media category is created successfully
+        Test if a media category is created successfully.
         """
         self.assertEqual(self.test_category.media_name, "Test Category")
 
     def test_blogpost_creation(self):
         """
-        Test if a blog post is created successfully
+        Test if a blog post is created successfully.
         """
         self.assertEqual(self.test_blogpost.blog_title, "Test Title")
         self.assertEqual(self.test_blogpost.author, self.test_user)
-        self.assertEqual(self.test_blogpost.media_category, self.test_category)
+        self.assertEqual(
+            self.test_blogpost.media_category, self.test_category
+        )
 
     def test_comment_creation(self):
         """
-        Test if a comment is created successfully and linked to a blog post and a user
+        Test if a comment is created successfully and linked
+        to a blog post and a user.
         """
         self.assertEqual(self.test_comment.body, "Test Comment Body")
         self.assertEqual(self.test_comment.blogpost, self.test_blogpost)
