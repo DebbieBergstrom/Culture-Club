@@ -74,47 +74,23 @@ class Blogpost(models.Model):
     featured image, media category, and the year of release. It also supports
     likes and bookmarks through many-to-many relationships with the User model.
     """
-
-    # Title of the blog post; must be unique
     blog_title = models.CharField(max_length=200, unique=True)
-
-    # URL-friendly slug for the blog post; generated automatically from the
-    # title and must be unique
     slug = models.SlugField(max_length=200, unique=True)
-
-    # Reference to the User model; indicates the author of the blog post
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='blog_posts'
     )
-    # Timestamps for when the post was created and last updated
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
-
-    # Main content of the blog post
     content = models.TextField(max_length=10000)
-
-    # Short excerpt or summary of the blog post; optional
     excerpt = models.TextField(max_length=70, blank=True)
-
-    # Indicates the current status of the blog post (e.g., draft, published)
     status = models.IntegerField(choices=STATUS, default=1)
-
-    # CloudinaryField for storing images, with a default placeholder image
     featured_image = CloudinaryField('image', default='blogpost_placeholder')
-
-    # Reference to a MediaCategory instance; categorizes the blog post
     media_category = models.ForeignKey(
         'MediaCategory', on_delete=models.SET_NULL,
         related_name='blog_posts', null=True, blank=False
     )
-    # Year of release for the media being discussed; validated by validate_year
     release_year = models.IntegerField(validators=[validate_year])
-
-    # Optional URL field for linking to external media or references
     media_link = models.URLField()
-
-    # Many-to-many relationships for likes and bookmarks; users can like or
-    # bookmark the post
     likes = models.ManyToManyField(
         User, related_name='blogpost_likes', blank=True
     )
@@ -134,11 +110,9 @@ class Blogpost(models.Model):
         super(Blogpost, self).save(*args, **kwargs)
 
     def number_of_likes(self):
-        # Return the count of likes for the blog post
         return self.likes.count()
 
     def number_of_bookmarks(self):
-        # Return the count of bookmarks for the blog post
         return self.bookmarks.count()
 
 
