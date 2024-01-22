@@ -1,10 +1,10 @@
-# Gamers Insight Testing 
+# Culture Club Testing 
 
-![Gamers Insight viewed in different screens](/docs/test.md/test.md-hero-image.png)
+![Culture Club viewed in different screens](/docs/readme/am_i_responsive_mockup.png)
 
-Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
-[Live webpage](https://game-insight-1cff11f2b2d5.herokuapp.com/)<br>
-[Project Repository](https://github.com/KimBergstroem/PP4)<br>
+Developer: [Debbie Bergström](https://github.com/DebbieBergstrom) <br>
+[Live webpage](https://WEBADDRESS)<br>
+[Project Repository](https://github.com/DebbieBergstrom/Culture-Club)<br>
 
 
 ## Table of Content
@@ -33,72 +33,66 @@ Developer: [Kim Bergström](https://github.com/KimBergstroem) <br>
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc and modified by myself</a></i></small>
 
 <p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
+  <img src="docs/readme/readme-divider3.png" />
 </p>
 
 ## Code Validation
 
 ### HTML Validation
+[W3C Markup Validation](https://validator.w3.org/), provided by the World Wide Web Consortium (W3C), is a tool to check HTML code for adherence to web standards. It highlights syntax errors, incorrect tag use, and other issues that might affect the integrity and semantics of your web pages. Employing this validation service ensures your HTML is robust and aligns with web standards.
 
-W3C Markup Validation is a service offered by W3C, which enables you to assess the compliance of your HTML code with the official standards. This service identifies syntax errors, improper tag usage, and other issues that might impact the structure and meaning of your web pages. By utilizing W3C Markup Validation, you can ensure that your HTML code is well-structured and conforms to established web standards.
+For validation, HTML pages were extracted from the web application's templates using the Google Chrome browser's 'Inspect' feature and then checked with W3C Validator.
 
-Google Chrome web browser and the 'Inspect' function were used to capture the HTML page from the webb applications templates, which was then validated against the W3C Validator.
+This project incorporates "Summernote," a rich text editor, to facilitate user-generated HTML content for creating and updating posts. While Summernote enriches user interaction, it adds complexity to HTML code validation.
 
-In this project, a rich text editor called "Summernote" is used to allow users to create and update posts with HTML content. While Summernote enhances the user experience, it introduces some complexities when validating our HTML code.
+The flexibility afforded by Summernote in HTML content creation can result in non-standard HTML structures or attributes. These atypical elements are often flagged as errors in external validation tools like W3C Validator.
 
-When users create or update posts, they have the flexibility to input HTML, which can sometimes lead to unconventional HTML structures or attributes. These unconventional structures are detected as errors when I validate our HTML code using external tools like the W3C validator.
-
-Due to the interaction between Summernote and the need to ensure the security of application. To protect against security threats and potential attacks, implemented safeguards such as using the `|safe` filter in our forms. This filter prevents user-entered HTML from compromising the security of application.
+To balance the functionality of Summernote with application security, specific precautions are taken. For instance, the |safe filter in Django forms is used to prevent user-entered HTML from posing security risks to the application, safeguarding against potential threats and attacks.
 
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
-|landing_page.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-landing_page.png)</details>| ✅
-|about.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-about.png)</details>| ✅
-|login.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-login.png)</details>| ✅
-|signup.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-signup.png)</details>| ✅
-|index.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-index.png)</details>| ✅
-|post_detail.html| "The font element is obsolete. Use CSS instead." | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-post_detail.png)</details>| ✅
-|contactus.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-contactus.png)</details>| ✅
-|contactus_success.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-contact-success.png)</details>| ✅
-|profile.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-profile.png)</details>| ✅
-|my_articles.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-myarticles.png)</details>| ✅
-|post_create.html| Bad value true for attribute hidden on element textarea., Attribute cols are not allowed on element div at this point.,  Bad value 100% for attribute width on element iframe: Expected a digit but saw % instead., The frame border attribute on the iframe element is obsolete. Use CSS instead.  | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-post_create.png)</details>| ✅
-|logout.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-logout.png)</details>| ✅
-|post_delete.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-post_delete.png)</details>| ✅
-|post_update.html| Bad value true for attribute hidden on element textarea., Attribute cols are not allowed on element div at this point.,  Bad value 100% for attribute width on element iframe: Expected a digit but saw % instead., The frame border attribute on the iframe element is obsolete. Use CSS instead. | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-post_update.png)</details>| ✅
-|profile_delete.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-profile_delete.png)</details>| ✅
-|profile_update.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-profile_update.png)</details>| ✅
-|password_change.html| No errors | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-password_change.png)</details>| ✅
+|login.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_login.png)</details>| ✅
+|about_us.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_about_us.png)</details>| ✅
+|signup.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_sign_up.png)</details>| ✅
+|index.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_index.png)</details>| ✅
+|blogpost_detail.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_blogpost_detail.png)</details>| ✅
+|blogpost_create.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_blogpost_create.png)</details>| ✅
+|blogpost_update.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_blogpost_update.png)</details>| ✅
+|blogpost_delete.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_blogpost_delete.png)</details>| ✅
+|profile.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_profile.png)</details>| ✅
+|profile_edit.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_profile_edit.png)</details>| ✅
+|account_manage.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_manage_account.png)</details>| ✅
+|my_posts.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_my_posts.png)</details>| ✅
+|bookmarked.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_bookmarked.png)</details>| ✅
+|logout.html| No errors | <details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/wc3_html_logout.png)</details>| ✅
 
 ### CSS Validation
-[W3C Jigsaw](https://jigsaw.w3.org/css-validator/) is a tool provided by the World Wide Web Consortium (W3C) that allows you to validate and check the correctness of your HTML and CSS code. It helps ensure that your web pages comply with the standards set by the W3C, promoting interoperability and accessibility.
+[W3C Jigsaw](https://jigsaw.w3.org/css-validator/) is a tool provided by W3C that allows you to validate and check the correctness of your CSS code. It helps ensure that your web pages comply with the standards set by the W3C, promoting interoperability and accessibility.
 
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
-|CSS file | No errors |<details><summary>Screenshot of result</summary>![Result](/docs/test.md/wc3/test-wc3-style.png)</details>| ✅
-|Whole webpage | No errors  |[Result](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fgame-insight-1cff11f2b2d5.herokuapp.com%2F&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=sv#warnings)| ✅
+|CSS file | No errors |<details><summary>Screenshot of result</summary>![Result](docs/test.md/wc3/css_wc3_validation.png)</details>| ✅
 
 ### Python Validaton 
 [PEP 8](https://pep8ci.herokuapp.com/) serves as a comprehensive style guide for writing Python code, emphasizing consistency and readability as its core principles. It offers guidance on code formatting, variable and function naming conventions, and various best practices. Adhering to PEP 8 principles contributes to enhancing code quality, making it more readable and maintainable.
 
-Within the settings file, one URL was identified as being excessively long. The other lines that exceeded the recommended length were automatically generated by Django. All other files were free from errors and issues.
-
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
-|game_insight/settings.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-settings.png) | ✅
-|game_insight/urls.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-project-urls.png)| ✅
-|blog/models.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-models.png)| ✅
-|blog/views.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-views.png)| ✅
-|blog/forms.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-forms.png) | ✅
-|blog/urls.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-urls.png)| ✅
-|blog/admin.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-admin.png)| ✅
-|blog/tests/test_views.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-test-views.png)| ✅
-|blog/tests/test_models.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-test-models.png)| ✅
-|blog/tests/test_urls.py | All clear, no errors found |![Result](/docs/test.md/pep8/test-pep8-test-urls.png)| ✅
+| culture_club/settings.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_settings.png)</details> | ✅ |
+| culture_club/urls.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_cc_urls.png)</details> | ✅ |
+| blog/models.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_models.png)</details> | ✅ |
+| blog/views.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_test_views.png)</details> | ✅ |
+| blog/forms.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_forms.png)</details> | ✅ |
+| blog/urls.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_blog_urls.png)</details> | ✅ |
+| blog/admin.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_admin.png)</details> | ✅ |
+| blog/tests/test_views.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_test_views.png)</details> | ✅ |
+| blog/tests/test_models.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_test_models.png)</details> | ✅ |
+| blog/tests/test_urls.py | All clear, no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/pep8/ci_linter_test_urls.png)</details> | ✅ |
+
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
+  <img src="docs/readme/readme-divider3.png" />
 </p>
 
 ## Accessibility
@@ -107,90 +101,93 @@ Within the settings file, one URL was identified as being excessively long. The 
 
 [The WAVE Web Accessibility Evaluation Tool](https://wave.webaim.org/) was used to assess the accessibility of the website. WAVE helps identify potential accessibility issues and provides guidance on how to improve the accessibility of web content.
 
-During the evaluation, the following issues were identified:
+During the evaluation, the following issue was identified:
 
-- **Errors**: The website generated 4 errors, which were related to the footer `<a>` (anchor) tags. There was no `aria-label` or text describing them. This was, of course, added to fix the errors.
+- **Contrast Warning**: The primary button's color scheme triggered a contrast warning during accessibility evaluation. However, upon thorough review and considering the overall aesthetic and user experience of the site, it has been determined that the current contrast level is sufficient. This decision was made with a careful balance between design integrity and usability in mind, ensuring that the button remains visually distinctive and functionally accessible for most users.
 
-- **Contrast Warning**: Received a contrast warning for the primary button, which was blue used by Bootstrap's class "btn-primary". This color was not good against my dark purple background. The Solution was to increase the primary button's blue color to a lighter shade.
+| Page | Accessibility Check | Screenshot | Status |
+| ---- | ------------------- | ---------- | ------ |
+| About Us | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_about_us.png)</details> | ✅  |
+| Create New Post | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_create_new_post.png)</details> | ✅ |
+| Edit Profile | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_edit_profile.png)</details> | ✅ |
+| Latest Posts | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_latest_posts.png)</details> | ✅ |
+| Log Out | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_log_out.png)</details> | ✅ |
+| Login Landing Page | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_login_landing_page.png)</details> | ✅ |
+| Manage Account | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_manage_account.png)</details> | ✅ |
+| Sign Up | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_sign_up.png)</details> | ✅ |
+| User Profile | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_user_profile.png)</details> | ✅ |
 
-
-<p align="center">
-  <img src="docs/test.md/test-accessibility.png" />
-</p>
-
-By using the WAVE tool, I gained valuable insights into the accessibility of my website. While I have chosen not to address certain errors at this time, I remain committed to creating an inclusive user experience and will continue to explore ways to improve accessibility in the future.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
+  <img src="docs/readme/readme-divider3.png" />
 </p>
 
 ## Performance
-I conducted a comprehensive evaluation of [The Gamers Insight website](https://game-insight-1cff11f2b2d5.herokuapp.com/) using [Google Lighthouse in Google Chrome Developer Tools](https://developer.chrome.com/docs/lighthouse/). This evaluation was performed in Google Chrome browser's incognito mode to eliminate all potential impacts from other addons and cached files.
+I conducted a comprehensive evaluation of [The culture club website](https://) using [Google Lighthouse in Google Chrome Developer Tools](https://developer.chrome.com/docs/lighthouse/). This evaluation was performed in Google Chrome browser's incognito mode to eliminate all potential impacts from other addons and cached files.
 
-Known Errors Impacting `index.html` and `post_detail.html` Pages the most, but even edit/delete post pages. Using Cloudinary as an image and storage server for users to upload their images. The following errors were identified during Lighthouse validation, and they currently cannot be changed. These errors have had an impact on the overall performance of these pages:
+Several pages, including index.html, post_detail.html that contain larger amount of images, are impacted in performance scores due to our reliance on Cloudinary for image hosting and management. Cloudinary allows users to upload images, providing a dynamic and user-driven experience. However, this flexibility comes with certain trade-offs that affect the Lighthouse performance metrics:
 
-- Serving images in next-gen formats
-- Properly sizing images
-- Efficiently encoding images
-- Eliminating render-blocking resources
+Next-Gen Formats: Cloudinary serves images in formats that may not be the latest 'next-gen' formats recommended by Lighthouse, like WebP, due to broader compatibility considerations.
+
+Image Sizing: Users can upload images of various dimensions, which may not always match the size in which they are displayed, leading to Lighthouse flagging issues with properly sizing images.
+
+Encoding: The encoding settings on Cloudinary are optimized for a balance between quality and performance. While this works well in most cases, Lighthouse may suggest further optimizations that could reduce image fidelity.
+
+Render-Blocking Resources: Some Cloudinary resources are loaded synchronously, which can be flagged by Lighthouse as render-blocking, but are necessary for displaying user content as intended.
+
+These items stem from the inherent trade-offs between user control and automated optimization. While some improvements can be made, such as using Cloudinary's automatic format selection and responsive image capabilities, the nature of user-generated content means that perfect scores in these areas are challenging to achieve without compromising on the user experience.
 
 The performance scores were assessed for both desktop and mobile devices. Below are the summarized results:
 
 ### Desktop Performance
-- Average performance score: 98/100
-- The majority of pages received scores above 90/100, indicating excellent performance.
+
+- The average performance score across all the desktop pages assessed in the Lighthouse performance tests is approximately 90.07 out of 100.
 
 | **Tested** | **Performance Score** | **View Result** | **Pass** |
 --- | --- | --- | :---:
-|landing_page.html| 93 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-landing_page.png)</details> | ✅
-|about.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-about.png)</details> | ✅
-|login.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-login.png)</details> | ✅
-|signup.html | 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-signup.png)</details> | ✅
-|index.html| 93 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-index.png)</details> | ✅
-|post_detail.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-post_details.png)</details> | ✅
-|contactus.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-contactus.png)</details> | ✅
-|contactus_success.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-contact-success.png)</details>| ✅
-|profile.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-profile.png)</details> | ✅
-|my_articles.html| 99 / 100| <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-myarticles.png)</details> | ✅
-|post_create.html| 99 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-create_post.png)</details> | ✅
-|logout.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-logout.png)</details> | ✅
-|post_delete.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-post_delete.png)</details> | ✅
-|post_update.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-post_update.png)</details> | ✅
-|profile_delete.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-profile_delete.png)</details> | ✅
-|profile_update.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-profile_update.png)</details> | ✅
-|password_change.html| 100 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-password_change.png)</details> | ✅
+|login.html| 97 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_login.png)</details> | ✅
+|about.html| 98 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_about_us.png)</details> | ✅
+|signup.html | 97 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_signup.png)</details> | ✅
+|index.html| 75 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_index.png)</details> | ✅
+|blogpost_detail.html| 82 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_blogpost_detail.png)</details> | ✅
+|blogpost_create.html| 84 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_blogpost_create.png)</details> | ✅
+|blogpost_delete.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_blogpost_delete.png)</details> | ✅
+|blogpost_update.html| 89 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_blogpost_update.png)</details> | ✅
+|my_posts.html| 87 / 100| <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_my_posts.png)</details> | ✅
+|bookmarked.html| 92 / 100| <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_bookmarked.png)</details> | ✅
+|profile.html|  / 89 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_profile.png)</details> | ✅
+|profile_edit.html| 91 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_profile_edit.png)</details> | ✅
+|account_manage.html| 94 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_account_manage.png)</details> | ✅
+|logout.html| 94 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_logout.png)</details> | ✅
 
 ### Mobile Performance
-- Average performance score: 92/100
+- Average performance score on mobile i approximately 76.71 out of 100.
 - The pages showed slightly lower performance compared to the desktop but still maintained a satisfactory score.
 
 | **Tested** | **Performance** | **View Result** | **Pass** |
 --- | --- | --- | :---:
-|landing_page.html| 92 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-landing_page.png)</details> | ✅
-|about.html| 94 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-about.png)</details> | ✅
-|login.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-login.png)</details> | ✅
-|signup.html | 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-signup.png)</details> | ✅
-|index.html| 80 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-index.png)</details> | ✅
-|post_detail.html| 83 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-post_details.png)</details> | ✅
-|contactus.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-contactus.png)</details> | ✅
-|contactus_success.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-contact-success.png)</details>| ✅
-|profile.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-profile.png)</details> | ✅
-|my_articles.html| 86 / 100| <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-myacrticles.png)</details> | ✅
-|post_create.html| 86 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-post_create.png)</details> | ✅
-|logout.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-logout.png)</details> | ✅
-|post_delete.html| 95 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-post_delete.png)</details> | ✅
-|post_update.html| 93 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-post_update.png)</details> | ✅
-|profile_delete.html| 96 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-profile_delete.png)</details> | ✅
-|profile_update.html| 95 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-profile_update.png)</details> | ✅
-|password_change.html| 95 / 100 | <details><summary>Screenshot of result</summary>![Result](/docs/test.md/lighthouse/test-lighthouse-mobile-password_change.png)</details> | ✅
+| login.html | 79 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_login_mob.png)</details> | ✅ |
+| about.html | 86 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_about_us_mob.png)</details> | ✅ |
+| signup.html | 86 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_sign_up_mob.png)</details> | ✅ |
+| index.html | 68 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_index_mob.png)</details> | ✅ |
+| blogpost_detail.html | 76 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_blogpost_detail_mob.png)</details> | ✅ |
+| blogpost_create.html | 61 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_blogpost_create_mob.png)</details> | ✅ |
+| blogpost_delete.html | 78 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_blogpost_delete_mob.png)</details> | ✅ |
+| blogpost_update.html | 64 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_blogpost_update_mob.png)</details> | ✅ |
+| my_posts.html | 74 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_my_posts_mob.png)</details> | ✅ |
+| bookmarked.html | 54 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_bookmarked_mob.png)</details> | ✅ |
+| profile.html | 82 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_profile_mob.png)</details> | ✅ |
+| profile_edit.html | 87 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_profile_edit_mob.png)</details> | ✅ |
+| account_manage.html | 88 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_account_manage_mob.png)</details> | ✅ |
+| logout.html | 91 / 100 | <details><summary>Screenshot of result</summary>![Result](docs/test.md/lighthouse/lh_logout_mob.png)</details> | ✅ |
 
 
-In terms of performance, the Gamers Insight website delivered strong results, ensuring a seamless user experience on both desktop and mobile platforms.
+In terms of performance, the Culture Club website delivered medium to strong results, ensuring a seamless user experience on desktop, but slightly lower performance on mobile platforms.
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
+  <img src="docs/readme/readme-divider3.png" />
 </p>
 
 ## Performing tests on various devices
@@ -216,7 +213,7 @@ In addition, the website was tested using the Google Chrome Developer Tools Devi
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
+  <img src="docs/readme/readme-divider3.png" />
 </p>
 
 ## Browser compatibility
@@ -236,7 +233,7 @@ The website was tested on the following:
 
 ## Automated Testing
 
-Automated testing was a critical phase conducted towards the end of the project to gain a deeper understanding of automated testing practices and to uncover any hidden bugs or errors that might have slipped through. This phase focused on testing the essential components and functionalities of the project, with a particular emphasis on the CRUD (Create, Read, Update, Delete) operations and various URL patterns and view paths.
+<!-- Automated testing was a critical phase conducted towards the end of the project to gain a deeper understanding of automated testing practices and to uncover any hidden bugs or errors that might have slipped through. This phase focused on testing the essential components and functionalities of the project, with a particular emphasis on the CRUD (Create, Read, Update, Delete) operations and various URL patterns and view paths.
 
 If more time was existing in this project, I would also create tests for all user stories.
 
@@ -245,7 +242,7 @@ I created a folder called "tests" inside of my blog application.
 In this folder I created three separate files, each corresponding to a specific aspect of the project that needed testing. 
 For conducting the tests, I leveraged Django's built-in testing framework and used the `django.test.TestCase` class as the foundation. This framework provides a robust and standardized environment for writing and executing tests, making it easier to assess the project's functionality and reliability.
 
-Before the testing process, it was needed to configure the project's settings in the "settings.py" file in order for the automated testing to work properly. I added this two condition, 1 variable and 1 import statement. This was removed from settings.py when uploading the project to production in heroku for keeping the production settings separate from testing settings.
+Before the testing process, it was needed to configure the project's settings in the "settings.py" file in order for the automated testing to work properly. I added this two condition, 1 variable and 1 import statement. This was removed from settings.py when uploading the project to production in heroku for keeping the production settings separate from testing settings. -->
 
 - `import sys`
 - `TEST_APPS = ['blog.tests']` 
@@ -265,19 +262,16 @@ else:
 
 &nbsp;
 
-### test_views.py
+- ### test_views.py
+  See first test in image below.
 
-![screenshot](docs/test.md/automated-test/test-test_views.png)
+- ### test_models.py
+  See second test in image below.
 
-### test_models.py
+- ### test_urls.py
+  See third test in image below.
 
-![screenshot](docs/test.md/automated-test/test-test_models.png)
-
-### test_urls.py
-
-![screenshot](docs/test.md/automated-test/test-test_urls.png)
-
-My initial tests passed without errors, the testing process did reveal some bugs and errors. You can find details about these issues, documented in my readme file, click [here](README.md)
+![screenshot](docs/test.md/automated_tests/tests_terminal.png)
 
 To measure code coverage and assess how much of the project's codebase is tested, I used the Coverage.py tool. Here are the steps to view the coverage report in HTML format:
 
@@ -293,16 +287,16 @@ To check coverage in the HTML format run in the terminal:
   - Right-click on it and select "Open with Live Server" to view the detailed coverage report.
 
 
-My tests have achieved 89% code coverage, but there's always room for improvement and further testing that can help improve this score.
+My tests have achieved 97% code coverage.
 
 <p align="center">
-  <img src="docs/test.md//automated-test/test-coverage-report.png" />
+  <img src="docs/test.md/automated_tests/tests_coverage.png" />
 </p>
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
+  <img src="docs/readme/readme-divider3.png" />
 </p>
 
 ## Manual Testing
@@ -311,7 +305,7 @@ My tests have achieved 89% code coverage, but there's always room for improvemen
 
 &nbsp;
 
-**First Time Visitors**
+<!-- **First Time Visitors**
 
 | First Time User Goals | How this was achieved | Screenshot |
 | --- | --- | --- |
@@ -384,7 +378,7 @@ Provided feedback and reported any issues or improvements they encountered durin
 | Comment Max Length   | Post Details - Comment input has no max length, fix max length.                                                                                                                                                                                  | Added `max_length=300` in my Comment(model) for the comment field in post_details. Also added custom CSS media queries to present the comment on different screens so that no overflow breaks the comment field. | Comment input now has a max length, and it's presented properly on different screens.                     | ✅  |
 | Profile picture | Users who update their profile picture should also see it displayed in the profile menu icon at the top right corner of the website. | Initially, attempted to display the user's profile picture instead of the current icon, but I found that it didn't look as good as the existing settings. Therefore, I decided to keep the profile icon as it is. | The profile icon remains unchanged for a better user experience. | ✅ |
 | Delete / Edit | In the post_detail page, the "Edit" and "Delete" post and comment text are not displayed very well. I would prefer icons for better visualization. | Added more spacing between the words and also included icons for "Delete" and "Edit" for improved visualization. | "Edit" and "Delete" now have both text and icons. | ✅ |  
-| Responsive           | Responsive needs to be fixed - Profile picture (nav menu collapse), Category buttons, Navbar in the smallest screens, it pops out of GAMERS INSIGHT and not in the same row. | Added custom styles with media queries to quickly fix responsiveness issues. Used small Bootstrap classes in some cases.                                                                                                                           | Responsive design improvements implemented.                | ✅  |
+| Responsive           | Responsive needs to be fixed - Profile picture (nav menu collapse), Category buttons, Navbar in the smallest screens, it pops out of culture club and not in the same row. | Added custom styles with media queries to quickly fix responsiveness issues. Used small Bootstrap classes in some cases.                                                                                                                           | Responsive design improvements implemented.                | ✅  |
 
 ### Full Testing
 
@@ -551,7 +545,7 @@ Provided feedback and reported any issues or improvements they encountered durin
 
 ## Summary
 
-Testing The Gamers Insight web application, conducted a comprehensive evaluation of various aspects, including HTML validation, CSS validation, accessibility, performance, and user experience. The following summarizes our key findings and the status of our testing:
+Testing The culture club web application, conducted a comprehensive evaluation of various aspects, including HTML validation, CSS validation, accessibility, performance, and user experience. The following summarizes our key findings and the status of our testing:
 
 ### HTML Validation
 
@@ -583,12 +577,12 @@ Testing The Gamers Insight web application, conducted a comprehensive evaluation
 
 ### Overall Status
 
-This project Gamers Insight is in good shape, with most features functioning as expected. Have addressed identified issues and incorporated user feedback to enhance the user experience. Continuous monitoring and testing will help us maintain a stable and user-friendly platform.
+This project culture club is in good shape, with most features functioning as expected. Have addressed identified issues and incorporated user feedback to enhance the user experience. Continuous monitoring and testing will help us maintain a stable and user-friendly platform.
 
 Remain committed to delivering an exceptional gaming community experience and will continue to work on improving accessibility, performance, and user satisfaction.
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
-</p>
+  <img src="docs/readme/readme-divider3.png" />
+</p> -->
