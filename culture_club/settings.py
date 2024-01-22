@@ -71,6 +71,15 @@ MESSAGE_TAGS = {
         messages.ERROR: 'alert-danger',
     }
 
+
+SUMMERNOTE_CONFIG = {
+    # You can put custom Summernote settings
+    "summernote": {
+        # Change editor size
+        "width": "100%",
+    },
+}
+
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
