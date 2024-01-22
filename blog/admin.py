@@ -11,13 +11,13 @@ class MediaCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(UserProfile)
 class UserProfileAdmin(admin.ModelAdmin):
-    list_display = ('user', 'bio', 'country')  
-    search_fields = ('user__username', 'bio') 
+    list_display = ('user', 'bio', 'country')
+    search_fields = ('user__username', 'bio')
 
 
 @admin.register(Blogpost)
 class PostAdmin(SummernoteModelAdmin):
-    
+
     list_display = ('blog_title', 'slug', 'status', 'created_on')
     search_fields = ('blog_title', 'content')
     prepopulated_fields = {'slug': ('blog_title',)}
@@ -32,6 +32,6 @@ class CommentAdmin(admin.ModelAdmin):
     list_filter = ('approved', 'created_on')
     search_fields = ('user', 'body', 'blogpost')
     actions = ['approved_comments']
-    
+
     def approved_comments(self, request, queryset):
         queryset.update(approved=True)
