@@ -508,7 +508,7 @@ Here are some exciting features that I would like to add to the Culture Club in 
 
 The Culture Club website went through a comprehensive testing process to guarantee its functionality, accessibility, and performance. This included checking the code, such as code validation, accessibility assessment, performance testing, cross-device testing, verification of browser compatibility, assessment of user stories, and the integration of user feedback to enhance the overall user experience.
 
-All testing was carried out and documented in [test.md](/URLLLLLLLLLL). 
+All testing was carried out and documented in [test.md](https://github.com/DebbieBergstrom/Culture-Club/blob/main/TESTING.md). 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
@@ -635,7 +635,6 @@ To manage version control and push code to the main repository on GitHub using G
      git push
      ```
 
-
  **Migrate Models:**
     - In the terminal, migrate the models to the new database connection.
 
@@ -703,6 +702,7 @@ The official Django documentation with guidance on models, forms, templates, and
 - [URL patterns](https://docs.djangoproject.com/en/5.0/topics/http/urls/)
 - [Form Widgets](https://docs.djangoproject.com/en/5.0/ref/forms/widgets/)
 - [Messages](https://docs.djangoproject.com/en/5.0/ref/contrib/messages/)
+- [Automated testing](https://docs.djangoproject.com/en/5.0/topics/testing/overview/)
 
 ### Bootstrap docs:
 - [Increase knowledge of Bootstrap framework](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
@@ -727,6 +727,9 @@ The official Django documentation with guidance on models, forms, templates, and
 - [Styling Crispy forms](https://blog.appseed.us/django-forms-styling-with-bootstrap/)
 - [Organize Imports](https://peps.python.org/pep-0008/)
 - [Generate Slugs](https://www.kodnito.com/posts/slugify-urls-django/)
+- [How to override default django templates](https://www.makeuseof.com/override-default-templates-django-allauth/)
+- [Automated testing tutorial](https://www.youtube.com/watch?v=6I_haJimhPY)
+
 
 - Code Institute, Module 4 & Django Coding Walkthrough material.
 
