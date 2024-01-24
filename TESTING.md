@@ -374,8 +374,15 @@ Total users attended the testing: 5
 
 Provided feedback and reported any issues or improvements they encountered during the testing process. Below is the feedback/issues reported.
 
-| **Feature**          | **Feedback**                                                                                                                                                                                                                                      | **Solution**                                                                                                                                                                              | **Result**                            | **Fixed** |
-|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|:--------:|
+Certainly! Here's a table with the columns you requested:
+
+| Feature | Feedback | Solution | Result | Fixed |
+| --- | --- | --- | --- | --- |
+| 'Music Albums' category button | Button is not targeted with the css that makes it darker and looked pressed down when active. | This seems to be because of the space between the two words in the category. Therefore a '+' between the words in the html template and <{% if request.GET.category == 'Music Albums' %}active{% endif %}"> had to be implemented to fix the issue. | The button works as it should, changing color to a darker shade when active. | ✅ |
+| Summernote blog content editor | The text container is not responsive an leaks out to the right of the container on screens smaller than large.| Summernote seems to have a default fixed with. Feedback was given with a known solution on how to change the fixed width with some additional code in settings.py: SUMMERNOTE_CONFIG = {"summernote": {"width": "100%",},} | The text field container is now responsive to smaller screens | ✅ |
+| User Profile fields | If, by any chance, the user chooses to have a username that is unusually long (no white spaces), the username will overflow its container and be displayed out to the right. Same happens to the fields below. | After trying many options to target the field with text-wrap css class and limit characters with failure, and considering making big changes to the models, I came to the conclusion that it is in this stage not prioritized. If the fields contain white spaces (which it does after every word), the line breaks and the content looks nice in the user profiles. The unlikelihood of a user choosing to have a user name that causes this issue is why this is going to have to be considered working on in a later stage. | The text will overflow, but has been removed by admin | ❌ |
+| | | | | |
+
 
 &nbsp;
 
