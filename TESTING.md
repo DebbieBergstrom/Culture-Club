@@ -300,7 +300,25 @@ My tests have achieved 97% code coverage.
 </p>
 
 ## Manual Testing
+&nbsp;
+### Security Testing
 
+Ensuring that users cannot access or modify other users' data is crucial for maintaining the integrity and security of the application. The table demonstrates the application's robustness in handling unauthorized access attempts, ensuring user data security and integrity.
+
+The following tests were conducted to verify that unauthorized access attempts are properly handled.
+
+| Test Case | Description | Method | Expected Outcome | Actual Outcome | Pass/Fail |
+| --------- | ----------- | ------ | ---------------- | -------------- | --------- |
+| Logout Redirection | Accessing another user's logout URL | Manual URL manipulation | Redirect to own user's logout page | Redirected correctly | ✅ |
+| My Posts Redirection | Accessing another user's 'My Posts' URL | Manual URL manipulation | Redirect to own user's 'My Posts' page | Redirected correctly | ✅ |
+| Edit Post Unauthorized Access | Attempting to edit another user's post | Manual URL manipulation | Receive a 404 error message | 404 error displayed | ✅ |
+| Delete Post Unauthorized Access | Attempting to delete another user's post | Manual URL manipulation | Receive a 404 error message | 404 error displayed | ✅ |
+| Bookmarked Posts Redirection | Accessing another user's bookmarked posts URL | Manual URL manipulation | Redirect to own user's 'Bookmarked' page | Redirected correctly | ✅ |
+| Profile Redirection | Accessing another user's profile URL | Manual URL manipulation | Redirect to own user's profile page | Redirected correctly | ✅ |
+| Edit Profile Unauthorized Access | Attempting to edit another user's profile | Manual URL manipulation | Redirect to own user's edit profile page | Redirected correctly | ✅ |
+| Manage Account Unauthorized Access | Attempting to access another user's manage account/delete account page | Manual URL manipulation | Redirect to own user's manage account page | Redirected correctly; deletion affects the right user | ✅ |
+
+&nbsp;
 ### Testing user stories
 
 **Epic 1: User Authentication & Profile Management**
@@ -313,6 +331,7 @@ My tests have achieved 97% code coverage.
 | [Favorite Lists in Personal Bio (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/5) | Users can list their favorite movies, books, etc., in their profile. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_user_profile_favorites.png)</details> |
 | [Password Reset (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/43) | A password reset feature was not implemented in this phase, but site admin has the power to change password for a user in the admin panel. | No result image |
 
+&nbsp;
 **Epic 2: Blog Interaction & Content Management**
 
 | User Goals | How this was achieved | Screenshot |
@@ -326,6 +345,7 @@ My tests have achieved 97% code coverage.
 | [Bookmark Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/29) | Users can bookmark their favorite blog posts for quick access in 'Bookmarked' section and remove bookmark too. Confirmation through full colored bookmark symbol when clicked otherwise just outlined symbol. Validation message also appear. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_bookmarked.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_unbookmarked.png)</details> |
 | [Follow Other Users (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/30) | The functionality to follow other users was not implemented in this phase. | No result image |
 
+&nbsp;
 **Epic 3: Administration & Analytics**
 
 | Site Owner Goals | How this was achieved | Screenshot |
@@ -335,6 +355,7 @@ My tests have achieved 97% code coverage.
 | [Admin - Manage and Categorize Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/15) | Admins can manage the categorization of blog posts for better organization and user experience. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_manage_post.png)</details> |
 | [Admin - Track User Engagement and Analytics (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/16) | This feature for tracking analytics was not implemented in the current phase. | No result image |
 
+&nbsp;
 **Epic 4: User Experience & Accessibility**
 
 | User Goals | How this was achieved | Screenshot |
