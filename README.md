@@ -158,13 +158,13 @@ User stories and tasks were put int o four 'epics' and are organized into three 
 This epic focuses on user account management, including registration, login/logout, and personal profile customization.
 - [User Account Registration (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/2)
 - [Log In and Out of User Account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3)
-- [Edit User Bio and Profile Picture (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/4)
-- [Favourite Lists in Personal Bio (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
+- [Create, Update & Delete User Profile (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/4)
+- [Favorite Lists in Personal Bio (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
 - [Password Reset (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/43)
 
 ### Epic 2: Blog Interaction & Content Management
 This epic deals with the core functionalities of the blog, such as creating, reading, editing, and deleting posts, as well as interacting with posts through comments and likes.
-- [User Create & Edit Blog Posts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/7)
+- [User Create, Edit & Delete Blog Posts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/7)
 - [Comment Blog Posts (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/8)
 - [Like/ Unlike Blog Posts (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/9)
 - [View Other Users' Profiles (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/10)
@@ -470,24 +470,98 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 ---
 
 # Features
-### Landing Page:
+### Login Landing Page:
 - Desciption 
-<details><summary>See Screenshot **Landingpage**</summary><img src="FILEPATH"></details>
+<details><summary>See Screenshot **Landingpage, large**</summary><img src="docs/features/login_landing_page.png"></details>
+<details><summary>See Screenshot **Landingpage, mobile**</summary><img src="docs/features/login_landing_page_sm.png"></details>
+<details><summary>See Screenshot **Navigation bar**</summary><img src="docs/features/navbar_logged_out.png"></details>
+<details><summary>See Screenshot **Footer**</summary><img src="docs/features/footer.png"></details>
 
-
-### Other Pages:
+### About Us:
 - Desciption 
-<details><summary>See Screenshot **Landingpage**</summary><img src="FILEPATH"></details>
+<details><summary>See Screenshot **About us, large**</summary><img src="docs/features/about_us.png"></details>
+<details><summary>See Screenshot **About us, mobile**</summary><img src="docs/features/about_us_sm.png"></details>
 
-
-### User Account Management:
+### Join the Club/ Sign Up:
 - Desciption
-<details><summary>See Screenshot **Landingpage**</summary><img src="FILEPATH"></details>
+<details><summary>See Screenshot **Sign Up, large**</summary><img src="docs/features/sign_up.png"></details>
+<details><summary>See Screenshot **Sign Up, mobile**</summary><img src="docs/features/sign_up_sm.png"></details>
 
-
-### Navigation:
+### Home / Index Blog Post view (Logged in User):
 - Desciption 
-<details><summary>See Screenshot **Landingpage**</summary><img src="FILEPATH"></details>
+<details><summary>See Screenshot **Login, success message**</summary><img src="docs/features/msg_signed_in.png"></details>
+<details><summary>See Screenshot **Home Page, large**</summary><img src="docs/features/index.png"></details>
+<details><summary>See Screenshot **Home Page, mobile**</summary><img src="docs/features/index_sm.png"></details>
+<details><summary>See Screenshot **Navbar, logged in user**</summary><img src="docs/features/navbar_logged_in.png"></details>
+<details><summary>See Screenshot **Site pagination 'next'**</summary><img src="docs/test.md/userstories/us_pagination_next.png"></details>
+<details><summary>See Screenshot **Site pagination 'prev'**</summary><img src="docs/test.md/userstories/us_pagination_prev.png"></details>
+<details><summary>See Screenshot **Category active button**</summary><img src="docs/features/category_active_button.png"></details>
+
+### Read Full Post:
+- Desciption 
+<details><summary>See Screenshot **Read Full Post, large**</summary><img src="docs/features/create_new_post.png"></details>
+<details><summary>See Screenshot **Read FullPost, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
+<details><summary>See Screenshot **Like Post**</summary><img src="docs/features/msg_post_created.png"></details>
+<details><summary>See Screenshot **Unlike Post**</summary><img src="docs/features/msg_post_created.png"></details>
+<details><summary>See Screenshot **Bookmark Post**</summary><img src="docs/test.md/userstories/us_blogpost_detail.png"></details>
+<details><summary>See Screenshot **Unbookmark Post**</summary><img src="docs/test.md/userstories/us_blogpost_detail.png"></details>
+<details><summary>See Screenshot **Comment Post**</summary><img src="docs/features/us_blogpost_comment.png"></details>
+
+
+
+### Create New Post:
+- Desciption 
+<details><summary>See Screenshot **Create New Post, large**</summary><img src="docs/features/create_new_post.png"></details>
+<details><summary>See Screenshot **Create New Post, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
+<details><summary>See Screenshot **Create New Post, success message**</summary><img src="docs/features/msg_post_created.png"></details>
+
+### Edit Post:
+- Desciption 
+<details><summary>See Screenshot **Edit Post, large**</summary><img src="docs/features/create_new_post.png"></details>
+<details><summary>See Screenshot **Edit Post, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
+<details><summary>See Screenshot **Edit Post, success message**</summary><img src="docs/features/msg_post_updated.png"></details>
+
+### Delete Post:
+- Desciption 
+<details><summary>See Screenshot **Delete Post, large**</summary><img src="docs/features/delete_post.png"></details>
+<details><summary>See Screenshot **Delete Post, mobile**</summary><img src="docs/features/delete_post_sm.png"></details>
+<details><summary>See Screenshot **Delete Post, success message**</summary><img src="docs/features/msg_post_deleted.png"></details>
+
+### My Posts:
+- Desciption 
+<details><summary>See Screenshot **My Posts, large**</summary><img src="docs/features/my_posts.png"></details>
+<details><summary>See Screenshot **My Posts, mobile**</summary><img src="docs/features/my_posts_sm.png"></details>
+
+### Bookmarked page:
+- Desciption 
+<details><summary>See Screenshot **Bookmarked, large**</summary><img src="docs/features/bookmarked.png"></details>
+<details><summary>See Screenshot **Bookmarked, mobile**</summary><img src="docs/features/bookmarked_sm.png"></details>
+
+### User Profiles:
+- Desciption 
+<details><summary>See Screenshot **Owner User Profile with uploaded image, large**</summary><img src="docs/test.md/userstories/us_own_user_profile.png"></details>
+<details><summary>See Screenshot **Owner User Profile with placeholder image, mobile**</summary><img src="docs/features/user_profile_placeholderimg_sm.png"></details>
+<details><summary>See Screenshot **Other User Profile without edit/manage links**</summary><img src="docs/test.md/userstories/us_other_user.png"></details>
+
+
+### Edit Profile:
+- Desciption 
+<details><summary>See Screenshot **Edit Profile, placeholder image default, large**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
+<details><summary>See Screenshot **Edit Profile, placeholder image default, mobile**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
+<details><summary>See Screenshot **Edit Profile, success message**</summary><img src="docs/features/msg_post_deleted.png"></details>
+
+
+### Manage Account / Delete Profile:
+- Desciption 
+<details><summary>See Screenshot **Manage Account, large**</summary><img src="docs/features/manage_account.png"></details>
+<details><summary>See Screenshot **Manage Account, mobile**</summary><img src="docs/features/manage_account_sm.png"></details>
+<details><summary>See Screenshot **Manage Account, extra on click Delete Warning**</summary><img src="docs/features/onclick-delete_warning.png"></details>
+
+### Logout:
+- Desciption 
+<details><summary>See Screenshot **Log out, large**</summary><img src="docs/features/log_out.png"></details>
+<details><summary>See Screenshot **Log out, mobile**</summary><img src="docs/features/log_out_sm.png"></details>
+<details><summary>See Screenshot **Log out, success message**</summary><img src="docs/features/msg_signed_out.png"></details>
 
 
 ### Future Features
