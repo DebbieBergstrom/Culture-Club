@@ -548,7 +548,7 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 - Desciption 
 <details><summary>See Screenshot **Edit Profile, placeholder image default, large**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
 <details><summary>See Screenshot **Edit Profile, placeholder image default, mobile**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
-<details><summary>See Screenshot **Edit Profile, success message**</summary><img src="docs/features/msg_post_deleted.png"></details>
+<details><summary>See Screenshot **Edit Profile, success message**</summary><img src="docs/features/msg_profile_updated.png"></details>
 
 
 ### Manage Account / Delete Profile:
@@ -809,6 +809,8 @@ The official Django documentation with guidance on models, forms, templates, and
 
 ### Media
 - [Favicon Generator](https://favicon.io/) to create the blue 'C' favicon in the browser tab.
+- [Pexels Free Images](https://www.pexels.com/sv-se/) to find some user profile mockup images.
+- [Freepik Free Images](https://www.freepik.com/free-photos-vectors/user-profile) to find user profile symbols and default images.
 
 ### Content
 - Content for the webpage and readme-file was written together with [ChatGPT](https://chat.openai.com/)
