@@ -48,15 +48,15 @@ Developer: [Debbie Bergström](https://github.com/DebbieBergstrom) <br>
 ## Code Validation
 
 ### HTML Validation
-[W3C Markup Validation](https://validator.w3.org/), provided by the World Wide Web Consortium (W3C), is a tool to check HTML code for adherence to web standards. It highlights syntax errors, incorrect tag use, and other issues that might affect the integrity and semantics of your web pages. Employing this validation service ensures your HTML is robust and aligns with web standards.
+We used the[W3C Markup Validation](https://validator.w3.org/) service to check the HTML code of our project for compliance with web standards. This tool is essential for identifying syntax errors and ensuring robust and standard-compliant HTML.
 
-For validation, HTML pages were extracted from the web application's templates using the Google Chrome browser's 'Inspect' feature and then checked with W3C Validator.
+Our HTML pages were extracted from the web application's templates using Google Chrome's 'Inspect' feature and then validated using the W3C Validator.
 
-This project incorporates "Summernote," a rich text editor, to facilitate user-generated HTML content for creating and updating posts. While Summernote enriches user interaction, it adds complexity to HTML code validation.
+A key aspect of our project is the use of "Summernote," a rich text editor that allows users to create and edit HTML content. While this enhances the user experience, it introduces complexities in maintaining standard HTML structures, often leading to validation errors in tools like W3C Validator.
 
-The flexibility afforded by Summernote in HTML content creation can result in non-standard HTML structures or attributes. These atypical elements are often flagged as errors in external validation tools like W3C Validator.
+To ensure both functionality and security, we used specific measures like Django's |safe filter, which allows user-generated HTML while protecting against security threats.
 
-To balance the functionality of Summernote with application security, specific precautions are taken. For instance, the |safe filter in Django forms is used to prevent user-entered HTML from posing security risks to the application, safeguarding against potential threats and attacks.
+Additionally, during validation, we temporarily disabled Django's django.contrib.messages.middleware.MessageMiddleware. This step was taken to prevent dynamically generated HTML (used for displaying notification messages) from interfering with the validation process. This ensured that our validation results accurately reflected the static HTML content of the site.
 
 | **Tested** | **Result** | **View Result** | **Pass** |
 --- | --- | --- | :---:
