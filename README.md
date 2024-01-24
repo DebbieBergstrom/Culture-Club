@@ -471,24 +471,24 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 # Features
 ### Login Landing Page:
-- Desciption 
+- Description: The landing page provides a welcoming first impression with easy access to login and information about the site. The navigation bar and footer is visible on every page.
 <details><summary>See Screenshot **Landingpage, large**</summary><img src="docs/features/login_landing_page.png"></details>
 <details><summary>See Screenshot **Landingpage, mobile**</summary><img src="docs/features/login_landing_page_sm.png"></details>
 <details><summary>See Screenshot **Navigation bar**</summary><img src="docs/features/navbar_logged_out.png"></details>
 <details><summary>See Screenshot **Footer**</summary><img src="docs/features/footer.png"></details>
 
 ### About Us:
-- Desciption 
+- Description: A detailed section introducing users to the concept and team behind Culture Club. 
 <details><summary>See Screenshot **About us, large**</summary><img src="docs/features/about_us.png"></details>
 <details><summary>See Screenshot **About us, mobile**</summary><img src="docs/features/about_us_sm.png"></details>
 
 ### Join the Club/ Sign Up:
-- Desciption
+- Description: A straightforward sign-up page enabling new users to join the community.
 <details><summary>See Screenshot **Sign Up, large**</summary><img src="docs/features/sign_up.png"></details>
 <details><summary>See Screenshot **Sign Up, mobile**</summary><img src="docs/features/sign_up_sm.png"></details>
 
 ### Home / Index Blog Post view (Logged in User):
-- Desciption 
+- A dynamic homepage showcasing the latest blog posts, with user-friendly navigation and category filtering. When user is logged in the navigation bar has more links. Site pagination is seen at the bottom to see more pages of posts. 
 <details><summary>See Screenshot **Login, success message**</summary><img src="docs/features/msg_signed_in.png"></details>
 <details><summary>See Screenshot **Home Page, large**</summary><img src="docs/features/index.png"></details>
 <details><summary>See Screenshot **Home Page, mobile**</summary><img src="docs/features/index_sm.png"></details>
@@ -498,7 +498,7 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 <details><summary>See Screenshot **Category active button**</summary><img src="docs/features/category_active_button.png"></details>
 
 ### Read Full Post:
-- Desciption 
+- Description: An immersive page for reading entire blog posts, complete with like, bookmark, and comment functionalities.
 <details><summary>See Screenshot **Read Full Post, large**</summary><img src="docs/features/create_new_post.png"></details>
 <details><summary>See Screenshot **Read FullPost, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
 <details><summary>See Screenshot **Like Post**</summary><img src="docs/features/msg_post_created.png"></details>
@@ -507,58 +507,56 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 <details><summary>See Screenshot **Unbookmark Post**</summary><img src="docs/test.md/userstories/us_blogpost_detail.png"></details>
 <details><summary>See Screenshot **Comment Post**</summary><img src="docs/features/us_blogpost_comment.png"></details>
 
-
-
 ### Create New Post:
-- Desciption 
+- Description: A user-friendly interface for creating new blog posts, with fields for title, content, images, and more. Validating message displays when post is successfully created.
 <details><summary>See Screenshot **Create New Post, large**</summary><img src="docs/features/create_new_post.png"></details>
 <details><summary>See Screenshot **Create New Post, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
 <details><summary>See Screenshot **Create New Post, success message**</summary><img src="docs/features/msg_post_created.png"></details>
 
 ### Edit Post:
-- Desciption 
+- Description: Allows users to make changes to their existing blog posts, with an intuitive editing interface. Validating message displays when post is successfully updated.
 <details><summary>See Screenshot **Edit Post, large**</summary><img src="docs/features/create_new_post.png"></details>
 <details><summary>See Screenshot **Edit Post, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
 <details><summary>See Screenshot **Edit Post, success message**</summary><img src="docs/features/msg_post_updated.png"></details>
 
 ### Delete Post:
-- Desciption 
+- Description: A confirmation page for users to delete their blog posts, ensuring mindful content management. Validating message displays when post is successfully deleted.
 <details><summary>See Screenshot **Delete Post, large**</summary><img src="docs/features/delete_post.png"></details>
 <details><summary>See Screenshot **Delete Post, mobile**</summary><img src="docs/features/delete_post_sm.png"></details>
 <details><summary>See Screenshot **Delete Post, success message**</summary><img src="docs/features/msg_post_deleted.png"></details>
 
 ### My Posts:
-- Desciption 
+- Description: A dedicated space for users to view and manage all their published blog posts.
 <details><summary>See Screenshot **My Posts, large**</summary><img src="docs/features/my_posts.png"></details>
 <details><summary>See Screenshot **My Posts, mobile**</summary><img src="docs/features/my_posts_sm.png"></details>
 
 ### Bookmarked page:
-- Desciption 
+- Description: A special page for users to view all their bookmarked blog posts for easy access. 
 <details><summary>See Screenshot **Bookmarked, large**</summary><img src="docs/features/bookmarked.png"></details>
 <details><summary>See Screenshot **Bookmarked, mobile**</summary><img src="docs/features/bookmarked_sm.png"></details>
 
 ### User Profiles:
-- Desciption 
+- Description: A comprehensive profile page displaying user information, top picks in various media categories and profile image. If it's the logged in users own profile, the links to 'Edit Profile' and 'Manage Account' is visible.
 <details><summary>See Screenshot **Owner User Profile with uploaded image, large**</summary><img src="docs/test.md/userstories/us_own_user_profile.png"></details>
 <details><summary>See Screenshot **Owner User Profile with placeholder image, mobile**</summary><img src="docs/features/user_profile_placeholderimg_sm.png"></details>
 <details><summary>See Screenshot **Other User Profile without edit/manage links**</summary><img src="docs/test.md/userstories/us_other_user.png"></details>
 
 
 ### Edit Profile:
-- Desciption 
+-  An edit profile page allowing users to update their personal information and preferences. Validating message displays when profile is successfully updated.
 <details><summary>See Screenshot **Edit Profile, placeholder image default, large**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
 <details><summary>See Screenshot **Edit Profile, placeholder image default, mobile**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
 <details><summary>See Screenshot **Edit Profile, success message**</summary><img src="docs/features/msg_profile_updated.png"></details>
 
 
 ### Manage Account / Delete Profile:
-- Desciption 
+- Provides users with account management option to be able to delete their account. When confirmed 'Delete Account' button is clicked there's an extra layer of confirmation for security when a popup warning ask for one more confirm.
 <details><summary>See Screenshot **Manage Account, large**</summary><img src="docs/features/manage_account.png"></details>
 <details><summary>See Screenshot **Manage Account, mobile**</summary><img src="docs/features/manage_account_sm.png"></details>
 <details><summary>See Screenshot **Manage Account, extra on click Delete Warning**</summary><img src="docs/features/onclick-delete_warning.png"></details>
 
 ### Logout:
-- Desciption 
+- A simple and secure logout process, ensuring users can safely exit their account. Validating message displays when user is successfully logged out.
 <details><summary>See Screenshot **Log out, large**</summary><img src="docs/features/log_out.png"></details>
 <details><summary>See Screenshot **Log out, mobile**</summary><img src="docs/features/log_out_sm.png"></details>
 <details><summary>See Screenshot **Log out, success message**</summary><img src="docs/features/msg_signed_out.png"></details>
@@ -567,12 +565,26 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 ### Future Features
 Here are some exciting features that I would like to add to the Culture Club in the future:
 
-- **Feature:**  
-  Description
+| Feature | Description |
+| --- | --- |
+| **Forgot Password Functionality** | Implement the ability for users to retrieve a new password if forgotten. [User Story #43](https://github.com/DebbieBergstrom/Culture-Club/issues/43) |
+| **User Engagement and Analytics Tracking for Admin** | Enhance admin capabilities to track user engagement and analytics for improved user experience. [User Story #16](https://github.com/DebbieBergstrom/Culture-Club/issues/16) |
+| **User Follow Functionality** | Allow users to follow other users to stay updated on their activities and posts. [User Story #30](https://github.com/DebbieBergstrom/Culture-Club/issues/30) |
+| **Comment Editing and Deletion** | Enable users to edit and delete their comments for better content control. |
+| **Nested Comment Fields** | Implement nested comments for a more organized and engaging discussion interface. |
+| **Improved Image Resizing** | Enhance image uploading experience with better resizing options and user guidance on image handling. |
+| **File Size Restrictions for Images** | Implement restrictions on image file size or functions to automatically downscale images for optimal performance. |
+| **Social Account Login Integration** | Enable login through social media accounts for a more seamless user experience. |
+| **User's Blog Posts on Profile** | Display a list of a user's blog posts on their profile for easier access by others. |
+| **User's social media links in profile** | Optionally the user can let other users know their presence on other social platforms. |
+| **Additional Back-Buttons** | Improve site navigation with more back-buttons for seamless user interaction. |
+| **Contact Form for Site Feedback** | Introduce a contact form for users to report bugs or inappropriate behavior within the community. |
+| **Community Guidelines and Policy Page** | Establish a page outlining community rules and policies, including respect and decorum among users. |
+| **Search Functions** | Add a search function to allow users to find specific blog posts and other users easily. |
+| **Design Improvements** | Continual enhancements in design, including better headings and text sizing for various screen sizes. |
 
 
 <br>
-
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
