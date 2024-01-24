@@ -214,9 +214,8 @@ The website was tested on the following devices:
 3. HP Victus gaming desktop
 
 <ins>Monitors</ins>
-1. 49-inch Samsung CHG9 ultra-wide
-2. 27-inch Benq zowie XL2746S
-3. 27-inch Dell ultrasharp U2723QE
+1. 49" Samsung CHG9 ultra-wide
+2. 28" Lenovo ThinkVision 
 
 In addition, the website was tested using the Google Chrome Developer Tools Device Toggling option for all available device options.
 
@@ -236,22 +235,19 @@ The website was tested on the following:
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
-  <img src="docs/readme.md/readme-divider3.png" />
+  <img src="docs/readme/readme-divider3.png" />
 </p>
 
 
 ## Automated Testing
 
-<!-- Automated testing was a critical phase conducted towards the end of the project to gain a deeper understanding of automated testing practices and to uncover any hidden bugs or errors that might have slipped through. This phase focused on testing the essential components and functionalities of the project, with a particular emphasis on the CRUD (Create, Read, Update, Delete) operations and various URL patterns and view paths.
-
-If more time was existing in this project, I would also create tests for all user stories.
-
+Automated testing was a critical phase conducted towards the end of the project to gain a deeper understanding of automated testing practices and to uncover any hidden bugs or errors that might have slipped through. This phase focused on testing the essential components and functionalities of the project, with a particular emphasis on the CRUD (Create, Read, Update, Delete) operations and various URL patterns and view paths.
 
 I created a folder called "tests" inside of my blog application.
-In this folder I created three separate files, each corresponding to a specific aspect of the project that needed testing. 
+In this folder I created three separate files, each corresponding to the files of the project that needed testing. 
 For conducting the tests, I leveraged Django's built-in testing framework and used the `django.test.TestCase` class as the foundation. This framework provides a robust and standardized environment for writing and executing tests, making it easier to assess the project's functionality and reliability.
 
-Before the testing process, it was needed to configure the project's settings in the "settings.py" file in order for the automated testing to work properly. I added this two condition, 1 variable and 1 import statement. This was removed from settings.py when uploading the project to production in heroku for keeping the production settings separate from testing settings. -->
+Before the testing process, it was needed to configure the project's settings in the "settings.py" file in order for the automated testing to work properly. I added these two condition, 1 variable and 1 import statement. This was removed from settings.py when uploading the project to production in Heroku for keeping the production settings separate from testing settings.
 
 - `import sys`
 - `TEST_APPS = ['blog.tests']` 
