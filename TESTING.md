@@ -322,6 +322,7 @@ The following tests were conducted to verify that unauthorized access attempts a
 | Profile Redirection | Accessing another user's profile URL | Manual URL manipulation | Redirect to own user's profile page | Redirected correctly | ✅ |
 | Edit Profile Unauthorized Access | Attempting to edit another user's profile | Manual URL manipulation | Redirect to own user's edit profile page | Redirected correctly | ✅ |
 | Manage Account Unauthorized Access | Attempting to access another user's manage account/delete account page | Manual URL manipulation | Redirect to own user's manage account page | Redirected correctly; deletion affects the right user | ✅ |
+| | | |
 
 &nbsp;
 ### Testing user stories
@@ -331,10 +332,12 @@ The following tests were conducted to verify that unauthorized access attempts a
 | User Goals | How this was achieved | Screenshot |
 | --- | --- | --- |
 | [User Account Registration (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/2) | Implemented a user registration system allowing visitors to create new accounts. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_sign_up.png)</details> |
-| [Log In and Out of User Account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3) | Provided login and logout functionalities for user accounts. Log out option is in the user profile dropdown menu in the right corner | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_login_landing_page.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_log_out.png)</details> |
+| [Easy Login from Landing Page (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/20) | Integrated a straightforward login mechanism directly from the landing page for fast and easy access. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_login.png)</details> |
+| [Log Out of User Account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3) | Provided logout functionalities for user accounts. Log out option is in the user profile dropdown menu in the right corner | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_log_out.png)</details> |
 | [Create, Update & Delete User Profile (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/4) | In 'Profile Edit' users can update their information and upload a profile picture, no image = a placeholder shows. Delete account is under 'Manage Account' | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_edit_profile.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_onclick-delete_warning.png)</details> |
 | [Favorite Lists in Personal Bio (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/5) | Users can list their favorite movies, books, etc., in their profile. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_user_profile_favorites.png)</details> |
 | [Password Reset (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/43) | A password reset feature was not implemented in this phase, but site admin has the power to change password for a user in the admin panel. | No result image |
+| | | |
 
 &nbsp;
 **Epic 2: Blog Interaction & Content Management**
@@ -349,6 +352,8 @@ The following tests were conducted to verify that unauthorized access attempts a
 | [Read Full Post Detail (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/12) | Users can read the full details of a blog post, including comments and interactions. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_index.png)</details> |
 | [Bookmark Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/29) | Users can bookmark their favorite blog posts for quick access in 'Bookmarked' section and remove bookmark too. Confirmation through full colored bookmark symbol when clicked otherwise just outlined symbol. Validation message also appear. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_bookmarked.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_unbookmarked.png)</details> |
 | [Follow Other Users (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/30) | The functionality to follow other users was not implemented in this phase. | No result image |
+| [Receive Validating Messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/37) | Users receive a confirmation message after successful login/logout, create/update/delete post, update profile, and when post is bookmarked/unbookmarked | </details> <details><summary>Screenshot of result</summary>![Result](docs/features/msg_signed_in.png)</details> </details> <details><summary>Screenshot of result</summary>![Result](docs/features/msg_signed_out.png)</details> </details> <details><summary>Screenshot of result</summary>![Result](docs/features/msg_profile_updated.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/features/msg_post_deleted.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/features/msg_post_updated.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/features/msg_post_created.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_bookmarked.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_unbookmarked.png)</details> |
+| | | |
 
 &nbsp;
 **Epic 3: Administration & Analytics**
@@ -359,6 +364,7 @@ The following tests were conducted to verify that unauthorized access attempts a
 | [Admin - Review and Edit User-Submitted Blog Posts and comments (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/14) | Admins can review, approve, or edit user-submitted blog posts and comments. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_postlist.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_commentlist.png)</details> |
 | [Admin - Manage and Categorize Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/15) | Admins can manage the categorization of blog posts for better organization and user experience. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_admin_manage_post.png)</details> |
 | [Admin - Track User Engagement and Analytics (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/16) | This feature for tracking analytics was not implemented in the current phase. | No result image |
+| | | |
 
 &nbsp;
 **Epic 4: User Experience & Accessibility**
@@ -368,9 +374,10 @@ The following tests were conducted to verify that unauthorized access attempts a
 | [Visually Appealing Landing Page (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/17) | Designed an engaging and visually appealing landing page to attract and retain users. | <details><summary>Screenshot of result</summary>![Result](docs/features/login_landing_page.png)</details> |
 | [Navigate to About Us (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/18) | Included clear navigation to the 'About Us' section to inform users about the website. Can always be seen in the navbar to the right or the collapsed menu in smaller screens | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_about_us.png)</details> |
 | [Navigate to Join the Club Section (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/19) | Implemented easy navigation to the 'Join the Club' section to encourage user registration. Can be seen in the navbar to the right or the collapsed menu in smaller screens. The link is visible only when no user is logged in. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_sign_up_link.png)</details> |
-| [Easy Login from Landing Page (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/20) | Integrated a straightforward login mechanism directly from the landing page for fast and easy access. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_login.png)</details> |
 | [Navigate through a well-designed website (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/33) | The website's design emphasizes intuitive navigation and user-friendly interfaces. Buttons are colorful and easy to see and hyperlinks are yellow and for example they show where the user could navigate to other users profile. The more User Profile specific links for the logged in user are gathered in the dropdown menu to the right. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_navigation.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_navigate_bookmarked.png)</details> |
 | [Site pagination for easy navigation (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/32) | Implemented pagination for easy browsing of blog posts. | <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_pagination_next.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/test.md/userstories/us_pagination_prev.png)</details> |
+| [Receive Page Error Messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/42) | User gets redirected to a custom error page if something isn't working correctly. | <details><summary>Screenshot of result</summary>![Result](docs/features/500_error_page.png)</details> <details><summary>Screenshot of result</summary>![Result](docs/features/404_error_page.png)</details> |
+| | | |
 
 &nbsp;
 
@@ -407,7 +414,8 @@ Certainly! Here's a table with the columns you requested:
 | 'Music Albums' category button | Button is not targeted with the css that makes it darker and looked pressed down when active. | This seems to be because of the space between the two words in the category. Therefore a '+' between the words in the html template and <{% if request.GET.category == 'Music Albums' %}active{% endif %}"> had to be implemented to fix the issue. | The button works as it should, changing color to a darker shade when active. | ✅ |
 | Summernote blog content editor | The text container is not responsive an leaks out to the right of the container on screens smaller than large.| Summernote seems to have a default fixed with. Feedback was given with a known solution on how to change the fixed width with some additional code in settings.py: SUMMERNOTE_CONFIG = {"summernote": {"width": "100%",},} | The text field container is now responsive to smaller screens | ✅ |
 | User Profile fields | If, by any chance, the user chooses to have a username that is unusually long (no white spaces), the username will overflow its container and be displayed out to the right. Same happens to the fields below. | After trying many options to target the field with text-wrap css class and limit characters with failure, and considering making big changes to the models, I came to the conclusion that it is in this stage not prioritized. If the fields contain white spaces (which it does after every word), the line breaks and the content looks nice in the user profiles. The unlikelihood of a user choosing to have a user name that causes this issue is why this is going to have to be considered working on in a later stage. | The text will overflow, but has been removed by admin. See screenshot here: <details><summary>Screenshot of result</summary>![Result](docs/test.md/test_chars_overflow_userprofile.png)</details> | ❌ |
-| Image in blogpost detail should scale down in height in large screens | The image should maintain a maximum height. If you upload an image that have a greater height than width, the masthead section becomes very big. It is still responsive, but design-wise it gets a little bit to "tall". | Tried to set max-height and also implement styling from the image-container in index.html that worked fine. Checked all css to see what could possibly disrupt the wanted behavior of max-height settings. Couldn't be solved at this stage, but will be fixed as soon as possible. | Image takes its full height in larger screens and the masthead section becomes a bit too big. This changes to normal on smaller screens due to other styling. See screenshot here: <details><summary>Screenshot of result</summary>![Result](docs/test.md/test_chars_overflow_userprofile.png)</details>  | ❌ |
+| Image in blogpost detail should scale down in height in large screens | The image should maintain a maximum height. If you upload an image that have a greater height than width, the masthead section becomes very big. It is still responsive, but design-wise it gets a little bit to "tall". | Tried to set max-height and also implement styling from the image-container in index.html that worked fine. Checked all css to see what could possibly disrupt the wanted behavior of max-height settings. Couldn't be solved at this stage, but will be fixed as soon as possible. | Image takes its full height in larger screens and the masthead section becomes a bit too big. This changes to normal on smaller screens due to other styling. See screenshot here: <details><summary>Screenshot of result</summary>![Result](docs/test.md/test_image_max_height.png)</details>  | ❌ |
+| | |
 
 
 &nbsp;
@@ -421,6 +429,7 @@ Certainly! Here's a table with the columns you requested:
 | Logo | Redirects to landing page login.html | Clicked on logo | Landing page loads | ✅ |
 | About Us | Redirects to the 'About Us' page with the 'Join the Club' button visible | Clicked on the link 'About Us' | 'About Us' page loads and shows the 'Join the Club' button | ✅ |
 | Join the Club | Redirects to the sign up page and form with a 'Sign Up' button | Clicked on the link 'Join the Club' | Sign-up page loads and the form displays with a 'Sign Up' button | ✅ |
+| | |
 
 &nbsp;
 
@@ -429,6 +438,7 @@ Certainly! Here's a table with the columns you requested:
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | "Join the club" button | Redirects to the sign up page and form with a 'Sign Up' button | Clicked on the link 'Join the Club' | Sign-up page loads and the form displays with a 'Sign Up' button | ✅ |
+| | |
 
 &nbsp;
 
@@ -443,6 +453,7 @@ Certainly! Here's a table with the columns you requested:
 | "Sign up" button | If the form is valid, the user is redirected to the blog post overview (index.html) page with a message confirming successful registration. If the form is not valid, an error message is displayed. | Clicked the button with valid and non-valid formats | The button functions as expected, redirecting to the appropriate page and displaying the corresponding messages | ✅ |
 | "Login" text link | Redirects to the login page | Clicked on the "Login" link | The login page and form were successfully loaded | ✅ |
 | "About Us" text link | Redirects to the 'About Us' page | Clicked on the 'About Us' link | The 'About Us' page and form were successfully loaded | ✅ |
+| | |
 
 &nbsp;
 
@@ -454,6 +465,7 @@ Certainly! Here's a table with the columns you requested:
 | Username input | The user enters a username | Tested with valid and invalid username input | The username field accepts and saves the valid input. If invalid, it displays an error message | ✅ |
 | Password input | The user enters a password | Tested with valid and invalid password input | The password field functions correctly, allowing the user to input a valid password and displays an error message when not valid | ✅ |
 | "Login" button | If the login form is valid, the user is logged in and redirected to the index.html page. If the form is not valid, an error message is displayed. | Tested with valid and invalid login form input | The login button functions correctly, logging in the user with valid credentials and displaying error messages for invalid credentials | ✅ |
+| | |
 
 
 &nbsp;
@@ -469,6 +481,7 @@ Certainly! Here's a table with the columns you requested:
 | Profile icon | Triggers the dropdown menu | Clicked on the icon | The dropdown menu is displayed | ✅ |
 | My Posts | Redirects to the page displaying the user's created posts | Clicked on the "My Posts" link | "My Posts" page loads, showing the user's created blog posts | ✅ |
 | Bookmarked | Redirects to the page displaying the user's bookmarked posts | Clicked on the "Bookmarked" link | "Bookmarked" page loads, showing the user's bookmarked blog posts | ✅ |
+| | |
 
 &nbsp;
 
@@ -477,6 +490,7 @@ Certainly! Here's a table with the columns you requested:
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | "Back to home" button | Redirect to index.html (blog posts) page | Clicked on the button 'Back to home' | Index.html page loads | ✅ |
+| | |
 
 &nbsp;
 
@@ -488,6 +502,7 @@ Certainly! Here's a table with the columns you requested:
 | Edit Profile | Redirects to the page displaying the user's own profile page | Clicked on the "Edit Profile" link | "Edit Profile" page loads, showing the user's profile page | ✅ |
 | Manage Account | Redirects to the page where the user can choose to delete their account | Clicked on the "Manage Account" link | "Manage Account" page loads, displaying the warning about deleting the account and displays button "Delete Account" and "No Go Back" | ✅ |
 | Logout | Redirects the user to a logout confirmation page | Clicked on "Logout" | User is redirected to a page confirming the logout | ✅ |
+| | |
 
 &nbsp;
 
@@ -505,7 +520,7 @@ Certainly! Here's a table with the columns you requested:
 | Blog post card title link | Redirects to the blog post detail page | Clicked on the title link of a post | Successfully redirected to the blog post detail page | ✅ |
 | Pagination | Displays pagination if more than 6 blog posts | Added more than 6 blog posts to the list | Pagination is displayed showing the correct number of pages | ✅ |
 | Page buttons on pagination | Navigates to the correct page | Clicked on page number/next/previous buttons in pagination | Successfully navigated to the correct page based on the button clicked | ✅ |
-
+| | |
 
 &nbsp;
 
@@ -515,6 +530,7 @@ Certainly! Here's a table with the columns you requested:
 | --- | --- | --- | --- | --- |
 | "Edit Profile" link | Redirects to the page displaying the user's own profile page | Clicked on the "Edit Profile" link | "Edit Profile" page loads, showing the user's profile page | ✅ |
 | Manage Account link | Redirects to the page where the user can choose to delete their account | Clicked on the "Manage Account" link | "Manage Account" page loads, displaying the warning about deleting the account and displays button "Delete Account" and "No Go Back" | ✅ |
+| | |
 
 &nbsp;
 
@@ -523,7 +539,7 @@ Certainly! Here's a table with the columns you requested:
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | "Edit Profile" | When changes are made and the "Save changes" button is clicked, the changes should be saved, the user should be redirected to the profile page, and a flash message should confirm the update | Made changes and click on the "Update" button | Changes were successfully saved, redirected to the profile page with the new information displayed, and a flash message confirmed the update | ✅ |
-
+| | |
 
 &nbsp;
 
@@ -533,6 +549,7 @@ Certainly! Here's a table with the columns you requested:
 | --- | --- | --- | --- | --- |
 | "Delete Account" button | When the "Delete Account" button is clicked, the user should be prompted with another extra confirmation button. If confirmed deletion user is deleted and redirected to the login page. | Clicked on the "Delete" button and confirmed the onclick popup confirm button again | Redirected to the login page with no access to the account or user | ✅ |
 | "No, go back" button | Redirects to the profile page | Clicked on the "No, go Back" button | The profile page loads, displaying the profile information | ✅ |
+| | |
 
 &nbsp;
 
@@ -542,6 +559,7 @@ Certainly! Here's a table with the columns you requested:
 | --- | --- | --- | --- | --- |
 | "Edit Profile" button | Redirects to the Profile Edit page | Clicked on the "Edit Profile" button | Successfully redirected to the Profile Edit page where the user can make changes to their profile | ✅ |
 | "Delete Post" button | Redirects to the Delete Post page for the specific post | Clicked on the "Delete Post" button for a specific post | Successfully redirected to the Delete Post page where the user can confirm the deletion of the post | ✅ |
+| | |
 
 &nbsp;
 
@@ -552,8 +570,7 @@ Certainly! Here's a table with the columns you requested:
 | Post title hyperlink | Redirects to the detailed view of the blog post | Clicked on the post title link | Successfully redirected to the blog post detail page | ✅ |
 | Author hyperlink | Redirects to the author's user profile page | Clicked on the author's link | Successfully redirected to the author's profile page, displaying their information and posts | ✅ |
 | "Read more" button | Redirects to the detailed view of the blog post | Clicked on the "Read more" button | Successfully redirected to the blog post detail page for further reading | ✅ |
-
-This table highlights the key features of the "Bookmarked" page, demonstrating how users can easily navigate to a detailed view of a bookmarked blog post or to the profile of the post's author.
+| | |
 
 &nbsp;
 
@@ -566,7 +583,7 @@ This table highlights the key features of the "Bookmarked" page, demonstrating h
 | "Like" heart icon | Toggles between liked and unliked state. Displays color-filled heart when liked and outlined heart when not. Count of likes changes accordingly | Clicked the like icon to like and unlike the post | Successfully toggled between liked and unliked states with corresponding heart icons and the like count updated | ✅ |
 | Comment section | Allows user to write a comment | Wrote a comment in the comment section | Successfully wrote and displayed the comment | ✅ |
 | "Submit button" in Comment section | Posts the comment to the blog post and displays it in the comments section | Clicked the submit button after writing a comment | Successfully posted the comment to the blog post and displayed it in the comments section | ✅ |
-
+| | |
 
 &nbsp;
 
@@ -582,6 +599,7 @@ This table highlights the key features of the "Bookmarked" page, demonstrating h
 | Year of Release input (required) | Validates input and requires a year of release for the post | Entered a year of release for the blog post | Successfully validated and accepted the year of release input | ✅ |
 | Media Link input (required) | Validates that the input is a link and is required for the post | Entered a media link for the blog post | Successfully validated and accepted the media link input | ✅ |
 | Media Category selection (required) | Requires selecting a media category from the list | Selected a media category for the blog post | Successfully required and accepted the selection of a media category | ✅ |
+| | |
 
 &nbsp;
 
@@ -590,6 +608,7 @@ This table highlights the key features of the "Bookmarked" page, demonstrating h
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | "Save Changes" button | When changes are made and the "Save Changes" button is clicked, the changes should be saved, the user should be redirected to the blog post detail page, and a flash message should confirm the update | Made changes and click on the "Save Changes" button | Changes were successfully saved, redirected to the blog post detail page, and a flash message confirmed the update | ✅ |
+| | |
 
 &nbsp;
 
@@ -599,6 +618,7 @@ This table highlights the key features of the "Bookmarked" page, demonstrating h
 | --- | --- | --- | --- | --- |
 | "Yes, Delete" button | When the "Yes, Delete" button is clicked, the post is deleted, and the user is redirected to the "My Posts" page with a confirmation success message | Clicked on the "Delete Post" button | Successfully deleted the post, redirected to the "My Posts" page, and displayed a confirmation success message | ✅ |
 | "No, go back" button | Redirects to the "My Posts" page | Clicked on the "No, go Back" button | Successfully redirected to the "My Posts" page, displaying the user's posts | ✅ |
+| | |
 
 &nbsp;
 
@@ -608,6 +628,7 @@ This table highlights the key features of the "Bookmarked" page, demonstrating h
 | --- | --- | --- | --- | --- |
 | LinkedIn link | Redirects to the specified LinkedIn profile | Clicked on the LinkedIn icon/link | Successfully redirected to the LinkedIn profile | ✅ |
 | GitHub link | Redirects to the specified GitHub profile | Clicked on the GitHub icon/link | Successfully redirected to the GitHub profile | ✅ |
+| | |
 
 &nbsp;
 
@@ -616,6 +637,7 @@ This table highlights the key features of the "Bookmarked" page, demonstrating h
 | Feature | Expected Outcome | Testing Performed | Result | Pass/Fail |
 | --- | --- | --- | --- | --- |
 | "Return home" button | Correct "error message" displays and redirects the user to index.html page where the articles are | Edited a non-URL path in the web browser and then clicked on the "Return home" button | Correct error handling message was displayed for the user, and when the "Return home"  button was clicked, the user was redirected to the index page where posts are displayed | ✅ |
+| | |
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
