@@ -157,7 +157,8 @@ User stories and tasks were put int o four 'epics' and are organized into three 
 ### Epic 1: User Authentication & Profile Management
 This epic focuses on user account management, including registration, login/logout, and personal profile customization.
 - [User Account Registration (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/2)
-- [Log In and Out of User Account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3)
+- [Easy Login from Landing Page (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/20)
+- [Log out of User account (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/3)
 - [Create, Update & Delete User Profile (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/4)
 - [Favorite Lists in Personal Bio (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
 - [Password Reset (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/43)
@@ -172,6 +173,7 @@ This epic deals with the core functionalities of the blog, such as creating, rea
 - [Read Full Post Detail (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/12)
 - [Bookmark Blog Posts (COULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/29)
 - [Follow Other Users (WON'T HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/30)
+- [Receive Validating Messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/37)
 
 ### Epic 3: Administration & Analytics
 This epic encompasses administrative control over the site, including user account management and content moderation, as well as tracking user engagement.
@@ -185,9 +187,9 @@ This epic is focused on the overall user experience on the site, such as the app
 - [Visually Appealing Landing Page (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/17)
 - [Navigate to About Us (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/18)
 - [Navigate to Join the Club Section (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/19)
-- [Easy Login from Landing Page (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/20)
 - [Navigate through a well designed website (MUST HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/33)
 - [Site pagination for easy navigation (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
+- [Receive Page Error Messages (SHOULD HAVE)](https://github.com/DebbieBergstrom/Culture-Club/issues/42)
 
 <br>
 
@@ -604,7 +606,7 @@ All testing was carried out and documented in [test.md](https://github.com/Debbi
 # Bugs
 The bug description section have been linked with the bug issues in my documentation for better visibility. The issue numbers are clickable to get a more comprehensive bug report.
 
-### Known bugs
+### Known bugs ❌ 
 
 | Bug Description | Bug Issue Link |
 | --- | --- |
@@ -612,7 +614,7 @@ The bug description section have been linked with the bug issues in my documenta
 | No linebreak if User Name too long <details><summary>Screenshot showing bug</summary>![Result](docs/test.md/test_chars_overflow_userprofile.png)</details> | More information &rarr; [#47](https://github.com/DebbieBergstrom/Culture-Club/issues/47) |
 
 
-### Fixed bugs
+### Fixed bugs ✅
 
 | Bug Description | Bug Issue Link |
 | --- | --- |
