@@ -582,6 +582,7 @@ Here are some exciting features that I would like to add to the Culture Club in 
 | **Community Guidelines and Policy Page** | Establish a page outlining community rules and policies, including respect and decorum among users. |
 | **Search Functions** | Add a search function to allow users to find specific blog posts and other users easily. |
 | **Design Improvements** | Continual enhancements in design, including better headings and text sizing for various screen sizes. |
+|  |  |
 
 
 <br>
@@ -601,22 +602,28 @@ All testing was carried out and documented in [test.md](https://github.com/Debbi
 ---
 
 # Bugs
-The bug section descriptions have been linked with the bug issues in my documentation for better visibility, added color coding, and divided the content into sections, all aimed at enhancing readability. The links are clickable for more reading and solution.
+The bug description section have been linked with the bug issues in my documentation for better visibility. The issue numbers are clickable to get a more comprehensive bug report.
 
 ### Known bugs
 
-| **Bug** | **Description** |
-| ------- | --------------- |
-| [Describe the problem.](https://github.com/DebbieBergstrom/FILEPATH) | Description. |
-
-
+| Bug Description | Bug Issue Link |
+| --- | --- |
+| Masthead image not scaling properly See screenshot here: <details><summary>Screenshot showing bug result</summary>![Result](docs/test.md/test_image_max_height.png)</details> | More information &rarr; [#46](https://github.com/DebbieBergstrom/Culture-Club/issues/46) |
+| No linebreak if User Name too long <details><summary>Screenshot showing bug</summary>![Result](docs/test.md/test_chars_overflow_userprofile.png)</details> | More information &rarr; [#47](https://github.com/DebbieBergstrom/Culture-Club/issues/47) |
 
 
 ### Fixed bugs
 
-| **Bug** | **Fix** |
-| ----------- | ----------- |
-| 1. Bug to be listed| Solutions to be fixed |
+| Bug Description | Bug Issue Link |
+| --- | --- |
+| Placeholder image doesn't show in Profile | More information &rarr; [#39](https://github.com/DebbieBergstrom/Culture-Club/issues/39) |
+| Post default image is not displayed | More information &rarr; [#41](https://github.com/DebbieBergstrom/Culture-Club/issues/41) |
+| Wrongfully landing page direction | More information &rarr; [#36](https://github.com/DebbieBergstrom/Culture-Club/issues/36) |
+| Index file does not render | More information &rarr; [#34](https://github.com/DebbieBergstrom/Culture-Club/issues/34) |
+| Author link in post detail not clickable | More information &rarr; [#38](https://github.com/DebbieBergstrom/Culture-Club/issues/38) |
+| 'Forgot your password' link can't be removed | More information &rarr; [#44](https://github.com/DebbieBergstrom/Culture-Club/issues/44) |
+| Summernote field overflows parent container | More information &rarr; [#45](https://github.com/DebbieBergstrom/Culture-Club/issues/45) |
+
 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
