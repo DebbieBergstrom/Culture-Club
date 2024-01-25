@@ -31,8 +31,6 @@ TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEVELOPMENT = os.environ.get('DEVELOPMENT', 'False').lower() == 'true'
-
 DEBUG = False
 
 ALLOWED_HOSTS = [(os.environ.get('LOCALHOST')),
@@ -115,6 +113,9 @@ TEMPLATES = [
 WSGI_APPLICATION = 'culture_club.wsgi.application'
 
 
+# Note: The following commented-out sections are for future development and
+# testing purposes. They are kept here for reference and should be uncommented
+# as needed.
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
@@ -133,9 +134,9 @@ DATABASES = {
 
 # TEMPORARY TEST SECTION
 # This section is used to configure a different database for testing purposes.
-# It should be uncommented only when running tests locally or in a CI/CD pipeline.
-# Ensure this section remains commented out in production to avoid overriding
-# production database settings.
+# It should be uncommented only when running tests locally or in a CI/CD
+# pipeline. Ensure this section remains commented out in production to avoid
+# overriding production database settings.
 """
 if 'test' in sys.argv or 'test_coverage' in sys.argv:
     DATABASES = {
