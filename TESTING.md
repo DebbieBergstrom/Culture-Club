@@ -3,7 +3,7 @@
 ![Culture Club viewed in different screens](/docs/readme/am_i_responsive_mockup.png)
 
 Developer: [Debbie Bergström](https://github.com/DebbieBergstrom) <br>
-[Live webpage](https://WEBADDRESS)<br>
+[Live webpage](https://culture-club-5c87709e95e2.herokuapp.com/accounts/login/)<br>
 [Project Repository](https://github.com/DebbieBergstrom/Culture-Club)<br>
 
 
@@ -125,7 +125,7 @@ During the evaluation, the following issue was identified:
 | Manage Account | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_manage_account.png)</details> | ✅ |
 | Sign Up | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_sign_up.png)</details> | ✅ |
 | User Profile | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_user_profile.png)</details> | ✅ |
-
+| Bookmarked | no errors found | <details><summary>Screenshot of result</summary>![Result](docs/test.md/accessibility_responsive/wave_bookmark.png)</details> | ✅ |
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
@@ -133,7 +133,7 @@ During the evaluation, the following issue was identified:
 </p>
 
 ## Performance
-I conducted a comprehensive evaluation of [The culture club website](https://) using [Google Lighthouse in Google Chrome Developer Tools](https://developer.chrome.com/docs/lighthouse/). This evaluation was performed in Google Chrome browser's incognito mode to eliminate all potential impacts from other addons and cached files.
+I conducted a comprehensive evaluation of the website using [Google Lighthouse in Google Chrome Developer Tools](https://developer.chrome.com/docs/lighthouse/). This evaluation was performed in Google Chrome browser's incognito mode to eliminate all potential impacts from other addons and cached files.
 
 Several pages, including index.html, post_detail.html that contain larger amount of images, are impacted in performance scores due to our reliance on Cloudinary for image hosting and management. Cloudinary allows users to upload images, providing a dynamic and user-driven experience. However, this flexibility comes with certain trade-offs that affect the Lighthouse performance metrics:
 
@@ -217,7 +217,7 @@ The website was tested on the following devices:
 1. 49" Samsung CHG9 ultra-wide
 2. 28" Lenovo ThinkVision 
 
-In addition, the website was tested using the Google Chrome Developer Tools Device Toggling option for all available device options.
+In addition, the website was tested using the Google Chrome Developer Tools Device Toggling option for all available device options. Firefox Dev tools was also used in most cases to double check. 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 <p align="center">
