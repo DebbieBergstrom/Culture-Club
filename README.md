@@ -12,7 +12,7 @@ Inspired by the diversity and unity of the iconic band it's named after, 'Cultur
 
 
 Developer: [Debbie Bergström](https://github.com/DebbieBergstrom) <br>
-[Live webpage](https://WEBADDRESS)<br>
+[Live webpage](https://culture-club-5c87709e95e2.herokuapp.com/accounts/login/)<br>
 [Project Repository](https://github.com/DebbieBergstrom/Culture-Club)<br>
 
 
@@ -152,7 +152,7 @@ When using Culture Club, users can expect the following features and characteris
 
 ### User Stories
 
-User stories and tasks were put int o four 'epics' and are organized into three distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these milestones by clicking [here](https://github.com/DebbieBergstrom/Culture-Club/milestones), which will take you to the milestone overview.
+User stories and tasks were put int o four 'epics' and are organized into four distinct sprints (milestones) to establish a well-defined work structure. You can access the details of these milestones by clicking [here](https://github.com/DebbieBergstrom/Culture-Club/milestones?state=closed), which will take you to the milestone overview.
 
 ### Epic 1: User Authentication & Profile Management
 This epic focuses on user account management, including registration, login/logout, and personal profile customization.
@@ -455,6 +455,8 @@ Emphasizing that the project timeline is expedited, the iterative approach maint
 - Visually Appealing Landing Page [#17](https://github.com/DebbieBergstrom/Culture-Club/issues/17)
 - Navigate to About Us [#18](https://github.com/DebbieBergstrom/Culture-Club/issues/18)
 - Site pagination for easy navigation [#32](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
+- Receive Validating Messages [#37](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
+- Receive Page Error Messages [#42](https://github.com/DebbieBergstrom/Culture-Club/issues/32)
 
 ### Could-Have:
 - Favourite Lists in Personal Bio [#5](https://github.com/DebbieBergstrom/Culture-Club/issues/5)
@@ -503,10 +505,10 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 - Description: An immersive page for reading entire blog posts, complete with like, bookmark, and comment functionalities.
 <details><summary>See Screenshot **Read Full Post, large**</summary><img src="docs/features/create_new_post.png"></details>
 <details><summary>See Screenshot **Read FullPost, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
-<details><summary>See Screenshot **Like Post**</summary><img src="docs/features/msg_post_created.png"></details>
-<details><summary>See Screenshot **Unlike Post**</summary><img src="docs/features/msg_post_created.png"></details>
-<details><summary>See Screenshot **Bookmark Post**</summary><img src="docs/test.md/userstories/us_blogpost_detail.png"></details>
-<details><summary>See Screenshot **Unbookmark Post**</summary><img src="docs/test.md/userstories/us_blogpost_detail.png"></details>
+<details><summary>See Screenshot **Like Post**</summary><img src="docs/test.md/userstories/us_like_post.png"></details>
+<details><summary>See Screenshot **Unlike Post**</summary><img src="docs/test.md/userstories/us_unliked.png"></details>
+<details><summary>See Screenshot **Bookmark Post**</summary><img src="docs/test.md/userstories/us_bookmarked.png"></details>
+<details><summary>See Screenshot **Unbookmark Post**</summary><img src="docs/test.md/userstories/us_unbookmarked.png"></details>
 <details><summary>See Screenshot **Comment Post**</summary><img src="docs/features/us_blogpost_comment.png"></details>
 
 ### Create New Post:
@@ -517,8 +519,8 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 
 ### Edit Post:
 - Description: Allows users to make changes to their existing blog posts, with an intuitive editing interface. Validating message displays when post is successfully updated.
-<details><summary>See Screenshot **Edit Post, large**</summary><img src="docs/features/create_new_post.png"></details>
-<details><summary>See Screenshot **Edit Post, mobile**</summary><img src="docs/features/create_new_post_sm.png"></details>
+<details><summary>See Screenshot **Edit Post, large**</summary><img src="docs/test.md/userstories/us_edit_post.png"></details>
+<details><summary>See Screenshot **Edit Post, mobile**</summary><img src="docs/features/edit_post_sm.png"></details>
 <details><summary>See Screenshot **Edit Post, success message**</summary><img src="docs/features/msg_post_updated.png"></details>
 
 ### Delete Post:
@@ -547,7 +549,7 @@ For a comprehensive view of the project's trajectory, user stories, and bug trac
 ### Edit Profile:
 -  An edit profile page allowing users to update their personal information and preferences. Validating message displays when profile is successfully updated.
 <details><summary>See Screenshot **Edit Profile, placeholder image default, large**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
-<details><summary>See Screenshot **Edit Profile, placeholder image default, mobile**</summary><img src="docs/features/edit_profile_placeholder.png"></details>
+<details><summary>See Screenshot **Edit Profile, placeholder image default, mobile**</summary><img src="docs/features/edit_profile__placeholder_ sm.png"></details>
 <details><summary>See Screenshot **Edit Profile, success message**</summary><img src="docs/features/msg_profile_updated.png"></details>
 
 
@@ -597,7 +599,7 @@ Here are some exciting features that I would like to add to the Culture Club in 
 
 The Culture Club website went through a comprehensive testing process to guarantee its functionality, accessibility, and performance. This included checking the code, such as code validation, accessibility assessment, performance testing, cross-device testing, verification of browser compatibility, assessment of user stories, and the integration of user feedback to enhance the overall user experience.
 
-All testing was carried out and documented in [test.md](https://github.com/DebbieBergstrom/Culture-Club/blob/main/TESTING.md). 
+All testing was carried out and documented in [testing.md](https://github.com/DebbieBergstrom/Culture-Club/blob/main/TESTING.md). 
 
 <p align="right">(<a href="#table-of-content">back to top</a>)</p>
 
